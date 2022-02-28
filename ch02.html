@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. 파이썬 프로그래밍 개발 환경 &#8212; core_pybook</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. 기본 자료형" href="ch03.html" />
+    <link rel="prev" title="1. 프로그래밍이란?" href="ch01.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">core_pybook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   소개
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch01.html">
+   1. 프로그래밍이란?
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. 파이썬 프로그래밍 개발 환경
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch03.html">
+   3. 기본 자료형
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ch02.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hj617kim/core_pybook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hj617kim/core_pybook/issues/new?title=Issue%20on%20page%20%2Fch02.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hj617kim/core_pybook/master?urlpath=tree/docs/ch02.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-size-2-anaconda-font">
+   2.1. 아나콘다
+   <font size="2">
+    Anaconda
+   </font>
+   설치
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-size-2-spyder-font">
+     2.1.1. 스파이더
+     <font size="2">
+      Spyder
+     </font>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-size-2-jupyter-notebook-font">
+     2.1.2. 주피터 노트북
+     <font size="2">
+      Jupyter Notebook
+     </font>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-size-2-visual-studio-code-vs-code-font">
+     2.1.3. 비주얼 스튜디오 코드
+     <font size="2">
+      Visual Studio Code, vs code
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-size-2-repl-it-font">
+   2.2. 레플릿
+   <font size="2">
+    Repl.it
+   </font>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-size-2-google-colab-font">
+   2.3. 구글 코랩
+   <font size="2">
+    Google Colab
+   </font>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>파이썬 프로그래밍 개발 환경</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-size-2-anaconda-font">
+   2.1. 아나콘다
+   <font size="2">
+    Anaconda
+   </font>
+   설치
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-size-2-spyder-font">
+     2.1.1. 스파이더
+     <font size="2">
+      Spyder
+     </font>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-size-2-jupyter-notebook-font">
+     2.1.2. 주피터 노트북
+     <font size="2">
+      Jupyter Notebook
+     </font>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-size-2-visual-studio-code-vs-code-font">
+     2.1.3. 비주얼 스튜디오 코드
+     <font size="2">
+      Visual Studio Code, vs code
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-size-2-repl-it-font">
+   2.2. 레플릿
+   <font size="2">
+    Repl.it
+   </font>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-size-2-google-colab-font">
+   2.3. 구글 코랩
+   <font size="2">
+    Google Colab
+   </font>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1><span class="section-number">2. </span>파이썬 프로그래밍 개발 환경<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>파이썬 프로그래밍을 하려면 개발환경을 준비해야 한다. 파이썬을 아직 설치하지 않았다면, 데이터 분석에 필요한 라이브러리가 포함되어 있는 아나콘다<font size = "2">Anaconda</font>를 설치하는 것도 좋다. 다음 중 하나의 방법을 선택하여 개발 환경을 구축하자.</p>
+<ul class="simple">
+<li><p>아나콘다 설치 → 스파이더 사용</p></li>
+<li><p>아나콘다 설치 → 주피터 노트북 사용</p></li>
+<li><p>아나콘다 &amp; vs code 설치 → vs code 사용</p></li>
+</ul>
+<p>별도의 프로그램 설치 없이 파이썬을 사용하는 방법도 있다.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://Repl.it">Repl.it</a> 사용</p></li>
+<li><p>구글 코랩 사용</p></li>
+</ul>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p><strong>통합 개발 환경</strong><font size = "2">Integrated Development Environment, IDE</font><br />
+통합 개발 환경은 코딩, 디버그, 컴파일 등 프로그램 개발과 관련된 작업을 하나의 프로그램으로 처리하는 소프트웨어이다.</p>
+</div>
+<div class="section" id="font-size-2-anaconda-font">
+<h2><span class="section-number">2.1. </span>아나콘다 <font size = "2">Anaconda</font> 설치<a class="headerlink" href="#font-size-2-anaconda-font" title="Permalink to this headline">¶</a></h2>
+<p>아나콘다를 설치하려면 먼저 설치 프로그램을 다운로드해야 한다.</p>
+<ul class="simple">
+<li><p>아나콘다 사이트 <font size = "2"><a class="reference external" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a></font> 에 접속한다.<br />
+그리고 화면 오른쪽에 있는 Download 버튼을 눌러 아나콘다 설치 프로그램을 다운로드한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/anaconda01.png" style="width:800px;">
+</div><div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>아나콘다 사이트에 접속하면, 접속자의 운영체제를 확인하여 설치 가능한 파이썬 최신 버전을 보여준다. 이 글을 작성하는 시점에는 파이썬 3.9가 최신 버전이다.</p>
+</div>
+<ul class="simple">
+<li><p>다운로드한 Anaconda3-Window_64.exe 실행파일을 더블 클릭하여 설치를 시작한다. 설치화면이 아래와 같이 나오면 Next 버튼을 눌러서 다음 화면으로 넘어간다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/anaconda02.png" style="width:400px;">
+</div><ul class="simple">
+<li><p>약관이 나타나면, 동의하는 I Agree 버튼을 눌러 다음 화면으로 넘어간다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/anaconda03.png" style="width:400px;">
+</div><ul class="simple">
+<li><p>사용자 환경에 따라 권한을 설정한 다음, Next 버튼을 눌러 다음 화면으로 넘어간다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/anaconda04.png" style="width:400px;">
+</div><ul class="simple">
+<li><p>설치 경로를 지정한 다음, Next 버튼을 눌러 다음 화면으로 넘어간다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/anaconda05.png" style="width:400px;">
+</div><div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>특별한 경우가 아니라면, 기본 경로를 그대로 두고 다음으로 넘어가면 된다.</p>
+</div>
+<ul class="simple">
+<li><p>아나콘다를 기본 파이썬으로 설정하고, Install 버튼을 눌러 설치를 진행한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/anaconda06.png" style="width:400px;">
+</div><ul class="simple">
+<li><p>설치 시간은 보통 1~3분 정도 걸리며, 컴퓨터 환경에 따라 5분이상 소요되기도 한다. 설치 완료가 되면, Next를 눌러 다음 화면으로 넘어간다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/anaconda08.png" style="width:400px;">
+</div><p>그 다음 화면도 Next 버튼을 누르면 된다.</p>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/anaconda09.png" style="width:400px;">
+</div><ul class="simple">
+<li><p>Finish 버튼을 눌러 설치를 완료한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/anaconda10.png" style="width:400px;">
+</div><div class="section" id="font-size-2-spyder-font">
+<h3><span class="section-number">2.1.1. </span>스파이더 <font size = "2"> Spyder </font><a class="headerlink" href="#font-size-2-spyder-font" title="Permalink to this headline">¶</a></h3>
+<p>스파이더는 과학프로그래밍을 위한 IDE로, 아나콘다를 설치하면 스파이더를 사용할 수 있다.</p>
+<ul class="simple">
+<li><p>윈도우키를 누른 후 스파이더를 선택한다. 시작까지 오랜 시간이 걸릴 수도 있다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/spyder01.png" style="width:400px;">
+</div><ul class="simple">
+<li><p>스파이더는 편집기 기능과 터미널 기능을 동시에 제공한다. 아래 화면에서 왼쪽이 편집기 부분(빨간색)이고, 오른쪽 아래가 터미널 부분(녹색)이다. 편집기 부분은 긴 코드를 작성할 때 사용하고, 터미널 부분은 짧은 코드를 테스트할 때 사용한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/spyder05.png" style="width:800px;">
+</div><p>편집기에 <code class="docutils literal notranslate"><span class="pre">print('Hello,</span> <span class="pre">world')</span></code>라고 코드를 작성한 다음 실행 버튼(노란색)<font size = "2">또는 F5</font>을 눌러보자.
+실행 버튼을 처음 누르면 아래와 같이 파이썬 인터프리터와 관련된 설정창이 뜬다. 설정 변경 없이 Run 버튼을 누르면 된다. 그러면 터미널에 <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world</span></code>가 출력되는 것을 볼 수 있다.</p>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/spyder03.png" style="width:400px;">
+</div><p>편집기 부분과 터미널 부분은 파이썬 인터프리터를 공유한다. 그래서 편집기 부분에 코드를 입력 후 실행하면, 터미널 부분에서도 편집기 부분에서 정의된 변수나 함수 등을 사용할 수 있다.</p>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>터미널 부분에서 정의된 변수나 함수 등도 편집기에서 사용할 수 있다. 하지만 편집기 부분을 저장할 때 터미널 부분에 정의된 코드는 저장되지 않는다. :::</p>
+</div>
+</div>
+<div class="section" id="font-size-2-jupyter-notebook-font">
+<h3><span class="section-number">2.1.2. </span>주피터 노트북 <font size = "2">Jupyter Notebook</font><a class="headerlink" href="#font-size-2-jupyter-notebook-font" title="Permalink to this headline">¶</a></h3>
+<p>주피터 노트북은 대화형 파이썬 인터프리터로, 웹브라우저에서 파이썬 코드를 작성하고 실행 결과를 바로 확인할 수 있다. 아나콘다를 설치하면 주피터 노트북을 사용할 수 있다.</p>
+<ul class="simple">
+<li><p>윈도우 키를 누른 후 주피터 노트북을 선택한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/jupyter01.png" style="width:400px;">
+</div><p>‘이 파일을 열 때 사용할 앱을 선택하세요.’라는 문구가 나온다면 사용하는 브라우저(예, Google Chrome 또는 Microsoft Edge 등)를 선택하면 된다. 그러면 주피터 노트북이 실행된다.</p>
+<ul class="simple">
+<li><p>아래 화면에서 오른쪽 위에 있는 New를 선택한 다음 Python 3를 선택하여 새로운 파이썬 파일을 만들자.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/jupyter04.png" style="width:800px;">
+</div><ul class="simple">
+<li><p>새로운 파이썬 파일은 아래 화면과 같다. 코드셀(빨간색)에 <code class="docutils literal notranslate"><span class="pre">print('Hello,</span> <span class="pre">world')</span></code>라고 코드를 작성한 다음 실행버튼(노란색)<font size = "2">또는 shift+enter나 ctrl+enter</font>를 누르면, 코드셀 바로 아래(녹색) <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world</span></code>가 출력되는 것을 볼 수 있다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/jupyter06.png" style="width:800px;">
+</div></div>
+<div class="section" id="font-size-2-visual-studio-code-vs-code-font">
+<h3><span class="section-number">2.1.3. </span>비주얼 스튜디오 코드 <font size = "2">Visual Studio Code, vs code</font><a class="headerlink" href="#font-size-2-visual-studio-code-vs-code-font" title="Permalink to this headline">¶</a></h3>
+<p>vs code는 마이크로소프트에서 만든 소스 코드 에디터<font size = "2">Editor</font>로 다양한 프로그래밍 언어를 지원하며 대부분의 OS에서 실행된다. 에디터는 들여쓰기나 코드 자동 완성, 문법 오류 감지 등 개발할 때 편리한 기능을 제공하기 때문에 개발 속도를 높이는 데 도움을 줄 수 있다.</p>
+<p>vs code를 설치하려면 먼저 설치 프로그램을 다운로드해야 한다.</p>
+<ul class="simple">
+<li><p>비주얼 스튜디오 코드 <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> 에 접속한다. 그리고 화면 왼쪽에 있는 Download 버튼을 눌러 비주얼 스튜디오 코드 설치 프로그램을 다운로드한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode01.png" style="width:800px;">
+</div><div class="admonition-class-info admonition">
+<p class="admonition-title">참고 :class: info</p>
+<p>비주얼 스튜디오 코드 사이트에 접속하면, 접속자의 운영체제를 확인하여 설치 가능한 버전을 보여준다. :::</p>
+</div>
+<ul class="simple">
+<li><p>다운로드한 VSCodeUserSetup.exe 실행파일을 더블 클릭하여 설치를 시작한다. 약관이 나타나면, 동의합니다를 선택하고, 다음을 눌러서 다음 화면으로 넘어간다.</p></li>
+<li><p>설치 경로를 지정한 다음, 다음 버튼을 눌러 다음 화면으로 넘어간다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode02.png" style="width:400px;">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode03.png" style="width:400px;">
+</div><div class="admonition- admonition">
+<p class="admonition-title">참고 :</p>
+<p>class: info
+특별한 경우가 아니면, 기본 경로를 그대로 두고 다음으로 넘어가면 된다. :::</p>
+</div>
+<ul class="simple">
+<li><p>시작 메뉴에 비주얼 스튜디오 코드가 보이도록 하고 싶다면 다음을 누르고, 아니라면 시작 메뉴 폴더를 만들지 않음을 선택하고 다음을 눌러 다음으로 넘어가면 된다.</p></li>
+<li><p>추가로 필요한 작업이 있다면, 선택하고 다음을 눌러 다음 화면으로 넘어가면 된다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode04.png" style="width:400px;">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode05.png" style="width:400px;">
+</div><ul class="simple">
+<li><p>아래 왼쪽 화면은 앞에서 선택한 항목들을 보여준다. 확인 후 설치를 눌러 설치를 진행한다.</p></li>
+<li><p>설치 시간은 보통 1~3분 정도 걸리며, 컴퓨터 환경에 따라 5분이상 소요되기도 한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode06.png" style="width:400px;">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode07.png" style="width:400px;">
+</div><ul class="simple">
+<li><p>종료 버튼을 눌러 설치를 완료한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode08.png" style="width:400px;">
+</div><ul class="simple">
+<li><p>이제 vs code를 실행해보자. 윈도우 키를 누른 후 visual studio code를 선택하면 된다.</p></li>
+<li><p>vs code에서 파이썬을 사용하기 위하여 확장<font size="2">Extensions</font>을 설치해야 한다. 아래 화면 왼쪽 아래에 있는 확장 아이콘(빨간색)<font size = "2">또는 ctrl + shift + x </font>을 클릭한 다음, python을 검색(노란색)한다. 그리고 아래(녹색) python과 python for vs code를 install를 클릭하여 설치한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode11.png" style="width:800px;">
+</div><ul class="simple">
+<li><p>그 다음 작업영역에 폴더를 추가해야 한다. 우선 원하는 위치에 폴더를 하나 만든다(예, 바탕화면에 python이라는 이름의 폴더 생성). 그 다음 vs code 메뉴 중 File 아래 Open Folder를 클릭한 다음, 생성한 폴더를 선택하여 연다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode12.png" style="width:800px;">
+</div><ul class="simple">
+<li><p>폴더명 옆에 마우스를 가져가면 파일을 추가할 수 있는 아이콘(빨간색)이 생긴다. 이 아이콘을 누른 다음, 아래 만들어지는 영역(노란색)에 파이썬 파일명과 확장자(.py)를 입력한다. 아래 화면에서는 <a class="reference external" href="http://1.py">1.py</a> 파일을 만들었다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode13.png" style="width:500px;">
+</div><ul class="simple">
+<li><p>만든 파이썬 파일(<a class="reference external" href="http://1.py">1.py</a>)은 아래 화면과 같다. 편집기(빨간색)에 <code class="docutils literal notranslate"><span class="pre">print('Hello,</span> <span class="pre">world')</span></code>라고 코드를 작성한 다음 ctrl + F5를 누르면, 아래 터미널에 <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world</span></code>가 출력되는 것(노란색)을 볼 수 있다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/vscode14.png" style="width:800px;">
+</div><div class="admonition-class-info admonition">
+<p class="admonition-title">참고 :class: info   </p>
+<p>터미널에 <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world</span></code>가 출력되지 않는다면, 파이썬 설치 경로가 제대로 입력되었는지 확인하자. vs code에서 ctrl + shift + p를 누르면 뜨는 창에 Python: Select Interpreter를 선택한다. 그 다음 열리는 창에 python이 설치된 경로를 적어준다. 보통은 설치 경로를 입력하는 창 아래에 파이썬 설치 경로를 보여준다.</p>
+</div>
+</div>
+</div>
+<div class="section" id="font-size-2-repl-it-font">
+<h2><span class="section-number">2.2. </span>레플릿 <font size = "2"> <a class="reference external" href="http://Repl.it">Repl.it</a> </font><a class="headerlink" href="#font-size-2-repl-it-font" title="Permalink to this headline">¶</a></h2>
+<p>레플릿은 온라인 IDE로 별도의 프로그램 설치 없이 파이썬을 사용할 수 있다. 사용 방법은 간단하다.</p>
+<ul class="simple">
+<li><p>레플릿 사이트(<a class="reference external" href="https://replit.com/">https://replit.com/</a>)에 접속한다. 그리고 오른쪽 위의 Sign up을 눌러 회원가입을 하고, 로그인을 한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/replit01.png" style="width:800px;">
+</div><ul class="simple">
+<li><p>로그인하면 아래와 같은 화면이 나온다. 오른쪽 위의 + 버튼(빨간색)을 누르면, Create a repl 창이 나온다. 물론, 왼쪽 위의 햄버거 버튼(녹색)를 누른 다음 +Create 버튼을 눌러도 되고, 화면 아래에 있는 + Python(노란색)를 눌러도 된다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/replit02.png" style="width:800px;">
+</div><ul class="simple">
+<li><p>Create a repl 창이 나오면, Template은 Python을 선택하고, 제목Title은 적당한 것으로 변경(예, 1)한 다음 오른쪽 아래에 보이는 +Create Repl 버튼을 누르면 된다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/replit03.png" style="width:400px;">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/replit04.png" style="width:465px;">
+</div><ul class="simple">
+<li><p>그러면 아래와 같이 파이썬 파일이 만들어진다. 왼쪽 편집기(빨간색)에 <code class="docutils literal notranslate"><span class="pre">print('Hello,</span> <span class="pre">world')</span></code>라고 코드를 작성한 다음 실행버튼(노란색)<font size = "2"> 또는 ctrl + enter</font>를 누르면, 오른쪽 터미널에 <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world</span></code>가 출력되는 것(녹색)을 볼 수 있다.</p></li>
+</ul>
+<div align="center"><img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/replit05_r.png" style="width:800px;"></div></div>
+<div class="section" id="font-size-2-google-colab-font">
+<h2><span class="section-number">2.3. </span>구글 코랩 <font size = "2">Google Colab</font><a class="headerlink" href="#font-size-2-google-colab-font" title="Permalink to this headline">¶</a></h2>
+<p>구글 코랩은 구글에서 제공하는 주피터 노트북이다. 레플릿과 마찬가지로 사용 방법은 간단하다.</p>
+<ul class="simple">
+<li><p>구글 <a class="reference external" href="https://www.google.com/">https://www.google.com/</a> 에 접속한다. 그리고 구글 계정으로 로그인을 한다. 이때, 사용할 웹 브라우저는 크롬을 추천한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/colab01.png" style="width:800px;">
+</div><ul class="simple">
+<li><p>웹 브라우저에서 오른쪽 위를 보면 여러 개의 아이콘이 보인다. 그 중 세 번째에 있는 Google 앱 아이콘을 누른 다음 구글 드라이브에 접속한다.</p></li>
+<li><p>구글 드라이브 화면에서 왼쪽 위를 보면 새로 만들기 버튼(빨간색)이 있다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/colab02.png" style="width:300px; padding-right:20px">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/colab03.png" style="width:400px;">
+</div><ul class="simple">
+<li><p>새로 만들기 버튼을 누르면 아래와 같은 창이 뜬다. 이 창에서 연결할 앱 더보기를 선택한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/colab04.png" style="width:500px;">
+</div><ul class="simple">
+<li><p>그러면 아래와 같은 창이 뜬다. 설치 가능한 앱 중 Colaboratory(빨간색)를 찾은 다음 클릭한다. 코랩을 검색(노란색)하여 찾는 것도 가능하다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/colab05.png" style="width:600px;">
+</div><ul class="simple">
+<li><p>Colaboratory 창에서 설치 버튼을 눌러 설치를 시작한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/colab06.png" style="width:600px;">
+</div><ul class="simple">
+<li><p>아래 왼쪽 화면처럼 권한을 요구할 수도 있다. 그러면 계속 버튼을 클릭한다.</p></li>
+<li><p>다음으로 계정 선택 창이 나온다면, 사용할 구글 계정을 선택하면 된다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/colab07.png" style="width:400px;">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/colab08.png" style="width:300px;">
+</div><ul class="simple">
+<li><p>그러면 코랩 설치가 완료된다. 확인, 완료 등의 버튼을 눌러 모든 창을 닫아준다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/colab09.png" style="width:400px;">
+</div><ul class="simple">
+<li><p>다시 구글 드라이브로 와서 새로 만들기 버튼을 누른 다음, 목록에서 Google Colaboratory를 선택한다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/colab10.png" style="width:500px;">
+</div><ul class="simple">
+<li><p>그러면 아래와 같은 주피터 노트북이 만들어진다. 코드셀(빨간색)에 <code class="docutils literal notranslate"><span class="pre">print('Hello,</span> <span class="pre">world')</span></code>라고 코드를 작성한 다음 실행버튼(실행하고자 하는 코드셀 앞에 있는 동그라미 안의 삼각형)<font size = "2">또는 shift+enter나 ctrl+enter</font>를 누르면, 코드셀 바로 아래(노란색) <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world</span></code>가 출력되는 것을 볼 수 있다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/colab11.png" style="width:800px;">
+</div></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ch01.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>프로그래밍이란?</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ch03.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>기본 자료형</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By HJ<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
