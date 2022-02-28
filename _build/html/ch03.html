@@ -699,7 +699,9 @@
 <p class="admonition-title">참고</p>
 <p>정수부나 소수부가 0이라면 생략하고 작성할 수 있다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">0.7</span></code>은 <code class="docutils literal notranslate"><span class="pre">.7</span></code>로, <code class="docutils literal notranslate"><span class="pre">1.0</span></code>은 <code class="docutils literal notranslate"><span class="pre">1.</span></code>이라고 작성할 수 있다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mf">0.7</span> <span class="o">==</span> <span class="mf">.7</span>
+<span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mf">1.0</span> <span class="o">==</span> <span class="mf">1.</span>
+<span class="go">True</span>
 </pre></div>
 </div>
 </div>
@@ -707,7 +709,9 @@
 <p class="admonition-title">지수 표현 방식  </p>
 <p><code class="docutils literal notranslate"><span class="pre">e</span></code>나 <code class="docutils literal notranslate"><span class="pre">E</span></code> 다음에 오는 수는 10의 지수가 된다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">30000.0</span></code>은 <code class="docutils literal notranslate"><span class="pre">3e4</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">3E4</span></code>라고 작성할 수 있다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mf">30000.0</span> <span class="o">==</span> <span class="mf">3e4</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mf">30000.0</span> <span class="o">==</span> <span class="mf">3E4</span> 
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mf">30000.0</span> <span class="o">==</span> <span class="mf">3E4</span>
+<span class="go">True</span>
 </pre></div>
 </div>
 <p>이렇게 표현된 수는 부동소수점이다.</p>
@@ -1479,7 +1483,7 @@ He paid ****0.1235 dollars.
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
 &lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-/tmp/ipykernel_1058/1180083856.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+/tmp/ipykernel_1328/1180083856.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
   1 is 2
 </pre></div>
 </div>
@@ -1526,7 +1530,7 @@ He paid ****0.1235 dollars.
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
 &lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-/tmp/ipykernel_1058/3336455986.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+/tmp/ipykernel_1328/3336455986.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
   1 is 1.0
 </pre></div>
 </div>
@@ -1890,7 +1894,9 @@ a : 2 , b : 1
 <p>그런 다음 아래와 코드를 작성하고 타입 검사기를 사용해보자.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mf">3.4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">3.4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="go">&lt;class &#39;float&#39;&gt;</span>
 </pre></div>
 </div>
 <p>mypy를 사용하면 타입 힌트가 작성된 파이썬 파일의 코드 전체에 타입 힌트 오류가 있는지를 확인할 수 있다.</p>
@@ -2351,93 +2357,36 @@ a : 2 , b : 1
 <div class="section" id="input">
 <h2><span class="section-number">5.3. </span><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
 <p>사용자의 입력은 <code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수를 사용하여 받을 수 있다. 아래와 같이 <code class="docutils literal notranslate"><span class="pre">input()</span></code>을 입력하고 코드를 실행하면, 그 아래에 값을 입력하라는 창이 나온다. 그곳에 <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">python!</span></code>을 입력하고 엔터<font size ="2">enter</font>를 누르면 입력한 문자열이 그대로 출력된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">input</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span><span class="p">()</span>
+<span class="go">Hello, python!</span>
+<span class="go">&#39;Hello, python!&#39;</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1058</span><span class="o">/</span><span class="mf">1290019835.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">input</span><span class="p">()</span>
-
-<span class="nn">/usr/local/lib/python3.8/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1039</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1040</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">-&gt; </span><span class="mi">1041</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1042</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1043</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 입력받은 값은 변수에 할당하여 사용할 수도 있다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="go"> python!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+<span class="go">Hello, python!</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> python!
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, python!
-</pre></div>
-</div>
-</div>
 </div>
 <p>이때 <code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 입력받은 값은 문자열<code class="docutils literal notranslate"><span class="pre">str</span></code>이다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="go">str</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
-</pre></div>
-</div>
-</div>
 </div>
 <p>사용자가 숫자를 입력하더라도 입력받은 값은 문자열<code class="docutils literal notranslate"><span class="pre">str</span></code>이다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="go"> 123</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="go">str</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 123
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
-</pre></div>
-</div>
-</div>
 </div>
 <p>사용자에게 무엇을 입력할지 알려주고 싶다면, 그 내용의 문자열을 <code class="docutils literal notranslate"><span class="pre">input()</span></code>의 인자로 사용하면 된다.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;정수를 입력하세요 : &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력하신 정수는 &quot;</span> <span class="o">+</span> <span class="n">input_num</span> <span class="o">+</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">input_num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;정수를 입력하세요 : &quot;</span><span class="p">)</span>
+<span class="go">정수를 입력하세요 :  135</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;입력하신 정수는 &quot;</span> <span class="o">+</span> <span class="n">input_num</span> <span class="o">+</span> <span class="s2">&quot;입니다.&quot;</span><span class="p">)</span>
+<span class="go">입력하신 정수는 135입니다.</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>정수를 입력하세요 :  135
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>입력하신 정수는 135입니다.
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="print">
@@ -2472,7 +2421,9 @@ a : 2 , b : 1
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
 Hello World
 Hello World
-Hello World
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
 </pre></div>
 </div>
 </div>
