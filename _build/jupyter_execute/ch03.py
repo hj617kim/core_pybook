@@ -891,7 +891,7 @@ int(True)
 int(False)
 
 
-# :::{admonition} 주의  
+# :::{admonition} 주의   
 # :class: caution  
 # `int()` 함수의 인자로 문자열을 사용할 때는 그 모양이 정수모양이어야 한다. 
 # 
@@ -905,7 +905,8 @@ int(False)
 # ```
 # :::
 
-# :::{admonition} 주의 :class: caution
+# :::{admonition} 주의  
+# :class: caution
 # 변수를 형변환한다고 해서 변수에 할당된 값이 변하는 것은 아니다. 다만, 형변환한 값을 다른 변수에 저장해서 활용할 수는 있다. 
 # :::
 
