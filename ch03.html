@@ -426,6 +426,33 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id19">
+   6. 연습문제
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     6.1. 문제
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     6.2. 문제
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     6.3. 문제
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     6.4. 문제
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -659,6 +686,33 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id19">
+   6. 연습문제
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     6.1. 문제
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     6.2. 문제
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     6.3. 문제
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     6.4. 문제
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -691,10 +745,46 @@
 <h2><span class="section-number">3.1. </span>정수<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>일반적으로 알고 있는 정수<font size = "2">int</font>(자연수, 0, 음의 정수)들의 자료형이다. 정수형으로 나타내면 덧셈, 뺄셈, 곱셈, 나눗셈 등의 기본 연산이 가능하다.<br />
 예를 들어, …, -3, -2, -1, 0, 1, 2, 3, …은 모두 정수형(<code class="docutils literal notranslate"><span class="pre">int</span></code>)이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="id3">
 <h2><span class="section-number">3.2. </span>부동소수점<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>부동소수점<font size = "2">float</font>은 원래 실수를 컴퓨터에서 다루기 위해 개발되었으나 실제로는 유리수 일부만을 다룬다. 무리수인 원주율 <span class="math notranslate nohighlight">\(\pi\)</span>의 경우에도 컴퓨터의 한계로 인해 소수점 이하 적당한 자리에서 끊어서 사용한다. 예를 들어, 1.2, 0.333, -1.2, -3.7680, 4.0, .7 등은 모두 부동소수점형(<code class="docutils literal notranslate"><span class="pre">float</span></code>)이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.2</span> <span class="o">+</span> <span class="mf">3.5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.7
+</pre></div>
+</div>
+</div>
+</div>
 <div class="info admonition">
 <p class="admonition-title">참고</p>
 <p>정수부나 소수부가 0이라면 생략하고 작성할 수 있다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">0.7</span></code>은 <code class="docutils literal notranslate"><span class="pre">.7</span></code>로, <code class="docutils literal notranslate"><span class="pre">1.0</span></code>은 <code class="docutils literal notranslate"><span class="pre">1.</span></code>이라고 작성할 수 있다.</p>
@@ -1127,7 +1217,7 @@
 <h3><span class="section-number">3.3.3. </span>f-string<a class="headerlink" href="#f-string" title="Permalink to this headline">¶</a></h3>
 <p>문자열 앞에 <code class="docutils literal notranslate"><span class="pre">f</span></code>를 붙이면, 문자열 포매팅 <font size = "2" >string formatting</font>을 사용할 수 있다.</p>
 <div class="info admonition">
-<p class="admonition-title">문자열 포매팅 <font size = "2" >string formatting</font></p>
+<p class="admonition-title">문자열 포매팅 <font size = "2" >string formatting</font>  </p>
 <p>문자열 포매팅이란 문자열 안에 값을 삽입하는 방법이다.</p>
 </div>
 <p>예제와 함께 살펴보자.</p>
@@ -1483,7 +1573,7 @@ He paid ****0.1235 dollars.
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
 &lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-/tmp/ipykernel_1529/1180083856.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+/tmp/ipykernel_303/1180083856.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
   1 is 2
 </pre></div>
 </div>
@@ -1530,7 +1620,7 @@ He paid ****0.1235 dollars.
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
 &lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-/tmp/ipykernel_1529/3336455986.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+/tmp/ipykernel_303/3336455986.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
   1 is 1.0
 </pre></div>
 </div>
@@ -2505,6 +2595,31 @@ bc	d
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id19">
+<h1><span class="section-number">6. </span>연습문제<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id20">
+<h2><span class="section-number">6.1. </span>문제<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<p>다음을 연산기호를 이용하여 수식으로 표현하고, 그 결과를 확인하여라.</p>
+<ul class="simple">
+<li><p>3 + 9 - 8</p></li>
+<li><p>(27 + 3) × 2 - 42 ÷ 3</p></li>
+<li><p>[{(9 ÷ 2) × 12} - 7] × 3 - 1</p></li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h2><span class="section-number">6.2. </span>문제<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<p>문자열 <code class="docutils literal notranslate"><span class="pre">Good</span> <span class="pre">morning!</span></code> 을 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id22">
+<h2><span class="section-number">6.3. </span>문제<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Hello!</span></code>를 3번 연속(<code class="docutils literal notranslate"><span class="pre">Hello!Hello!Hello!</span></code>)으로 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id23">
+<h2><span class="section-number">6.4. </span>문제<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<p>사용자에게 문자열을 입력받고, 그 문자열을 5번 연속으로 출력하는 코드를 작성하여라.<br />
+예를 들어, 사용자가 <code class="docutils literal notranslate"><span class="pre">Hello!</span></code>를 입력했다면, <code class="docutils literal notranslate"><span class="pre">Hello!Hello!Hello!Hello!Hello!</span></code>를 출력한다.</p>
 </div>
 </div>
 
