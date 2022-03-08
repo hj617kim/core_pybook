@@ -259,6 +259,14 @@
 
 # <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch02/replit05_r.png" style="width:800px;"></div>
 
+# :::{admonition} 참고     
+# :class: info  
+# replit에서 실행버튼이나 ctrl + enter를 누르면 main.py 파일이 실행된다. 다른 이름의 파일을 실행하고 싶다면 오른쪽 Shell에 `python 파일명.py`라고 코드를 작성하고 enter를 누르면 된다. 예를 들어, w1.py 파일을 실행하고 싶다면, Shell에 다음과 같이 `python w1.py` 코드를 작성하고 enter를 누르면 된다. 참고로, `python` 다음에는 공백<font size = "2">space</font>이 있고, 그 뒤에 파일명을 적으면 된다.   
+# 
+# <div align="center"><img src="./images/ch02/replit06.png" style="width:800px;"></div>
+# 
+# :::
+
 # ## 구글 코랩 <font size = "2">Google Colab</font>
 
 # 구글 코랩은 구글에서 제공하는 주피터 노트북이다. 레플릿과 마찬가지로 사용 방법은 간단하다.
