@@ -158,7 +158,7 @@
 
 
 # ````{prf:example}
-# :label: my-example
+# :label: str-example
 # 
 # `Hello, "World"`를 보이는 그대로 출력하는 코드를 작성하여라. 
 # ````
@@ -590,7 +590,7 @@ id(1) == id(2)
 # ```
 
 # ````{prf:example}
-# :label: my-example
+# :label: var_name-example
 # 다음 중 변수명으로 사용 가능한 것은 무엇인가?
 # 
 # * `123k`    
@@ -1300,7 +1300,7 @@ print(x) #변수 x는 None을 가리킨다.
 # 다음과 같은 방법으로 (세 자리 수) × (세 자리 수) 를 계산할 수 있다.   
 # 
 # <div align="left">
-#     <img src="./images/ch04/pro01.png" style="width:250px;">
+#     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch04/pro01.png" style="width:250px;">
 # </div>  
 # 
 # 두 세 자리 수가 주어질 때, ①, ②, ③, ④에 들어갈 값을 각각 줄변경하여 출력하는 구하는 코드를 작성하여라.  
