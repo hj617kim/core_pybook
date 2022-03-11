@@ -496,6 +496,11 @@
      3.4.13. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id33">
+     3.4.14. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -799,6 +804,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id32">
      3.4.13. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id33">
+     3.4.14. 문제
     </a>
    </li>
   </ul>
@@ -1665,7 +1675,7 @@ He paid ****0.1235 dollars.
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
 &lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-/tmp/ipykernel_223/1180083856.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+/tmp/ipykernel_324/1180083856.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
   1 is 2
 </pre></div>
 </div>
@@ -1712,7 +1722,7 @@ He paid ****0.1235 dollars.
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
 &lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-/tmp/ipykernel_223/3336455986.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+/tmp/ipykernel_324/3336455986.py:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
   1 is 1.0
 </pre></div>
 </div>
@@ -2821,17 +2831,10 @@ Output :</p>
 <span class="mi">29680</span>
 </pre></div>
 </div>
-<p>n = int(input())
-num_coins = 0
-num_coins += n//500
-n = n%500
-num_coins += n//100
-n = n%100
-num_coins += n//50
-n = n%50
-num_coins += n//10
-print(num_coins)### 문제<br />
-A편의점은 500원, 100원, 50원, 10원을 보유하고 있고, 동전의 개수를 최소화하여 거스름 돈을 주려고 한다.<br />
+</div>
+<div class="section" id="id33">
+<h3><span class="section-number">3.4.14. </span>문제<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<p>A편의점은 500원, 100원, 50원, 10원을 보유하고 있고, 동전의 개수를 최소화하여 거스름 돈을 주려고 한다.<br />
 거슬러 줘야 하는 금액이 n원일 때, 최소 동전의 개수를 출력하는 코드를 작성하여라.<br />
 단, n은 10의 배수이며 5000보다 작은 정수고, 모든 화폐는 무한하게 있다고 가정한다.</p>
 <p>Input : n = 1730<br />
