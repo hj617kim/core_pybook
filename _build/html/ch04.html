@@ -1720,7 +1720,7 @@ b
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="go">True</span>
+<span class="go">False</span>
 </pre></div>
 </div>
 </div>
@@ -2590,7 +2590,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7fb488631d00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f31727b9580&gt;
 </pre></div>
 </div>
 </div>
@@ -3659,10 +3659,12 @@ None
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;World&#39;, &#39;Hi&#39;, &#39;Hello&#39;}
-{&#39;World&#39;, &#39;Hi&#39;, &#39;Hello&#39;}
-{&#39;안녕&#39;, &#39;세계&#39;}
-{(&#39;Hello&#39;, &#39;안녕&#39;), (&#39;World&#39;, &#39;세계&#39;), (&#39;Hi&#39;, &#39;안녕&#39;)}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Hello&#39;, &#39;World&#39;, &#39;Hi&#39;}
+{&#39;Hello&#39;, &#39;World&#39;, &#39;Hi&#39;}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;세계&#39;, &#39;안녕&#39;}
+{(&#39;Hi&#39;, &#39;안녕&#39;), (&#39;Hello&#39;, &#39;안녕&#39;), (&#39;World&#39;, &#39;세계&#39;)}
 </pre></div>
 </div>
 </div>
@@ -3888,11 +3890,12 @@ Output : <code class="docutils literal notranslate"><span class="pre">{4}</span>
 </div>
 <div class="section" id="id51">
 <h3><span class="section-number">4.2.3. </span>문제<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h3>
-<p>이름과 핸드폰 번호를 입력받아, 아래와 같은 형식으로 출력하는 코드를 작성하여라.</p>
+<p>이름과 핸드폰 번호를 <code class="docutils literal notranslate"><span class="pre">input()</span></code>함수로 입력받아, 아래와 같은 형식으로 출력하는 코드를 작성하여라. 이때, 사용자의 이름은 두 글자에서 네 글자까지를 입력하며,
+핸드폰 번호는 아래의 형식으로 입력한다고 가정한다.</p>
 <p>Input : <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">'김강현'</span></code>, <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">=</span> <span class="pre">'010-1234-5678'</span></code><br />
 Output : <code class="docutils literal notranslate"><span class="pre">김*현(5678)님</span> <span class="pre">등록되었습니다.</span></code></p>
 <p>Input : <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">'강현'</span></code>, <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">=</span> <span class="pre">'01012345678'</span></code><br />
-Output : <code class="docutils literal notranslate"><span class="pre">김*(5678)님</span> <span class="pre">등록되었습니다.</span></code></p>
+Output : <code class="docutils literal notranslate"><span class="pre">강*(5678)님</span> <span class="pre">등록되었습니다.</span></code></p>
 <p>Input : <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">'김강현이'</span></code>, <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">=</span> <span class="pre">'010.1234.5678'</span></code><br />
 Output : <code class="docutils literal notranslate"><span class="pre">김*현이(5678)님</span> <span class="pre">등록되었습니다.</span></code></p>
 <p>Input : <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">'김강현'</span></code>, <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">=</span> <span class="pre">'02-123-5678'</span></code><br />
