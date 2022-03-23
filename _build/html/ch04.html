@@ -52,6 +52,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. 파이썬 프로그래밍의 기초 III" href="ch05.html" />
     <link rel="prev" title="3. 파이썬 프로그래밍의 기초 I" href="ch03.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -110,6 +111,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    4. 파이썬 프로그래밍의 기초 II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch05.html">
+   5. 파이썬 프로그래밍의 기초 III
   </a>
  </li>
 </ul>
@@ -2590,7 +2596,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f31727b9580&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f9b0877c6c0&gt;
 </pre></div>
 </div>
 </div>
@@ -3383,7 +3389,7 @@ b
 </div>
 <div class="section" id="id40">
 <h5><span class="section-number">4.1.3.1.7. </span>사전 메서드<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h5>
-<p>집합 자료형이 제공하는 주요 메서드는 아래와 같다.</p>
+<p>사전 자료형이 제공하는 주요 메서드는 아래와 같다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Hello&#39;</span> <span class="p">:</span> <span class="s1">&#39;안녕&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span> <span class="p">:</span> <span class="s1">&#39;세계&#39;</span><span class="p">}</span>
@@ -3661,9 +3667,7 @@ None
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Hello&#39;, &#39;World&#39;, &#39;Hi&#39;}
 {&#39;Hello&#39;, &#39;World&#39;, &#39;Hi&#39;}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;세계&#39;, &#39;안녕&#39;}
+{&#39;안녕&#39;, &#39;세계&#39;}
 {(&#39;Hi&#39;, &#39;안녕&#39;), (&#39;Hello&#39;, &#39;안녕&#39;), (&#39;World&#39;, &#39;세계&#39;)}
 </pre></div>
 </div>
@@ -3773,10 +3777,10 @@ None
 <p>위의 조건제시법은 다음 장에서 소개하는 <code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문을 활용한 코드와 동일하다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="p">:</span>
-<span class="go">        if x % 2 == 0 :</span>
-<span class="go">            a_list.append(x)</span>
+<span class="go">        if x % 2 == 1 :</span>
+<span class="go">            a_list.append(x ** 2)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
-<span class="go">[0, 2, 4, 6, 8]</span>
+<span class="go">[1, 9, 25, 49, 81]</span>
 </pre></div>
 </div>
 </div>
@@ -4046,6 +4050,13 @@ Input :</p>
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">3. </span>파이썬 프로그래밍의 기초 I</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="ch05.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>파이썬 프로그래밍의 기초 III</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
