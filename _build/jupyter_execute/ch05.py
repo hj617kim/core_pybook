@@ -471,7 +471,7 @@ z = my_sum(2, 3)
 print(z)
 
 
-# :::{admonition} 주의 
+# :::{admonition} 주의  
 # :class: caution  
 # 매개변수의 개수와 인자의 개수가 맞지 않으면 오류가 발생한다.  
 # ```python
@@ -481,6 +481,8 @@ print(z)
 # ----> 1 print(my_sum(3))
 # 
 # TypeError: my_sum() missing 1 required positional argument: 'b'
+# ```
+# ```python
 # >>> print(my_sum(1, 2, 3))
 # TypeError                                 Traceback (most recent call last)
 # /tmp/ipykernel_1887/828772552.py in <module>
@@ -813,6 +815,453 @@ for item in num_map :
     print(item, end = ' ')
 
 
+# ## 예외처리
+
+# 프로그램을 만들다보면 여러 오류가 발생할 수 있다. 파이썬은 오류가 발생하면 오류 메시지를 보여주며 프로그램을 중단한다. 하지만 때로는 오류를 다른 방식으로 처리하고 싶을 때도 있다. 여기서 그에 대한 해결책을 다루고자 한다.  
+
+# ### 오류  
+# 오류를 처리하는 방법을 살펴보기 전에, 프로그램을 만들 때 발생할 수 있는 오류 몇 가지를 살펴보자. 오류의 종류를 파악하면 어디서 왜 오류가 발생하였는지를 보다 쉽게 파악하여 코드를 수정할 수 있게 된다. 다음의 코드들은 모두 오류를 발생시킨다. 오류 메시지는 오류의 종류를 명시하고 있으며, 문제가 되는 줄을 다시 보여주고 문제가 되는 부분을 화살표로 가리키고 있다. 
+# 
+
+# :::{admonition} 문법 오류<font size="2">SyntaxError</font>  
+# :class: caution  
+# 아래의 코드에서 문자열 양 끝의 큰 따옴표(또는 작은 따옴표)는 짝이 맞아야 한다.  
+# ```python  
+# >>> print('Hello, world)
+#   File "/tmp/ipykernel_739/1244210618.py", line 1
+#     print('Hello, world)
+#                         ^
+# SyntaxError: EOL while scanning string literal
+# ```  
+# 아래의 코드에서 괄호는 짝이 맞게 작성해야 한다. 오류 메시지에서는 line2 시작 부분에서 오류가 발생했다고 나왔지만, 실제로는 line1 마지막에 괄호(`)`)가 없어서 발생한 오류이다.   
+# ```python
+# >>> print(type('3')
+# >>> print('Hello, python')
+#   File "/tmp/ipykernel_739/2346138518.py", line 2
+#     print('Hello, python')
+#     ^
+# SyntaxError: invalid syntax
+# ```
+# :::  
+# 
+
+# :::{admonition} 0 나누기 오류<font size="2">ZeroDivisionError</font>    
+# :class: caution   
+# 어떤 값을 0으로 나누려고 하면, 아래와 같이 오류가 발생한다.   
+# ```python
+# >>> print(3/0)
+# ZeroDivisionError                         Traceback (most recent call last)
+# /tmp/ipykernel_739/3450647263.py in <module>
+# ----> 1 print(3/0)
+# 
+# ZeroDivisionError: division by zero
+# ```
+# :::
+# 
+
+# :::{admonition} 들여쓰기 오류<font size="2">IndentationError</font>   
+# :class: caution  
+# 
+# 2번 줄과 3번 줄의 들여쓰기 정도가 동일해야 한다. 
+# ```python
+# >>> for i in range(5) :
+#       i -= 2
+#         print(i)
+#   File "/tmp/ipykernel_739/1686879996.py", line 3
+#     print(i)
+#     ^
+# IndentationError: unexpected indent
+# ```
+# :::
+# 
+
+# :::{admonition} 자료형 오류<font size="2">TypeError</font>   
+# :class: caution  
+# 
+# 정수와 문자열은 `+` 연산을 할 수 없다. 
+# ```python
+# >>> 3 + 'abc' 
+# TypeError                                 Traceback (most recent call last)
+# /tmp/ipykernel_739/2042041464.py in <module>
+# ----> 1 3 + 'abc'
+# 
+# TypeError: unsupported operand type(s) for +: 'int' and 'str'
+# ```
+# :::
+# 
+
+# :::{admonition} 인덱스 오류<font size="2">IndexError</font>   
+# :class: caution  
+# 
+# 인덱스는 문자열의 길이보다 작거나 같은 수만 사용할 수 있다. 
+# ```python
+# >>> a_word = 'Hello'
+# >>> print(a_word[15])
+# IndexError                                Traceback (most recent call last)
+# /tmp/ipykernel_739/570418593.py in <module>
+#       1 a_word = 'Hello'
+# ----> 2 print(a_word[15])
+# 
+# IndexError: string index out of range
+# ```
+# :::
+
+# :::{admonition} 값 오류<font size="2">ValueError</font>  
+# :class: caution  
+# 
+# `int()`함수의 인자로 문자열을 사용할 때는 문자열의 모양이 정수 모양이어야 한다.   
+# ```python
+# >>> int('3.4')  
+# ValueError                                Traceback (most recent call last)
+# /tmp/ipykernel_739/1056813288.py in <module>
+# ----> 1 int('3.4')
+# 
+# ValueError: invalid literal for int() with base 10: '3.4'
+# ```
+# :::
+# 
+
+# :::{admonition} 속성 오류<font size="2">AttributeError</font>     
+# :class: caution  
+# 
+# 문자열(`str`)에 `split()`메서드를 사용하면, 리스트(`list`)가 된다. `strip()`은 문자열 메서드로 리스트 자료형에 사용할 수 없다.    
+# ```python
+# >>> 'Hello, python'.split().strip()
+# AttributeError                            Traceback (most recent call last)
+# /tmp/ipykernel_739/2431863669.py in <module>
+# ----> 1 'Hello, python'.split().strip()
+# 
+# AttributeError: 'list' object has no attribute 'strip'
+# ```
+# :::
+
+# 지금 살펴본 오류 외에도 다양한 오류가 발생할 수 있다. 그때마다 스스로 오류의 내용과 원인을 확인해 나가는 과정이 필요하다.  
+
+# ### 예외처리
+
+# 프로그램 중간에 오류가 발생할 수 있는 경우를 미리 생각하여 대비하는 과정을 **예외처리<font size="2">exception handling</font>** 라고 부른다. 예를 들어, 오류가 발생하더라도 오류발생 이전까지 생성된 정보들을 저장하거나, 오류 발생 이유를 조금 더 자세히 다루거나, 아니면 오류발생에 대한 보다 자세한 정보를 사용자에게 알려주기 위해 예외처리를 사용한다. 여기서는 `try-except`문을 사용하여 예외처리하는 방법을 살펴보자. 아래의 형식을 따른다.   
+# 
+# ```
+# try : 
+#     코드1
+# except :
+#     코드2
+# ```
+# 
+# * `try`문을 만나면, 먼저 `코드1`(`try`와 `except` 사이의 코드들)부분을 실행한다.   
+# * `코드1` 부분이 실행되면서 오류가 발생하지 않으면 `코드2`부분은 무시하고 다음으로 넘어간다. 
+# * `코드1` 부분이 실행되면서 오류가 발생하면 더이상 진행하지 않고 바로 `코드2` 부분을 실행한다.   
+# 
+# 예제와 함께 살펴보자. 아래의 코드는 문법적 오류는 없지만, 정수가 아닌 값을 입력하면 값 오류<font size="2">ValueError</font>가 발생한다.  
+# 
+# ```python
+# >>> int_num = int(input('정수를 입력하세요 : '))
+# 정수를 입력하세요 :  3
+# ```
+# ```python
+# >>> int_num = int(input('정수를 입력하세요 : '))
+# 정수를 입력하세요 :  3.5
+# ValueError                                Traceback (most recent call last)
+# /tmp/ipykernel_739/4187675782.py in <module>
+# ----> 1 int_num = int(input('정수를 입력하세요 : '))
+# 
+# ValueError: invalid literal for int() with base 10: '3.5'
+# ``` 
+# 
+# 정수가 아닌 값을 입력하면, `'정수를 입력해야 합니다.'`라는 문구를 출력하고 싶다면 `try-except`문을 이용하여 예외처리할 수 있다.  
+# ```python
+# >>> num = input("정수를 입력하세요: ")
+# >>> try :
+#         int_num = int(num)
+#         print("입력한 정수", int_num, "의 제곱은", int_num**2, "입니다.")
+#     except :
+#         print("정수를 입력해야 합니다.")
+# 정수를 입력하세요:  3
+# 입력한 정수 3 의 제곱은 9 입니다.
+# ```
+# ```python
+# >>> num = input("정수를 입력하세요: ")
+# >>> try :
+#         int_num = int(num)
+#         print("입력한 정수", int_num, "의 제곱은", int_num**2, "입니다.")
+#     except :
+#         print("정수를 입력해야 합니다.")
+# 정수를 입력하세요:  3.5
+# 정수를 입력해야 합니다.
+# ```
+# 
+# 위의 코드에서 정수 3을 입력하면 입력한 정수의 제곱을 출력하고, 부동소수점 3.5를 입력하면 정수를 입력해야 한다는 메시지를 보여준다.   
+# 
+# `while`문을 사용하여 정수를 입력할 때까지 계속 입력을 요구할 수도 있다.   
+# ```python
+# >>> while True :
+#         try :
+#             int_num = int(input("정수를 입력하세요: "))
+#             print("입력한 정수", int_num, "의 제곱은", int_num**2, "입니다.")
+#             break
+#         except :
+#             print("정수를 입력해야 합니다.")
+# 정수를 입력하세요:  3.5
+# 정수를 입력해야 합니다.
+# 정수를 입력하세요:  1.5
+# 정수를 입력해야 합니다.
+# 정수를 입력하세요:  5
+# 입력한 정수 5 의 제곱은 25 입니다.
+# ```
+
+# 오류 종류에 맞추어 다양한 대처를 하기 위해서는 오류의 종류를 명시하여 예외처리를 하면된다. 형식은 아래와 같다. 
+# ```
+# try : 
+#     코드1
+# except 오류종류1:
+#     코드2
+# except 오류종류2:
+#     코드3
+# ```
+# * `try`문을 만나면, 먼저 `코드1`(`try`와 `except` 사이의 코드들)부분을 실행한다.   
+# * `코드1` 부분이 실행되면서 오류가 발생하지 않으면 `코드2`, `코드3` 부분은 무시하고 다음으로 넘어간다. 
+# * `코드1` 부분이 실행되면서 `오류종류1`의 오류가 발생하면 더이상 진행하지 않고 바로 `코드2` 부분을 실행한다.   
+# * `코드1` 부분이 실행되면서 `오류종류2`의 오류가 발생하면 더이상 진행하지 않고 바로 `코드3` 부분을 실행한다.   
+# 
+# 
+# 예제와 함께 살펴보자. 0이 아닌 정수를 입력받은 다음, 10을 입력받은 수로 나눈 값을 출력하는 코드를 작성하려고 한다. 입력 값이 따라 값 오류`VauleError`와 0 나누기 오류`ZeroDivisionError`가 발생할 수 있다. 각각에 상응하는 방식으로 아래와 같이 예외처리를 해보자. `try`문 아래 코드에서 오류가 발생했을 때 `except`문이 여러 개 있다면, 가장 위에 있는 `except`문부터 오류의 종류가 일치하는지를 확인한다. 
+# 
+# ```python
+# >>> num = input('0이 아닌 정수를 입력하세요 : ')
+# >>> try :
+#         int_num = int(num)
+#         ans = 10 / int_num
+#         print('결과는', ans, '입니다.')
+#     except ValueError :
+#         print('정수를 입력하세요.')
+#     except ZeroDivisionError :
+#         print('0은 입력할 수 없습니다.')
+# 0이 아닌 정수를 입력하세요 :  3.5
+# 정수를 입력하세요.   
+# ```
+# ```python
+# >>> num = input('0이 아닌 정수를 입력하세요 : ')
+# >>> try :
+#         int_num = int(num)
+#         ans = 10 / int_num
+#         print('결과는', ans, '입니다.')
+#     except ValueError :
+#         print('정수를 입력하세요.')
+#     except ZeroDivisionError :
+#         print('0은 입력할 수 없습니다.')
+# 0이 아닌 정수를 입력하세요 :  0
+# 0은 입력할 수 없습니다. 
+# ```
+# 
+# 오류 메시지의 내용까지 알고 싶다면, 오류 종류 옆에 `as 오류메시지변수`를 적어주면 된다. 예를 들어, 아래와 같이 오류 종류 옆에 `as e`라고 적고, 아래에서 오류 메시지를 출력할 수 있다. 
+# ```python
+# >>> num = input('0이 아닌 정수를 입력하세요 : ')
+# >>> try :
+#         int_num = int(num)
+#         ans = 10 / int_num
+#         print('결과는', ans, '입니다.')
+#     except ValueError as e :
+#         print(e)
+#         print('정수를 입력하세요.')
+#     except ZeroDivisionError as e :
+#         print(e)
+#         print('0은 입력할 수 없습니다.')
+# 0이 아닌 정수를 입력하세요 :  3.5
+# invalid literal for int() with base 10: '3.5'
+# 정수를 입력하세요.   
+# ```
+# ```python
+# >>> num = input('0이 아닌 정수를 입력하세요 : ')
+# >>> try :
+#         int_num = int(num)
+#         ans = 10 / int_num
+#         print('결과는', ans, '입니다.')
+#     except ValueError as e :
+#         print(e)
+#         print('정수를 입력하세요.')
+#     except ZeroDivisionError as e :
+#         print(e)
+#         print('0은 입력할 수 없습니다.')
+# 0이 아닌 정수를 입력하세요 :  0
+# division by zero
+# 0은 입력할 수 없습니다. 
+# ```
+
+# :::{admonition} 주의  
+# :class: caution  
+# 오류 종류를 잘못 명시하면 예외처리가 제대로 동작하지 않는다.  
+# 
+# ```python
+# >>> try :
+#         a = 3 / 0
+#     except ValueError :
+#         print('This program stops here.')
+# ZeroDivisionError                         Traceback (most recent call last)
+# /tmp/ipykernel_739/1260866280.py in <module>
+#       1 try :
+# ----> 2     a = 3 / 0
+#       3 except ValueError :
+#       4     print('This program stops here.')
+# 
+# ZeroDivisionError: division by zero
+# ```
+# 실제로 발생 가능한 오류를 일으킨 다음, 오류 종류를 명시하는 것도 좋다. 
+# 
+# ```python
+# >>> try :
+#         a = 3 / 0
+#     except ZeroDivisionError :
+#         print('This program stops here.')
+# This program stops here.
+# ```
+# :::
+
+# :::{admonition} 참고  
+# :class: info  
+# 상황에 따라 `try`문은 `else` 또는 `finally`와 함께 사용할 수 있다. `else`는 `try`문 아래에서 오류가 발생하지 않았을 때 실행되고, `finally`은 `try`문 아래에서 오류가 발생했는가와 관계없이 실행된다.   
+# 
+# 아래와 같은 코드를 살펴보자. `try`문 아래 코드를 실행할 때 어떠한 오류도 발생하지 않는다. 그러면, `except` 아래 코드는 무시하고, `else`와 `finally` 아래 코드가 실행된다. 그리고 `try`문 밖에 있는 `print('E')`가 실행된다.  
+# ```python
+# >>> try :
+#         print('A1')
+#         print('A2')
+#     except :
+#         print('B')
+#     else :
+#         print('C1')
+#         print('C2')
+#     finally :
+#         print('D')
+#     print('E')
+# A1
+# A2
+# C1
+# C2
+# D
+# E
+# ```
+# 
+# `try`문 아래 코드를 실행할 때 오류가 발생하면, 더이상 진행하지 않고 `except`아래 코드를 실행한다. 이후 `else` 아래 코드는 무시하고, `finally`아래 코드와 `print('E')`가 실행된다.
+# ```python
+# >>> try :
+#         print('A1')
+#         print(3 / 0)
+#         print('A2')
+#     except :
+#         print('B')
+#     else :
+#         print('C1')
+#         print('C2')
+#     finally :
+#         print('D')
+#     print('E')
+# A1
+# B
+# D
+# E
+# ```
+# 
+# 다음와 같이 `else` 아래 있는 코드에서도 오류가 발생할 수 있다. 그런 경우에는 `finally` 아래 코드가 실행된 다음에 오류가 발생한다. 이후 `print('E')`가 실행되지 않는다. 
+# ```python
+# >>> try :
+#         print('A1')
+#         print('A2')
+#     except :
+#         print('B')
+#     else :
+#         print('C1')
+#         print(3 / 0)
+#         print('C2')
+#     finally :
+#         print('D')
+#     print('E')
+# A1
+# A2
+# C1
+# D
+# ZeroDivisionError                         Traceback (most recent call last)
+# /tmp/ipykernel_739/1541466067.py in <module>
+#       6 else :
+#       7     print('C1')
+# ----> 8     print(3 / 0)
+#       9     print('C2')
+#      10 finally :
+# 
+# ZeroDivisionError: division by zero
+# ```
+# :::
+# 
+
+# :::{admonition} 주의  
+# :class: caution  
+# `try` 아래 있는 코드에서 `break`, `continue`, `return` 문을 만나도, `finally` 아래 있는 코드를 먼저 실행한 다음 실행한다. 예를 들어, `try`문 아래에서 `break`를 만나 `while`문을 바로 벗어나는 것이 아니라 `finally` 아래 있는 코드를 실행한 다음 `break`문을 실행한다. 
+# 
+# ```python
+# >>> while True :
+#         try :
+#             break
+#         finally :
+#             print('A')
+# A
+# ```
+# 
+# `finally` 아래 `return`문이 있다면, 리턴값은 `try` 문 아래 리턴값이 아니라 `finally` 아래 리턴값이 된다. 
+# ```python
+# >>> def bool_return() :
+#         try :
+#             return True
+#         finally :
+#             return False
+# >>> bool_return()
+# False
+# ```
+# :::
+
+# ### 예외 일으키기  
+# 강제로 오류를 발생시키고 싶다면, `raise` 명령어를 사용하면 된다.   
+# 
+# ```python
+# >>> raise
+# RuntimeError                              Traceback (most recent call last)
+# /tmp/ipykernel_739/2235509928.py in <module>
+# ----> 1 raise
+# 
+# RuntimeError: No active exception to reraise
+# ```
+# 
+# 오류 종류와 어떤 일이 있어났는지도 알려줄 수 있다. 예를 들어, 아래와 같이 `NameError`를 발생시킬 수 있다. 
+# ```python
+# >>> raise NameError
+# NameError                                 Traceback (most recent call last)
+# /tmp/ipykernel_739/1567631431.py in <module>
+# ----> 1 raise NameError
+# 
+# NameError: 
+# ```
+# 그리고 오류 종류 옆에 괄호를 하고 문자열을 넣으면, 오류가 발생했을 때 그 문자열을 보여준다. 
+# ```python
+# >>> raise NameError('name error 발생')
+# NameError                                 Traceback (most recent call last)
+# /tmp/ipykernel_739/3044916970.py in <module>
+# ----> 1 raise NameError('name error 발생')
+# 
+# NameError: name error 발생
+# ```
+# 
+
+# :::{admonition} 코드의 안정성 문제    
+# :class: caution  
+# 문법 오류 또는 실행 중 오류가 발생하지 않더라도 코드의 안전성이 보장되지는 않는다. 즉, 오류가 발생하지 않더라도 코드를 실행했을 때 기대하는 결과가 나오지 않을 수도 있으니 주의해야 한다. 예를 들어, 아래의 코드는 입력받은 정수의 제곱을 출력해주는 코드를 제대로 구현하지 못하고 있다. 
+# 
+# ```python
+# >>> int_num = int(input("정수를 입력하세요 : "))
+# 정수를 입력하세요 : 3
+# >>> print("입력한 정수", int_num, "의 제곱은", int_num, "입니다.")
+# 입력한 정수 3 의 제곱은 3 입니다.
+# ```
+# :::
+# 
+
 # ## 연습문제
 
 # ### 문제 
@@ -872,7 +1321,7 @@ for item in num_map :
 # ### 문제   
 # A대학의 일반차량에 대한 주차요금은 아래와 같다.   
 # 
-# * 2,000원/최초 30분, 초과 10분마다 500원, 1일(24시간)은 40,000원   
+# * 2,000원/최초 30분, 초과 10분마다 500원, 1일(24시간) 최대 요금은 40,000원   
 # 
 # 일반차량에 대한 입출차 기록이 리스트로 주어졌을 때, 차량별로 주차시간과 주차요금이 정리된 코드를 작성하여라.   
 # 
@@ -880,8 +1329,8 @@ for item in num_map :
 # * 시간은 24시간제를 아래와 같이 사용하고, 모든 차량은 00:00부터 23:59분 사이에 한 번씩만 입출차(`IN`/`OUT`) 한다고 가정한다.  
 # * 잘못된 입력은 없다고 가정하고, 아직 출차하지 않은 차량에 대해서는 주차시간과 주차요금을 정리할 수 없다.  
 # 
-# Input : `['07:30 1234 IN', '07:35 2580 IN','08:15 0328 IN', '08:45 2580 OUT', '08:55 9876 IN', '09:20 9876 OUT','11:00 1597 IN', '15:15 1234 OUT', '21:00 0328 OUT']`   
-# Output : `{'1234': {'IN': '07:30', 'OUT': '15:15', 'parking_duration': 465, 'parking_fee': 24000}, '2580': {'IN': '07:35', 'OUT': '08:45', 'parking_duration': 70, 'parking_fee': 4000}, '0328': {'IN': '08:15', 'OUT': '21:00', 'parking_duration': 765, 'parking_fee': 40000}, '9876': {'IN': '08:55', 'OUT': '09:20', 'parking_duration': 25, 'parking_fee': 2000}, '1597': {'IN': '11:00'}}`
+# Input : `['07:30 1234 IN', '07:35 2580 IN','08:15 0328 IN', '08:45 2580 OUT', '08:55 9876 IN', '09:20 9876 OUT','11:00 1597 IN', '15:15 1234 OUT', '21:30 0328 OUT']`   
+# Output : `{'1234': {'IN': '07:30', 'OUT': '15:15', 'parking_duration': 465, 'parking_fee': 24000}, '2580': {'IN': '07:35', 'OUT': '08:45', 'parking_duration': 70, 'parking_fee': 4000}, '0328': {'IN': '08:15', 'OUT': '21:30', 'parking_duration': 795, 'parking_fee': 40000}, '9876': {'IN': '08:55', 'OUT': '09:20', 'parking_duration': 25, 'parking_fee': 2000}, '1597': {'IN': '11:00'}}`
 # 
 # 참고) 
 # 
@@ -889,6 +1338,6 @@ for item in num_map :
 # |-------|-------|-----------|-----------|
 # |1234|07:30|15:15|465|24000|
 # |2580|07:35|08:45|70|4000|
-# |0328|08:15|21:00|765|40000|
+# |0328|08:15|21:30|795|40000|
 # |9876|08:55|09:20|25|2000|
 # |1597|11:00|-|-|-|
