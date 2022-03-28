@@ -1419,7 +1419,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7fa04aebf280&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f0f1073f4f0&gt;
 [1, 2, 3]
 </pre></div>
 </div>
@@ -2331,7 +2331,7 @@ Output : <code class="docutils literal notranslate"><span class="pre">[2,</span>
 <div class="section" id="id24">
 <h3><span class="section-number">5.5.10. </span>문제<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
 <p>여러 개의 다항식을 곱하는 프로그램을 만들어보자. 다항식은 각 항의 계수로 나타낼 수 있다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">2</span></code>는 <span class="math notranslate nohighlight">\(2\)</span>를, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">3</span> <span class="pre">4</span></code>는 <span class="math notranslate nohighlight">\(1 + 3x + 4x^2\)</span>를, <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">4</span> <span class="pre">0</span> <span class="pre">1</span></code>은 <span class="math notranslate nohighlight">\(4x + x^3\)</span>을 의미한다.</p>
-<p>입력의 첫 줄에는 다항식의 개수 N(0&lt;N&lt;5)이 주어진다. 그 다음에 들어오는 N개의 줄에는 각 줄마다 다항식의 개수가 공백으로 분리되어 주어진다. 단, 입력으로 주어지는 각 다항식의 계수는 모두 정수이며, 최고차항의 계수는 0이 아니다.</p>
+<p>입력의 첫 줄에는 다항식의 개수 N(0&lt;N&lt;5)이 주어진다. 그 다음에 들어오는 N개의 줄에는 각 줄마다 다항식의 계수가 공백으로 분리되어 주어진다. 단, 입력으로 주어지는 각 다항식의 계수는 모두 정수이며, 최고차항의 계수는 0이 아니다.</p>
 <p>예를 들어, Input이 아래와 같다면, <span class="math notranslate nohighlight">\((1 + 3x)(2 + 4x)3\)</span>을 의미하고, 전개하면 <span class="math notranslate nohighlight">\(6 + 30x + 36x^2\)</span>이므로 <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">30</span> <span class="pre">36</span></code>을 출력하면 된다. 다항식의 개수로 0이하, 5이상을 입력하거나 각 다항식의 계수로 정수가 아닌 값을 입력하면, 올바른 값을 입력할 때까지 계속 입력을 받는다.<br />
 Input :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>  
