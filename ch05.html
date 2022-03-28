@@ -427,6 +427,36 @@
      5.5.5. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     5.5.6. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     5.5.7. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     5.5.8. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     5.5.9. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     5.5.10. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     5.5.11. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -651,6 +681,36 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id19">
      5.5.5. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     5.5.6. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     5.5.7. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     5.5.8. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     5.5.9. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     5.5.10. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     5.5.11. 문제
     </a>
    </li>
   </ul>
@@ -1359,7 +1419,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f08ec328970&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7fa04aebf280&gt;
 [1, 2, 3]
 </pre></div>
 </div>
@@ -1466,7 +1526,7 @@ b
 </pre></div>
 </div>
 <p>동일한 제너레이터를 다시 사용하려면 제너레이터를 다시 생성해야 한다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span> <span class="o">=</span> <span class="n">squares</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gen</span> <span class="o">=</span> <span class="n">squares</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gen</span> <span class="p">:</span>
 <span class="go">        print(x, end = &#39; &#39;)</span>
 <span class="go">1 4 9 16 25 </span>
@@ -1528,9 +1588,7 @@ b
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, &#39;봄&#39;), (1, &#39;여름&#39;), (2, &#39;가을&#39;), (3, &#39;겨울&#39;)]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(10, &#39;봄&#39;), (11, &#39;여름&#39;), (12, &#39;가을&#39;), (13, &#39;겨울&#39;)]
+[(10, &#39;봄&#39;), (11, &#39;여름&#39;), (12, &#39;가을&#39;), (13, &#39;겨울&#39;)]
 </pre></div>
 </div>
 </div>
@@ -2178,40 +2236,125 @@ Output : <code class="docutils literal notranslate"><span class="pre">{'1234':</
 <p>참고)</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>차량번호</p></th>
-<th class="head"><p>입차시간</p></th>
-<th class="head"><p>출차시간(분)</p></th>
-<th class="head"><p>주차요금(원)</p></th>
+<tr class="row-odd"><th class="text-align:center head"><p>차량번호</p></th>
+<th class="text-align:center head"><p>입차시간</p></th>
+<th class="text-align:center head"><p>출차시간</p></th>
+<th class="text-align:center head"><p>주차시간(분)</p></th>
+<th class="text-align:center head"><p>주차요금(원)</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>1234</p></td>
-<td><p>07:30</p></td>
-<td><p>15:15</p></td>
-<td><p>465</p></td>
+<tr class="row-even"><td class="text-align:center"><p>1234</p></td>
+<td class="text-align:center"><p>07:30</p></td>
+<td class="text-align:center"><p>15:15</p></td>
+<td class="text-align:center"><p>465</p></td>
+<td class="text-align:center"><p>24000</p></td>
 </tr>
-<tr class="row-odd"><td><p>2580</p></td>
-<td><p>07:35</p></td>
-<td><p>08:45</p></td>
-<td><p>70</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>2580</p></td>
+<td class="text-align:center"><p>07:35</p></td>
+<td class="text-align:center"><p>08:45</p></td>
+<td class="text-align:center"><p>70</p></td>
+<td class="text-align:center"><p>4000</p></td>
 </tr>
-<tr class="row-even"><td><p>0328</p></td>
-<td><p>08:15</p></td>
-<td><p>21:30</p></td>
-<td><p>795</p></td>
+<tr class="row-even"><td class="text-align:center"><p>0328</p></td>
+<td class="text-align:center"><p>08:15</p></td>
+<td class="text-align:center"><p>21:30</p></td>
+<td class="text-align:center"><p>795</p></td>
+<td class="text-align:center"><p>40000</p></td>
 </tr>
-<tr class="row-odd"><td><p>9876</p></td>
-<td><p>08:55</p></td>
-<td><p>09:20</p></td>
-<td><p>25</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>9876</p></td>
+<td class="text-align:center"><p>08:55</p></td>
+<td class="text-align:center"><p>09:20</p></td>
+<td class="text-align:center"><p>25</p></td>
+<td class="text-align:center"><p>2000</p></td>
 </tr>
-<tr class="row-even"><td><p>1597</p></td>
-<td><p>11:00</p></td>
-<td><p>-</p></td>
-<td><p>-</p></td>
+<tr class="row-even"><td class="text-align:center"><p>1597</p></td>
+<td class="text-align:center"><p>11:00</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="id20">
+<h3><span class="section-number">5.5.6. </span>문제<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>어느 강좌의 수강생과 시험 점수가 주어졌을 때, 학점을 매기는 프로그램을 만들어보자.</p>
+<ul class="simple">
+<li><p>수강생의 30% 이하가 A학점을 받을 수 있다.</p></li>
+<li><p>수강생의 60% 이하가 A학점 또는 B학점을 받을 수 있다.</p></li>
+<li><p>A학점과 B학점이 아닌 나머지는 C학점이다.</p></li>
+<li><p>최대한 좋은 성적을 부여한다. 예를 들어, 10명 중 3등을 했다면, B, C등의 학점도 가능하지만 A학점을 받는다고 가정한다.</p></li>
+</ul>
+<p>입력으로 학생들의 이름과 점수가 두 줄로 들어오는 데, 각 줄의 항목은 공백으로 구분된다.</p>
+<p>Input :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">강현</span> <span class="n">나현</span> <span class="n">다현</span> <span class="n">라현</span> <span class="n">미현</span> <span class="n">백현</span> <span class="n">서현</span> <span class="n">아현</span> <span class="n">지현</span> <span class="n">차현</span> <span class="n">태현</span> <span class="n">호현</span>   
+<span class="mi">90</span> <span class="mi">62</span> <span class="mi">82</span> <span class="mi">55</span> <span class="mi">75</span> <span class="mi">74</span> <span class="mi">71</span> <span class="mi">68</span> <span class="mi">88</span> <span class="mi">78</span> <span class="mi">85</span> <span class="mi">90</span>  
+</pre></div>
+</div>
+<p>A, B, C 학점인 학생들의 리스트를 아래와 같은 형식으로 출력하는 데, 이때 각 리스트 항목의 순서는 중요하지 않다.<br />
+Output :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A학점</span> <span class="p">:</span>  <span class="p">[</span><span class="s1">&#39;강현&#39;</span><span class="p">,</span> <span class="s1">&#39;지현&#39;</span><span class="p">,</span> <span class="s1">&#39;호현&#39;</span><span class="p">]</span>  
+<span class="n">B학점</span> <span class="p">:</span>  <span class="p">[</span><span class="s1">&#39;다현&#39;</span><span class="p">,</span> <span class="s1">&#39;미현&#39;</span><span class="p">,</span> <span class="s1">&#39;차현&#39;</span><span class="p">,</span> <span class="s1">&#39;태현&#39;</span><span class="p">]</span>  
+<span class="n">C학점</span> <span class="p">:</span>  <span class="p">[</span><span class="s1">&#39;나현&#39;</span><span class="p">,</span> <span class="s1">&#39;라현&#39;</span><span class="p">,</span> <span class="s1">&#39;백현&#39;</span><span class="p">,</span> <span class="s1">&#39;서현&#39;</span><span class="p">,</span> <span class="s1">&#39;아현&#39;</span><span class="p">]</span>  
+</pre></div>
+</div>
+</div>
+<div class="section" id="id21">
+<h3><span class="section-number">5.5.7. </span>문제<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>독일 수학자인 콜라츠<font size="2">Collatz, L.</font>는 1937년에 아래 알고리즘을 얼마나 많이 반복하면 최종적으로 숫자 1에 다다를 것인가를 질문했다.</p>
+<ul class="simple">
+<li><p>주어진 숫자가 짝수라면 2로 나눈다.</p></li>
+<li><p>주어진 숫자가 홀수라면 3을 곱한 다음 1을 더한다.</p></li>
+</ul>
+<p>실제로 숫자 7부터 시작해서 위 과정을 16번 반복하면 1에 다다른다.<br />
+7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1</p>
+<p>반면에 숫자 128부터 시작하면 7번만 반복하면 된다.<br />
+128, 64, 32, 16, 8, 4, 2, 1</p>
+<p>콜라츠는 어떤 자연수로 시작하든지 반복작업이 언젠가는 끝난다고 추측했는데, 아직 언제 끝나는가는 수학적으로 알아내지 못했다. 이를 콜라츠 추측이라고 부른다.</p>
+<p>자연수 n을 입력받아 위의 알고리즘을 몇 번 반복하면 1에 다다르는지를 아래와 같은 형식으로 반환하는 <code class="docutils literal notranslate"><span class="pre">collatz()</span></code> 함수를 정의하여라. 단, 100번이상 반복하는 경우 -1를 반환한다.<br />
+In : <code class="docutils literal notranslate"><span class="pre">collatz(128)</span></code><br />
+Out : <code class="docutils literal notranslate"><span class="pre">(7)128-&gt;64-&gt;32-&gt;16-&gt;8-&gt;4-&gt;2-&gt;1</span></code></p>
+<p>In : <code class="docutils literal notranslate"><span class="pre">collatz(171)</span></code><br />
+Out : <code class="docutils literal notranslate"><span class="pre">(-1)</span></code></p>
+</div>
+<div class="section" id="id22">
+<h3><span class="section-number">5.5.8. </span>문제<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<p>소수<font size="2">prime number</font>는 1보다 큰 자연수 중 1과 자기자신만을 약수로 가지는 수를 말한다. 예를 들어, 2, 3, 5, 7, 11, 13, 17, 19 등은 소수이다. 자연수 100보다 작은 소수를 생성하는 이터레이터를 만들어라.</p>
+</div>
+<div class="section" id="id23">
+<h3><span class="section-number">5.5.9. </span>문제<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<p>A는 정수를 입력하는 일을 하고 있다. 이때 연속으로 같은 숫자를 입력하면 안되는데, 입력장치의 오류로 연속적으로 같은 숫자가 입력된 것을 발견하였다. A가 입력한 숫자 리스트를 인자로 받아 연속적으로 같은 숫자가 있다면 그 숫자는 하나만 남기고 나머지는 제거한 리스트를 반환하는 함수<code class="docutils literal notranslate"><span class="pre">disconti_num()</span></code>를 만들어라. 단, 입력의 순서는 유지되야 하고, 같은 숫자가 불연속적으로 여러 번 등장할 수 있다.</p>
+<p>Input : <code class="docutils literal notranslate"><span class="pre">disconti_num([2,</span> <span class="pre">3,</span> <span class="pre">3,</span> <span class="pre">3,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">5])</span></code><br />
+Output : <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">5]</span></code></p>
+</div>
+<div class="section" id="id24">
+<h3><span class="section-number">5.5.10. </span>문제<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<p>여러 개의 다항식을 곱하는 프로그램을 만들어보자. 다항식은 각 항의 계수로 나타낼 수 있다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">2</span></code>는 <span class="math notranslate nohighlight">\(2\)</span>를, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">3</span> <span class="pre">4</span></code>는 <span class="math notranslate nohighlight">\(1 + 3x + 4x^2\)</span>를, <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">4</span> <span class="pre">0</span> <span class="pre">1</span></code>은 <span class="math notranslate nohighlight">\(4x + x^3\)</span>을 의미한다.</p>
+<p>입력의 첫 줄에는 다항식의 개수 N(0&lt;N&lt;5)이 주어진다. 그 다음에 들어오는 N개의 줄에는 각 줄마다 다항식의 개수가 공백으로 분리되어 주어진다. 단, 입력으로 주어지는 각 다항식의 계수는 모두 정수이며, 최고차항의 계수는 0이 아니다.</p>
+<p>예를 들어, Input이 아래와 같다면, <span class="math notranslate nohighlight">\((1 + 3x)(2 + 4x)3\)</span>을 의미하고, 전개하면 <span class="math notranslate nohighlight">\(6 + 30x + 36x^2\)</span>이므로 <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">30</span> <span class="pre">36</span></code>을 출력하면 된다. 다항식의 개수로 0이하, 5이상을 입력하거나 각 다항식의 계수로 정수가 아닌 값을 입력하면, 올바른 값을 입력할 때까지 계속 입력을 받는다.<br />
+Input :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>  
+<span class="mi">1</span> <span class="mi">3</span>  
+<span class="mi">2</span> <span class="mi">4</span>  
+<span class="mi">3</span>  
+</pre></div>
+</div>
+<p>Output : <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">30</span> <span class="pre">36</span></code></p>
+</div>
+<div class="section" id="id25">
+<h3><span class="section-number">5.5.11. </span>문제<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<p>주어진 빙고판에서 빙고의 총 개수를 세는 프로그램을 만들어보자. 빙고판의 행의 개수와 열의 개수는 모두 2이상이고, 행의 개수와 열의 개수는 같다. 빙고판은 <code class="docutils literal notranslate"><span class="pre">o</span></code>와 <code class="docutils literal notranslate"><span class="pre">x</span></code>로만 이루어져 있으며, 빙고 여부는 <code class="docutils literal notranslate"><span class="pre">o</span></code> 기준으로 생각한다. 입력의 첫 줄에는 빙고판 크기 N이 주어진다. 그 다음에 들어오는 N개의 줄에는 <code class="docutils literal notranslate"><span class="pre">o</span></code>와 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 공백으로 분리되어 입력되는데, 각각 N개 넘게 입력하면 N개를 입력할 때까지 계속 입력을 받는다.</p>
+<p>Input :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span>
+<span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span> 
+<span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span> 
+<span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span> 
+<span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span> 
+<span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span> <span class="n">o</span>
+</pre></div>
+</div>
+<p>Output : <code class="docutils literal notranslate"><span class="pre">Total</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">bingo</span> <span class="pre">is</span> <span class="pre">12</span></code></p>
 </div>
 </div>
 </div>
