@@ -736,7 +736,7 @@ for month, name in data_zip :
 # In[39]:
 
 
-print(all([1, 3, 0, 2, 15])) # 0 == False은 True다.
+print(all([1, 3, 0, 2, 15])) # 0 == False를 실행하면 True다. 0이 아닌 수는 True이다. 
 print(all([1, 3, 2, 15]))
 
 
@@ -1271,7 +1271,7 @@ for item in num_map :
 # Output : `Success`  
 #   
 # Input : `tomato`  
-# Output : `False` 
+# Output : `Fail` 
 
 # ### 문제  
 # 거꾸로 노래 부르기 좋아하는 청개구리는 아래와 같이 노래를 부른다.  

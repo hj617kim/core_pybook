@@ -54,6 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6. 파이썬 프로그래밍의 기초 IV" href="ch06.html" />
     <link rel="prev" title="4. 파이썬 프로그래밍의 기초 II" href="ch04.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -117,6 +118,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    5. 파이썬 프로그래밍의 기초 III
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch06.html">
+   6. 파이썬 프로그래밍의 기초 IV
   </a>
  </li>
 </ul>
@@ -1419,7 +1425,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f0f1073f4f0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f0a6c3bf670&gt;
 [1, 2, 3]
 </pre></div>
 </div>
@@ -1588,7 +1594,9 @@ b
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, &#39;봄&#39;), (1, &#39;여름&#39;), (2, &#39;가을&#39;), (3, &#39;겨울&#39;)]
-[(10, &#39;봄&#39;), (11, &#39;여름&#39;), (12, &#39;가을&#39;), (13, &#39;겨울&#39;)]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(10, &#39;봄&#39;), (11, &#39;여름&#39;), (12, &#39;가을&#39;), (13, &#39;겨울&#39;)]
 </pre></div>
 </div>
 </div>
@@ -1605,7 +1613,9 @@ b
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1번 학생은 강현입니다.
-2번 학생은 나현입니다.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2번 학생은 나현입니다.
 3번 학생은 다현입니다.
 </pre></div>
 </div>
@@ -1626,7 +1636,9 @@ b
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>강현은 3월달에 태어났다.
-나현은 2월달에 태어났다.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>나현은 2월달에 태어났다.
 다현은 9월달에 태어났다.
 </pre></div>
 </div>
@@ -1638,14 +1650,16 @@ b
 <p>이터러블의 모든 항목이 참이거나 비어있으면 <code class="docutils literal notranslate"><span class="pre">True</span></code>, 아니면 <code class="docutils literal notranslate"><span class="pre">False</span></code>를 반환한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">]))</span> <span class="c1"># 0 == False은 True다.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">]))</span> <span class="c1"># 0 == False를 실행하면 True다. 0이 아닌 수는 True이다. </span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -1664,6 +1678,9 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 False
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1687,7 +1704,9 @@ False
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -2178,7 +2197,7 @@ True
 <p>Input : <code class="docutils literal notranslate"><span class="pre">racecar</span></code><br />
 Output : <code class="docutils literal notranslate"><span class="pre">Success</span></code></p>
 <p>Input : <code class="docutils literal notranslate"><span class="pre">tomato</span></code><br />
-Output : <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+Output : <code class="docutils literal notranslate"><span class="pre">Fail</span></code></p>
 </div>
 <div class="section" id="id16">
 <h3><span class="section-number">5.5.2. </span>문제<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
@@ -2390,6 +2409,13 @@ Input :</p>
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">4. </span>파이썬 프로그래밍의 기초 II</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="ch06.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>파이썬 프로그래밍의 기초 IV</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
