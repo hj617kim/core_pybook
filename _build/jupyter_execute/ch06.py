@@ -893,7 +893,7 @@ help(myfunc)
 # `iterable`의 모든 항목에 `function`을 적용한 후 그 결과를 돌려주는 이터레이터를 반환하는 `my_map(function, iterable)` 함수를 정의하여라.  
 
 # ### 문제  
-# 단어우월효과<font size="2">word superiority effect</font>란 문장 속에 단어가 비정상적인 순서로 배열되더라도 이를 정하확게 인지할 수 있는 현상을 말한다. 문자열을 인자로 받아 각 단어의 순서를 임의로 배열한 다음 반환하는 `word_superiority_effect()`함수를 정의하여라. 
+# 단어우월효과<font size="2">word superiority effect</font>란 문장 속에 단어가 비정상적인 순서로 배열되더라도 이를 정하확게 인지할 수 있는 현상을 말한다. 문자열을 인자로 받아 각 단어의 순서를 임의로 배열한 다음 반환하는 `word_superiority_effect()`함수를 정의하여라. 단, 각 단어의 첫 문자는 그 위치 그대로 둔다. 
 # 
 # Input : 
 # ```
@@ -916,11 +916,12 @@ import random
 
 
 a_word = 'abc'
-random.sample(a_word, len(a_word))
+print(random.sample(a_word, len(a_word)))
+print(random.sample(a_word, len(a_word)))
 
 
 # ### 문제  
-# 타겟들을 인자로 받아 주어진 문장에서 가장 많이 등장하는 타켓단어가 무엇이고, 몇 번 등장하는지를 반환하는 함수 `target_words()`를 정의하여라. 문제에서 말하는 타겟단어란 타겟(예, `은`, `는`, `이`, `가`, `을`, `를` 등) 중 하나가 붙어 있는 단어를 말한다. 주어진 문장은 `파이썬은 범용 프로그래밍 언어로 간결하고 쉬운 문법을 가지고 있다`로, 변경하고 싶다면 키워드 인자(예, `words =`)를 사용한다.    
+# 타겟들을 인자로 받아 주어진 문장에서 가장 많이 등장하는 타켓단어가 무엇이고, 몇 번 등장하는지를 반환하는 함수 `target_words()`를 정의하여라. 문제에서 말하는 타겟단어란 타겟(예, 단어 맨 뒤에 붙는 `은`, `는`, `이`, `가`, `을`, `를` 등의 조사) 중 하나가 붙어 있는 단어를 말한다. 주어진 문장은 `파이썬은 범용 프로그래밍 언어로 간결하고 쉬운 문법을 가지고 있다`로, 변경하고 싶다면 키워드 인자(예, `words =`)를 사용한다.    
 # 
 # Input : `target_words('은')`    
 # Output : `파이썬(1)`   
@@ -936,6 +937,13 @@ random.sample(a_word, len(a_word))
 # target_words('이', words = words)  
 # ```
 # Output : `눈(5)`  
+#   
+# Input :  
+# ```
+# words = '고양이는 밥을 먹고 있고, 강아지는 잠을 자고 있다'
+# target_words('는', words = words)   
+# ```  
+# Output : `고양이(1) 강아지(1)`
 
 # ### 문제  
 # 모듈 만들기
