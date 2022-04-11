@@ -715,7 +715,7 @@ class Fraction(builtins.object)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7ff6c427f760&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7fe3b854fc10&gt;
 </pre></div>
 </div>
 </div>
@@ -1211,6 +1211,31 @@ class Fraction(builtins.object)
 <li><p><code class="docutils literal notranslate"><span class="pre">__mul__()</span></code> : 곱셈(<code class="docutils literal notranslate"><span class="pre">*</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">__truediv__()</span></code> : 나눗셈(<code class="docutils literal notranslate"><span class="pre">/</span></code>)</p></li>
 </ul>
+<p>필요하다면, <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> 함수를 사용하여라. <code class="docutils literal notranslate"><span class="pre">isinstance(object,</span> <span class="pre">classinfo)</span></code>함수는 첫 번째 인자로 들어온 객체가 두 번째 인자로 들어온 클래스의 인스턴스가 맞으면 <code class="docutils literal notranslate"><span class="pre">True</span></code>, 아니면 <code class="docutils literal notranslate"><span class="pre">False</span></code>를 반환하는 함수다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="id11">
 <h3><span class="section-number">7.3.3. </span>문제<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
