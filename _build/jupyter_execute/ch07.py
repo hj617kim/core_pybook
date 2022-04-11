@@ -179,7 +179,7 @@ a_fraction = Fraction(2, 7)
 
 # 그러면 `a_fraction` 변수는 $\frac{2}{7}$에 해당하는 객체를 가리킨다. 
 
-# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch06/class01.png" style="width:700px;"></div>
+# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch07/class01.png" style="width:700px;"></div>
 
 # 이제 `print()`함수를 사용하여 `a_fraction`을 확인해보자. 
 
@@ -260,9 +260,11 @@ str(a_fraction)
 # ```
 # 
 # 분수의 덧셈은 아래와 같이 정의된다. 
-# 
-# <div align="center"><font size ="4"> $ \frac{a}{b} + \frac{c}{d} = \frac{ad}{bd} + \frac{bc}{bd} = \frac{ad + bc}{bd} $ </font></div>
-# 
+
+# $$ 
+# \frac{a}{b} + \frac{c}{d} = \frac{ad}{bd} + \frac{bc}{bd} = \frac{ad + bc}{bd} 
+# $$
+
 # 이를 구현하는 `__add__()` 메서드를 `Fraction` 클래스에 추가하자. 
 
 # In[14]:
@@ -297,7 +299,7 @@ f2 = Fraction(1, 2)
 
 
 # 그러면 이제 `Fraction`클래스의 인스턴스는 `__add__()` 메서드를 갖는다. 
-# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch06/class02.png" style="width:700px;"></div>
+# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch07/class02.png" style="width:700px;"></div>
 
 # In[16]:
 
@@ -413,7 +415,7 @@ y = Fraction(1, 2)
 
 
 # 하지만 서로 독립적으로 생성되었기 때문에 서로 다른 객체를 가리키고 있다. 
-# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch06/class03.png" style="width:700px;"></div>
+# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch07/class03.png" style="width:700px;"></div>
 # 
 # 따라서 두 변수가 가리키는 값은 동등하지 않다고 판정된다. 
 
@@ -424,9 +426,11 @@ print(x == y)
 
 
 # 이런 경우에 의도적으로 동등하다고 판정되게 하고 싶다면, `__eq__()` 메서드가 적절하게 정의되어 있어야 한다. 일반적으로 두 분수의 동등성은 아래와 같이 정의된다.  
-# 
-# <div align ="center"><font size="4">$\frac{a}{b}= \frac{c}{d} $</font> $\Longleftrightarrow ad = bc$</div> 
-# 
+
+# $$
+# \frac{a}{b}= \frac{c}{d} \Longleftrightarrow ad = bc
+# $$
+
 # 이를 구현하는 `__eq__()` 메서드를 `Fraction` 클래스에 추가하자. 
 
 # In[24]:
