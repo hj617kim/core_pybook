@@ -179,7 +179,7 @@ a_fraction = Fraction(2, 7)
 
 # 그러면 `a_fraction` 변수는 $\frac{2}{7}$에 해당하는 객체를 가리킨다. 
 
-# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch06/class01.png" style="width:700px;"></div>
+# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch06/class01.png" style="width:700px;"></div>
 
 # 이제 `print()`함수를 사용하여 `a_fraction`을 확인해보자. 
 
@@ -297,7 +297,7 @@ f2 = Fraction(1, 2)
 
 
 # 그러면 이제 `Fraction`클래스의 인스턴스는 `__add__()` 메서드를 갖는다. 
-# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch06/class02.png" style="width:700px;"></div>
+# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch06/class02.png" style="width:700px;"></div>
 
 # In[16]:
 
@@ -413,7 +413,7 @@ y = Fraction(1, 2)
 
 
 # 하지만 서로 독립적으로 생성되었기 때문에 서로 다른 객체를 가리키고 있다. 
-# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch06/class03.png" style="width:700px;"></div>
+# <div align="center"><img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch06/class03.png" style="width:700px;"></div>
 # 
 # 따라서 두 변수가 가리키는 값은 동등하지 않다고 판정된다. 
 
