@@ -884,7 +884,7 @@ help(myfunc)
 # Output : `220과 284는 친화수입니다.`   
 # 
 # Input :  `amicable_nums(1184, 1210)`    
-# Output : `220과 284는 친화수입니다.`  
+# Output : `1184과 1210는 친화수입니다.`  
 # 
 # Input :  `amicable_nums(6230, 6368)`   
 # Output : `6230과 6368는 친화수가 아닙니다.`  
