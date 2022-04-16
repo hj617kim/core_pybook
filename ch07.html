@@ -352,6 +352,11 @@
      7.3.4. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     7.3.5. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -493,6 +498,11 @@
      7.3.4. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     7.3.5. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -588,7 +598,7 @@
 </div>
 </div>
 </div>
-<p>클래스에 문서화 문자열을 추가하면, <code class="docutils literal notranslate"><span class="pre">help()</span></code> 함수를 사용하여 해당 함수의 역할 및 사용법을 확인할 수 있다.</p>
+<p>클래스에 문서화 문자열을 추가하면, <code class="docutils literal notranslate"><span class="pre">help()</span></code> 함수를 사용하여 해당 클래스의 역할 및 사용법을 확인할 수 있다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">Fraction</span><span class="p">)</span>
@@ -630,8 +640,8 @@ class Fraction(builtins.object)
 </div>
 <p>그러면 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code>의 속성과 메서드를 확인할 수 있다. 여기에는 <code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스를 선언할 때 명시하지 않았던 여러 속성과 메서드가 보이는데, 그 이유는 다음과 같다.</p>
 <ul class="simple">
-<li><p>파이썬의 모든 클래스는 <code class="docutils literal notranslate"><span class="pre">object</span></code>라는 최상위 클래스를 상속한다.</p></li>
-<li><p>하나의 클래스를 상속하면 해당 클래스의 속성과 메서드도 모두 함께 상속받는다.</p></li>
+<li><p>파이썬의 모든 클래스는 <code class="docutils literal notranslate"><span class="pre">object</span></code>라는 최상위 클래스를 상속받는다.</p></li>
+<li><p>하나의 클래스를 상속받으면 상속하는 클래스의 속성과 메서드도 모두 함께 상속받는다.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">object</span></code> 클래스에는 위에서 언급된, 이중 밑줄로 감싼 속성과 메서드가 선언되어 있다.</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">object</span></code> 클래스에 포함된 속성과 메서드는 모두 양끝이 이중 밑줄로 감싸여 있는데, 양끝이 이중 밑줄로 감싸인 메서드를 특별히 <strong>특수 메서드</strong><font size="2">special method</font> 또는 <strong>매직 메서드</strong><font size="2">magic method</font>라고 부른다. 임의의 클래스는 <code class="docutils literal notranslate"><span class="pre">object</span></code> 클래스에서 선언된 특수 메서드와 속성을 모두 상속 받는다. 상속받은 속성과 메서드는 상속한 클래스에서 선언한 그대로 사용할 수 있다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">__class__</span></code> 속성은 객체의 자료형 정보를 저장하고 있다. <code class="docutils literal notranslate"><span class="pre">Fraction</span></code>의 <code class="docutils literal notranslate"><span class="pre">__class__</span></code> 속성을 확인해보자. 속성 확인은 메서드를 호출하는 방식과 비슷하다.</p>
@@ -715,7 +725,7 @@ class Fraction(builtins.object)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7fe3b854fc10&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f1a3c47f670&gt;
 </pre></div>
 </div>
 </div>
@@ -1239,6 +1249,16 @@ class Fraction(builtins.object)
 </div>
 <div class="section" id="id11">
 <h3><span class="section-number">7.3.3. </span>문제<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 인스턴스의 분모가 항상 양의 정수를 갖도록 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> 메서드를 수정하여라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">Fraction</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  
+<span class="go">-1/2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">))</span>  
+<span class="go">-1/2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3><span class="section-number">7.3.4. </span>문제<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Fraction</span></code> 클래스의 인스턴스가 크기 비교가 가능하도록 아래 메서드를 구현하여라. 그러면 <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> 연산 기호를 사용할 수 있다.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">__lt__()</span></code> : 작다<font size="2">less than</font>(<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>)</p></li>
@@ -1247,8 +1267,8 @@ class Fraction(builtins.object)
 <li><p><code class="docutils literal notranslate"><span class="pre">__ge__()</span></code> : 크거나 같다<font size="2">greater than or equals</font>(<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>)</p></li>
 </ul>
 </div>
-<div class="section" id="id12">
-<h3><span class="section-number">7.3.4. </span>문제<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3><span class="section-number">7.3.5. </span>문제<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>(1) 은행 계좌를 관리하는 <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code> 클래스를 정의하여라. <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code> 클래스의 인스턴스는 <code class="docutils literal notranslate"><span class="pre">은행명</span></code>, <code class="docutils literal notranslate"><span class="pre">계좌번호</span></code>, <code class="docutils literal notranslate"><span class="pre">잔액</span></code>, <code class="docutils literal notranslate"><span class="pre">비밀번호</span></code>를 인자로 받아 다음과 같이 생성한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">seoul</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="s1">&#39;서울은행&#39;</span><span class="p">,</span> <span class="s1">&#39;1234-4567&#39;</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="s1">&#39;a1234&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1285,7 +1305,7 @@ class Fraction(builtins.object)
 </div>
 <p>이때 비밀번호가 틀리면 송금하지 않는다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">seoul</span><span class="o">.</span><span class="n">send_money</span><span class="p">(</span><span class="s1">&#39;a2580&#39;</span><span class="p">,</span> <span class="n">suwon</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>  <span class="c1">#순서대로 비밀번호, 은행명, 금액</span>
-<span class="go">비밀번호를 잘 못 입력했습니다.   </span>
+<span class="go">비밀번호를 잘못 입력했습니다.   </span>
 </pre></div>
 </div>
 <p>잔액보다 많은 금액을 송금할 수 없다.</p>
