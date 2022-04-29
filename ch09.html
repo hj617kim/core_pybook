@@ -289,6 +289,11 @@
      9.4.4. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     9.4.5. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -355,6 +360,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
      9.4.4. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     9.4.5. 문제
     </a>
    </li>
   </ul>
@@ -747,6 +757,55 @@ False
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;print(closing_price([100, 101, 95, 92, 90, 120]))</span>
 <span class="go">[1, 4, 3, 2, 1, 0]</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><span class="section-number">9.4.5. </span>문제<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>문자 없애기 게임을 만들어보자. 게임은 다음과 같이 진행된다.</p>
+<ul class="simple">
+<li><p>컴퓨터는 <code class="docutils literal notranslate"><span class="pre">abcd</span></code> 중 중복을 허용하여 랜덤하게 3개의 문자를 말한다.</p></li>
+<li><p>사용자는 <code class="docutils literal notranslate"><span class="pre">abcd</span></code> 중 중복을 허용하여 3개의 문자를 입력한다.</p></li>
+<li><p>컴퓨터와 사용자가 입력한 문자열은 순서대로 이어 붙여진다. 그리고 같은 문자가 3번이상 반복되면 그 문자는 사라진다.</p></li>
+</ul>
+<p>위 과정을 반복하여, 사용자는 모든 문자를 없애야 한다.</p>
+<p>예를 들어, 게임 진행 과정은 아래와 같다. <code class="docutils literal notranslate"><span class="pre">coputer</span></code>가 랜덤하게 3개의 문자를 말하면, <code class="docutils literal notranslate"><span class="pre">user</span></code>가 3개의 문자를 입력한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">computer</span> <span class="p">:</span> <span class="n">bdc</span>
+<span class="n">user</span> <span class="p">:</span> <span class="n">ccd</span>
+</pre></div>
+</div>
+<p>두 문자열을 이어 붙이면 <code class="docutils literal notranslate"><span class="pre">bdcccd</span></code> 이고 <code class="docutils literal notranslate"><span class="pre">c</span></code>가 3번 반복되어 <code class="docutils literal notranslate"><span class="pre">bdd</span></code>가 남는다. 그 다음은 <code class="docutils literal notranslate"><span class="pre">computer</span></code> 차례다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">computer</span> <span class="p">:</span> <span class="n">cac</span>
+</pre></div>
+</div>
+<p>문자열을 이어 붙이면 현재 문자열은 <code class="docutils literal notranslate"><span class="pre">bddcac</span></code>이다. 그 다음은 <code class="docutils literal notranslate"><span class="pre">user</span></code> 입력할 차례다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user</span> <span class="p">:</span> <span class="n">cca</span>
+</pre></div>
+</div>
+<p>문자열을 이어 붙이면 <code class="docutils literal notranslate"><span class="pre">bddcaccca</span></code> 이고 <code class="docutils literal notranslate"><span class="pre">c</span></code>가 3번 반복되어 <code class="docutils literal notranslate"><span class="pre">bddcaa</span></code>가 남는다. 그 다음 <code class="docutils literal notranslate"><span class="pre">computer</span></code> 차례다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">computer</span> <span class="p">:</span> <span class="n">acc</span>
+</pre></div>
+</div>
+<p>그러면 <code class="docutils literal notranslate"><span class="pre">bddcaaacc</span></code>가 된다. <code class="docutils literal notranslate"><span class="pre">a</span></code>가 3번 반복되어 <code class="docutils literal notranslate"><span class="pre">bddccc</span></code>가 된다. 그런데 이때도 <code class="docutils literal notranslate"><span class="pre">c</span></code>가 3번 반복되어 사라진다. 그래서 <code class="docutils literal notranslate"><span class="pre">bdd</span></code>가 남는다.</p>
+<p>이제 <code class="docutils literal notranslate"><span class="pre">user</span></code>가 <code class="docutils literal notranslate"><span class="pre">dbb</span></code>를 입력하면, 모든 문자가 사라지고 게임이 끝난다.</p>
+<p>필요하면, <code class="docutils literal notranslate"><span class="pre">random</span></code> 모듈의 <code class="docutils literal notranslate"><span class="pre">choices()</span></code> 함수를 사용한다. <code class="docutils literal notranslate"><span class="pre">choices(population,</span> <span class="pre">k</span> <span class="pre">=</span> <span class="pre">1)</span></code>는 <code class="docutils literal notranslate"><span class="pre">population</span></code>에서 중복을 허용하면서 선택한 <code class="docutils literal notranslate"><span class="pre">k</span></code> 크기의 요소를 가진 리스트를 반환한다.</p>
+<p>게임을 구현할 때는 사용자에게 문자를 입력 받기 전 현재 남아 있는 문자를 보여줘야 한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;c&#39;, &#39;c&#39;, &#39;c&#39;]
+[&#39;c&#39;, &#39;b&#39;, &#39;a&#39;]
+[&#39;c&#39;, &#39;a&#39;, &#39;b&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
