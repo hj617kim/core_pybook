@@ -272,12 +272,13 @@ print(time3.timeit(number = 1000))
 # ````{prf:example}
 # :label: algorithm-example02    
 # 다음 `sum_list(li)` 함수의 일정 시간복잡도를 계산해보자. 이때, `li`는 길이가 n인 리스트이고, 기본 계산단위는 변수할당으로 한다.   
-# 
+# ```
 # def sum_list(li) :
 #     ans = 0
 #     for i in li :
 #         ans = ans + i
-#     return ans   
+#     return ans
+# ```
 # ````
 
 # 
