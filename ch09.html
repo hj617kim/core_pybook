@@ -541,7 +541,7 @@
 <p>스택<font size="2">stack</font>은 여러 개의 값을 가지며 값들 사이의 순서가 중요한 선형 자료형이다. 항목의 추가 및 삭제는 보통 <strong>탑</strong><font size="2">top</font>이라 불리는 한쪽 끝에서만 허용된다. 반면에 다른 한 쪽 끝은 <strong>베이스</strong><font size="2">base</font>라 한다.<br />
 스택은 아래 그림처럼 데이터를 들어온 순으로 쌓아 올린 형상을 생각하면 된다.</p>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/stack01.png" style="width:400px;">
+    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/stack01.png" style="width:220px;">
 </div>
 <p>아래 그림처럼 스택은 들어온 순서의 역순으로 삭제되는 선입후출<font size="2">Last In First Out, LIFO</font>로 처리된다.</p>
 <ul class="simple">
@@ -549,7 +549,7 @@
 <li><p>탑 : 가장 나중에 추가된 항목이며 가장 먼저 삭제될 대상</p></li>
 </ul>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/stack02.png" style="width:400px;">
+    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/stack02.png" style="width:250px;">
 </div>
 <p><strong>활용 예제</strong> : 인터넷 브라우저의 ‘뒤로가기(Back)’ 버튼<br />
 웹페이지가 변경될 때마다 순서를 기억해 둔 다음에 ‘뒤로가기’ 버튼을 누르면 역순으로 이전 웹페이지를 보여준다.</p>
@@ -820,7 +820,7 @@ False
 <h2><span class="section-number">9.2. </span>큐<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>큐<font size="2">queue</font>는 스택과 마찬가지로, 선형 자료형이다. 항목의 추가는 보통 <strong>꼬리</strong><font size="2">rear, tail</font>라 불리는 한 쪽 끝에서만 허용되고, 항목의 삭제는 <strong>머리</strong><font size="2">front, head</font>라고 불리는 다른 한 쪽 끝에서 이루어진다. 큐는 아래 그림처럼 입력된 순서대로 하나씩 삭제되는 형상을 생각하면 된다.</p>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/queue01.png" style="width:400px;">
+    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/queue01.png" style="width:500px;">
 </div>
 <p>위의 그림처럼 큐는 먼저 들어온 항목이 먼저 나간다는 선입선출<font size="2">First In First Out, FIFO</font>원리를 따르며, 항목들의 추가와 삭제는 입력 순서에 따라 한쪽 방향으로 이동하는 방식이 철저하게 지켜진다.</p>
 <p><strong>활용 예제</strong> : 은행 창구 번호표 배분 장치<br />
@@ -1035,7 +1035,7 @@ False
 <h2><span class="section-number">9.3. </span>덱<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>덱<font size="2">double-ended queue, deque</font>은 선형 자료형으로, 큐와는 달리 항목의 추가와 삭제가 머리와 꼬리 양쪽 끝 모두에서 처리된다. 이런 의미에서 덱은 스택과 큐의 기능을 함께 제공하며 어떻게 사용할 것인가는 사용자에 의해 결정된다.</p>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/deque01.png" style="width:400px;">
+    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/deque01.png" style="width:500px;">
 </div>
 <p><strong>활용 예제</strong> : 편집기의 ‘undo’와 ‘redo’<br />
 문서 작성 중에 ‘undo’ 버튼을 누르면 마지막에 추가된 항목(머리 항목)이 삭제되는 동시에 꼬리 항목으로 추가된다. 이후 ‘redo’ 버튼이 눌리면 꼬리 항목이 삭제되어 다시 머리 항목으로 추가된다. 웹브라우저의 ‘back’과 ‘forward’ 버튼도 이와 유사하게 작동한다.</p>
@@ -1372,6 +1372,21 @@ True
 <span class="go">[1, 4, 3, 2, 1, 0]</span>
 </pre></div>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">도움말</p>
+<p>스택에 유용한 항목의 인덱스를 저장하는 방식으로 문제를 해결할 수 있다. 위의 예제의 경우, 아래와 같은 방식으로 해결할 수 있다.</p>
+<ol class="simple">
+<li><p>스택을 만든다(s : <code class="docutils literal notranslate"><span class="pre">[]</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">closing_price()</span></code> 함수가 반환할 리스트를 정의한다. 이때, 리스트의 길이는 주식 종가가 기록된 리스트와 같고, 항목은 모두 <code class="docutils literal notranslate"><span class="pre">0</span></code>으로 한다.</p></li>
+<li><p>반복문을 사용하여, 인자로 들어온 리스트의 각 항목에 접근한다.</p></li>
+<li><p>현재 스택이 비어 있으므로, <code class="docutils literal notranslate"><span class="pre">100</span></code>의 인덱스 <code class="docutils literal notranslate"><span class="pre">0</span></code>을 스택에 추가한다(s : <code class="docutils literal notranslate"><span class="pre">[0]</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">101</span></code>은 <code class="docutils literal notranslate"><span class="pre">100</span></code>보다 크므로, 스택의 탑에 있는 값 <code class="docutils literal notranslate"><span class="pre">0</span></code>을 꺼낸 다음 <code class="docutils literal notranslate"><span class="pre">반환할</span> <span class="pre">리스트[0]</span> <span class="pre">=</span> <span class="pre">1(101의</span> <span class="pre">인덱스)</span> <span class="pre">-</span> <span class="pre">0</span></code>을 한다. 그리고 <code class="docutils literal notranslate"><span class="pre">101</span></code>의 인덱스 <code class="docutils literal notranslate"><span class="pre">1</span></code>를 스택에 추가한다(s : <code class="docutils literal notranslate"><span class="pre">[1]</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">95</span></code>는 <code class="docutils literal notranslate"><span class="pre">101</span></code>보다 작으므로, 스택에 추가한다(s : <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">92</span></code>는 <code class="docutils literal notranslate"><span class="pre">95</span></code>보다 작고, 101보다 작으므로, 스택에 추가한다(s : <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">90</span></code>는 <code class="docutils literal notranslate"><span class="pre">91</span></code>와 <code class="docutils literal notranslate"><span class="pre">95</span></code>보다 작고, 101보다도 작으므로, 스택에 추가한다(s : <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">120</span></code>은 <code class="docutils literal notranslate"><span class="pre">90</span></code>보다 크다. 스택의 탑에 있는 값 <code class="docutils literal notranslate"><span class="pre">4</span></code>를 꺼낸 다음 <code class="docutils literal notranslate"><span class="pre">반환할</span> <span class="pre">리스트[4]</span> <span class="pre">=</span> <span class="pre">5(120의</span> <span class="pre">인덱스)</span> <span class="pre">-</span> <span class="pre">4</span></code>를 한다. 그다음 스택의 탑에 있는 값 <code class="docutils literal notranslate"><span class="pre">3</span></code>을 꺼낸 다음 <code class="docutils literal notranslate"><span class="pre">반환할</span> <span class="pre">리스트[3]</span> <span class="pre">=</span> <span class="pre">5(120의</span> <span class="pre">인덱스)</span> <span class="pre">-</span> <span class="pre">3</span></code>을 한다. 다시, 그다음 스택의 탑에 있는 값 <code class="docutils literal notranslate"><span class="pre">2</span></code>을 꺼낸 다음 <code class="docutils literal notranslate"><span class="pre">반환할</span> <span class="pre">리스트[2]</span> <span class="pre">=</span> <span class="pre">5(120의</span> <span class="pre">인덱스)</span> <span class="pre">-</span> <span class="pre">2</span></code>를 한다. 스택에 아무 것도 없을 때까지 위 과정을 반복하고, 마지막에 리스트를 반환하면 된다.</p></li>
+</ol>
+</div>
 </div>
 <div class="section" id="id13">
 <h3><span class="section-number">9.4.5. </span>문제<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
@@ -1414,9 +1429,9 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;c&#39;, &#39;a&#39;, &#39;c&#39;]
-[&#39;a&#39;, &#39;c&#39;, &#39;a&#39;]
-[&#39;a&#39;, &#39;c&#39;, &#39;a&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;b&#39;, &#39;a&#39;, &#39;a&#39;]
+[&#39;b&#39;, &#39;b&#39;, &#39;c&#39;]
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
 </pre></div>
 </div>
 </div>
@@ -1430,6 +1445,16 @@ True
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">generate_binary_number</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
 <span class="go">[1, 10, 11, 100, 101, 110, 111]</span>
 </pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">도움말</p>
+<p>큐에 이진수를 추가하는 방식으로 문제를 해결할 수 있다.</p>
+<ol class="simple">
+<li><p>큐를 만든다.</p></li>
+<li><p>큐에 ‘1’를 추가한다.</p></li>
+<li><p>큐의 머리에 있는 값(<code class="docutils literal notranslate"><span class="pre">s1</span></code>)을 꺼내 반환할 리스트에 담는다. 그리고 <code class="docutils literal notranslate"><span class="pre">s1</span></code>에 <code class="docutils literal notranslate"><span class="pre">'0'</span></code>과 <code class="docutils literal notranslate"><span class="pre">'1'</span></code>를 더하는 방식으로 다음 이진수를 만들어 큐에 추가한다.</p></li>
+<li><p>3의 과정을 원하는 만큼 반복한다.</p></li>
+</ol>
 </div>
 </div>
 <div class="section" id="id15">
@@ -1445,6 +1470,10 @@ True
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sliding_window</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>  
 <span class="go">[3, 4, 4, 4]</span>
 </pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">도움말</p>
+<p>파이썬의 슬라이싱과 <code class="docutils literal notranslate"><span class="pre">max()</span></code>를 사용하면, 쉽게 해결된다. 반면, 리스트의 유용한 인덱스를 덱(또는 큐)에 저장하는 방식으로 문제를 해결할 수 있다. 이때는 덱의 머리와 꼬리 항목을 확인할 수 있는 <code class="docutils literal notranslate"><span class="pre">peek_front()</span></code>와 <code class="docutils literal notranslate"><span class="pre">peek_rear()</span></code>를 추가하는 것이 좋다. 덱에 최댓값을 저장해두고, 한 칸씩 이동하면서 최댓값인지 아닌지를 확인하면 된다.</p>
 </div>
 </div>
 <div class="section" id="id16">
@@ -1462,6 +1491,10 @@ True
 <span class="go">12</span>
 </pre></div>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">도움말</p>
+<p>이전 문제와 비슷하다. 다만, 덱을 사용할 때는 최솟값을 저장할 덱이 하나 더 필요하다.</p>
+</div>
 </div>
 <div class="section" id="id17">
 <h3><span class="section-number">9.4.9. </span>문제<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
@@ -1470,6 +1503,18 @@ True
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">josephus_permutation</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="go">[3, 6, 2, 5, 4, 7, 1]</span>
 </pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">도움말</p>
+<p>예를 들어, <code class="docutils literal notranslate"><span class="pre">t</span></code>가 2라면, 2사람을 제외하고 사람을 세는 방향을 변경해야 한다. 제외되는 사람을 각각 0, 1, 2, 3, 4, 5, 6이라고 해보자. 그러면 아래와 같은 방식으로 제외한다.</p>
+<ul class="simple">
+<li><p>0, 1 - 시계 방향</p></li>
+<li><p>2, 3 - 반시계 방향</p></li>
+<li><p>4, 5 - 시계 방향</p></li>
+<li><p>6 - 반시계 방향</p></li>
+</ul>
+<p>이때, 0, 1, 4, 5는 2로 나눴을 때의 몫이 각각 0, 0, 2, 2이다. 그리고 2, 3, 6은 2로 나눴을 때의 몫이 1, 1, 3이다.<br />
+즉, <code class="docutils literal notranslate"><span class="pre">i</span></code>는 0부터 시작하여 사람을 제외할 떄마다 1씩 증가하게 두고, <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">//</span> <span class="pre">t</span></code>의 값이 짝수냐 홀수냐에 따라 방향을 변경하면 된다.</p>
 </div>
 </div>
 <div class="section" id="id18">
