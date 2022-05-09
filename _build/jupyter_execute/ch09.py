@@ -9,7 +9,7 @@
 # 스택은 아래 그림처럼 데이터를 들어온 순으로 쌓아 올린 형상을 생각하면 된다.    
 # 
 # <div align="center">
-#     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/stack01.png" style="width:400px;">
+#     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/stack01.png" style="width:220px;">
 # </div>
 # 
 # 아래 그림처럼 스택은 들어온 순서의 역순으로 삭제되는 선입후출<font size="2">Last In First Out, LIFO</font>로 처리된다.  
@@ -18,7 +18,7 @@
 # * 탑 : 가장 나중에 추가된 항목이며 가장 먼저 삭제될 대상
 # 
 # <div align="center">
-#     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/stack02.png" style="width:400px;">
+#     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/stack02.png" style="width:250px;">
 # </div>
 # 
 # **활용 예제** : 인터넷 브라우저의 '뒤로가기(Back)' 버튼  
@@ -203,7 +203,7 @@ print(par_checker(")("))
 # 큐<font size="2">queue</font>는 스택과 마찬가지로, 선형 자료형이다. 항목의 추가는 보통 **꼬리**<font size="2">rear, tail</font>라 불리는 한 쪽 끝에서만 허용되고, 항목의 삭제는 **머리**<font size="2">front, head</font>라고 불리는 다른 한 쪽 끝에서 이루어진다. 큐는 아래 그림처럼 입력된 순서대로 하나씩 삭제되는 형상을 생각하면 된다. 
 # 
 # <div align="center">
-#     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/queue01.png" style="width:400px;">
+#     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/queue01.png" style="width:500px;">
 # </div>
 # 
 # 위의 그림처럼 큐는 먼저 들어온 항목이 먼저 나간다는 선입선출<font size="2">First In First Out, FIFO</font>원리를 따르며, 항목들의 추가와 삭제는 입력 순서에 따라 한쪽 방향으로 이동하는 방식이 철저하게 지켜진다.    
@@ -354,7 +354,7 @@ print(josephus_permutation(7, 3))
 # 덱<font size="2">double-ended queue, deque</font>은 선형 자료형으로, 큐와는 달리 항목의 추가와 삭제가 머리와 꼬리 양쪽 끝 모두에서 처리된다. 이런 의미에서 덱은 스택과 큐의 기능을 함께 제공하며 어떻게 사용할 것인가는 사용자에 의해 결정된다.  
 # 
 # <div align="center">
-#     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/deque01.png" style="width:400px;">
+#     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch09/deque01.png" style="width:500px;">
 # </div>
 # 
 # **활용 예제** : 편집기의 'undo'와 'redo'  
@@ -625,6 +625,20 @@ print(palindrome_checker('tomato'))
 # [1, 4, 3, 2, 1, 0]
 # ```
 
+# ```{admonition} 도움말    
+# :class: dropdown  
+# 스택에 유용한 항목의 인덱스를 저장하는 방식으로 문제를 해결할 수 있다. 위의 예제의 경우, 아래와 같은 방식으로 해결할 수 있다.    
+# 1. 스택을 만든다(s : `[]`).  
+# 2. `closing_price()` 함수가 반환할 리스트를 정의한다. 이때, 리스트의 길이는 주식 종가가 기록된 리스트와 같고, 항목은 모두 `0`으로 한다.   
+# 3. 반복문을 사용하여, 인자로 들어온 리스트의 각 항목에 접근한다.   
+# 4. 현재 스택이 비어 있으므로, `100`의 인덱스 `0`을 스택에 추가한다(s : `[0]`).  
+# 5. `101`은 `100`보다 크므로, 스택의 탑에 있는 값 `0`을 꺼낸 다음 `반환할 리스트[0] = 1(101의 인덱스) - 0`을 한다. 그리고 `101`의 인덱스 `1`를 스택에 추가한다(s : `[1]`).    
+# 6. `95`는 `101`보다 작으므로, 스택에 추가한다(s : `[1, 2]`).  
+# 7. `92`는 `95`보다 작고, 101보다 작으므로, 스택에 추가한다(s : `[1, 2, 3]`).  
+# 8. `90`는 `91`와 `95`보다 작고, 101보다도 작으므로, 스택에 추가한다(s : `[1, 2, 3, 4]`).  
+# 9. `120`은 `90`보다 크다. 스택의 탑에 있는 값 `4`를 꺼낸 다음 `반환할 리스트[4] = 5(120의 인덱스) - 4`를 한다. 그다음 스택의 탑에 있는 값 `3`을 꺼낸 다음 `반환할 리스트[3] = 5(120의 인덱스) - 3`을 한다. 다시, 그다음 스택의 탑에 있는 값 `2`을 꺼낸 다음 `반환할 리스트[2] = 5(120의 인덱스) - 2`를 한다. 스택에 아무 것도 없을 때까지 위 과정을 반복하고, 마지막에 리스트를 반환하면 된다.  
+# ```
+
 # ### 문제
 
 # 문자 없애기 게임을 만들어보자. 게임은 다음과 같이 진행된다.     
@@ -685,6 +699,15 @@ print(random.choices('abc', k = 3))
 # [1, 10, 11, 100, 101, 110, 111]
 # ```
 
+# ```{admonition} 도움말    
+# :class: dropdown  
+# 큐에 이진수를 추가하는 방식으로 문제를 해결할 수 있다.   
+# 1. 큐를 만든다.  
+# 2. 큐에 '1'를 추가한다.  
+# 3. 큐의 머리에 있는 값(`s1`)을 꺼내 반환할 리스트에 담는다. 그리고 `s1`에 `'0'`과 `'1'`를 더하는 방식으로 다음 이진수를 만들어 큐에 추가한다. 
+# 4. 3의 과정을 원하는 만큼 반복한다. 
+# ```
+
 # ### 문제
 
 # 정수를 항목으로 갖는 리스트와 자연수 k가 주어지면, 길이가 k인 각각의 연속된 부분 리스트의 최댓값들을 담은 리스트를 반환하는 `sliding_window()` 함수를 정의하여라.
@@ -699,6 +722,11 @@ print(random.choices('abc', k = 3))
 # ```python 
 # >>> print(sliding_window([1, -1, 3, 4, 2, -3], 3))  
 # [3, 4, 4, 4]
+# ```
+
+# ```{admonition} 도움말    
+# :class: dropdown  
+# 파이썬의 슬라이싱과 `max()`를 사용하면, 쉽게 해결된다. 반면, 리스트의 유용한 인덱스를 덱(또는 큐)에 저장하는 방식으로 문제를 해결할 수 있다. 이때는 덱의 머리와 꼬리 항목을 확인할 수 있는 `peek_front()`와 `peek_rear()`를 추가하는 것이 좋다. 덱에 최댓값을 저장해두고, 한 칸씩 이동하면서 최댓값인지 아닌지를 확인하면 된다.      
 # ```
 
 # ### 문제 
@@ -718,6 +746,11 @@ print(random.choices('abc', k = 3))
 # 12
 # ```
 
+# ```{admonition} 도움말    
+# :class: dropdown  
+# 이전 문제와 비슷하다. 다만, 덱을 사용할 때는 최솟값을 저장할 덱이 하나 더 필요하다.  
+# ```
+
 # ### 문제     
 # n명이 동그랗게 둘러앉아 임의의 한 사람부터 순서를 세어 k번째 사람을 제외하는 게임을 아무도 남지 않을 때까지 계속한다. 단, t명이 제외되면 사람을 세는 방향을 변경한다. 자연수 n, k, t를 입력받아 제외되는 사람의 순서를 반환하는 `josephus_permutation()` 함수를 정의하여라. 단, t, k < n라고 가정한다.   
 # 
@@ -726,6 +759,19 @@ print(random.choices('abc', k = 3))
 # ```python
 # >>> print(josephus_permutation(7, 3, 2))
 # [3, 6, 2, 5, 4, 7, 1]
+# ```
+
+# ```{admonition} 도움말    
+# :class: dropdown  
+# 예를 들어, `t`가 2라면, 2사람을 제외하고 사람을 세는 방향을 변경해야 한다. 제외되는 사람을 각각 0, 1, 2, 3, 4, 5, 6이라고 해보자. 그러면 아래와 같은 방식으로 제외한다.  
+# * 0, 1 - 시계 방향
+# * 2, 3 - 반시계 방향
+# * 4, 5 - 시계 방향
+# * 6 - 반시계 방향
+# 
+# 이때, 0, 1, 4, 5는 2로 나눴을 때의 몫이 각각 0, 0, 2, 2이다. 그리고 2, 3, 6은 2로 나눴을 때의 몫이 1, 1, 3이다.   
+# 즉, `i`는 0부터 시작하여 사람을 제외할 떄마다 1씩 증가하게 두고, `i // t`의 값이 짝수냐 홀수냐에 따라 방향을 변경하면 된다.  
+# 
 # ```
 
 # ### 문제 
