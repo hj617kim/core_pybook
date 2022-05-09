@@ -1429,9 +1429,9 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;b&#39;, &#39;a&#39;, &#39;a&#39;]
-[&#39;b&#39;, &#39;b&#39;, &#39;c&#39;]
-[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;b&#39;, &#39;a&#39;, &#39;b&#39;]
+[&#39;a&#39;, &#39;a&#39;, &#39;b&#39;]
+[&#39;b&#39;, &#39;a&#39;, &#39;b&#39;]
 </pre></div>
 </div>
 </div>
@@ -1498,7 +1498,7 @@ True
 </div>
 <div class="section" id="id17">
 <h3><span class="section-number">9.4.9. </span>문제<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
-<p>n명이 동그랗게 둘러앉아 임의의 한 사람부터 순서를 세어 k번째 사람을 제외하는 게임을 아무도 남지 않을 때까지 계속한다. 단, t명이 제외되면 사람을 세는 방향을 변경한다. 자연수 n, k, t를 입력받아 제외되는 사람의 순서를 반환하는 <code class="docutils literal notranslate"><span class="pre">josephus_permutation()</span></code> 함수를 정의하여라. 단, t, k &lt; n라고 가정한다.</p>
+<p>n명이 동그랗게 둘러앉아 임의의 한 사람부터 순서를 세어 k번째 사람을 제외하는 게임을 아무도 남지 않을 때까지 계속한다. 단, t명이 제외될 때마다 사람을 세는 방향을 변경한다. 자연수 n, k, t를 입력받아 제외되는 사람의 순서를 반환하는 <code class="docutils literal notranslate"><span class="pre">josephus_permutation()</span></code> 함수를 정의하여라. 단, t, k &lt; n라고 가정한다.</p>
 <p>예를 들어, n = 7, k = 3, t = 2라면 3 -&gt; 6 -&gt; 2 -&gt; 5 -&gt; 4 -&gt; 7 -&gt; 1 순서로 제외한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">josephus_permutation</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="go">[3, 6, 2, 5, 4, 7, 1]</span>
