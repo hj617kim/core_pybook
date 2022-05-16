@@ -724,7 +724,7 @@ Out : <code class="docutils literal notranslate"><span class="pre">128-&gt;64-&g
 <div class="section" id="id14">
 <h3><span class="section-number">10.7.2. </span>문제<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <p>카탈란 수<font size="2">또는 카탈랑 수 Catalan number</font>는 아래와 같이 정의된 자연수의 수열로, 개수 세기 문제<font size="2">counting problem</font>들을 해결하는 과정에서 많이 나타난다.</p>
-<p><span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(5\)</span>, <span class="math notranslate nohighlight">\(14\)</span>, <span class="math notranslate nohighlight">\(42\)</span>, <span class="math notranslate nohighlight">\(132\)</span>, <span class="math notranslate nohighlight">\(429\)</span>, <span class="math notranslate nohighlight">\(4862\)</span>, …</p>
+<p><span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(5\)</span>, <span class="math notranslate nohighlight">\(14\)</span>, <span class="math notranslate nohighlight">\(42\)</span>, <span class="math notranslate nohighlight">\(132\)</span>, <span class="math notranslate nohighlight">\(429\)</span>, <span class="math notranslate nohighlight">\(1430\)</span>, <span class="math notranslate nohighlight">\(4862\)</span>, …</p>
 <p>음이 아닌 정수 <span class="math notranslate nohighlight">\(n\)</span>에 대해서, <span class="math notranslate nohighlight">\(n\)</span>번째 카탈란 수<span class="math notranslate nohighlight">\(C_n\)</span>는 다음과 같이 정의할 수 있다.<br />
 $<span class="math notranslate nohighlight">\(C_n = \frac{(2n)!}{n!(n + 1)!}\)</span>$</p>
 <p>또, 카탈란 수는 다음과 같이 점화식으로 나타낼 수도 있다.
@@ -788,10 +788,6 @@ $<span class="math notranslate nohighlight">\(C_0 = 1,\quad C_{n+1} = \frac{2(2n
 <li><p><code class="docutils literal notranslate"><span class="pre">with_tower</span></code> : 중간 지점 탑</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">to_tower</span></code> : 목적지 탑</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-</pre></div>
-</div>
 <div class="info admonition">
 <p class="admonition-title">하노이 탑  </p>
 <p>하노이 탑 문제에서 탑에 원판을 추가, 삭제하는 것은 스택에서 항목을 추가, 삭제할 때와 같다. 이에 하노이 탑 문제에서의 탑은 스택으로 정의할 수 있다.</p>
