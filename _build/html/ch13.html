@@ -777,9 +777,9 @@
 <li><p>제목이 <code class="docutils literal notranslate"><span class="pre">personalinformation</span></code>이고 버전이 2인 문서</p></li>
 </ul>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">2personalinformation</span></code></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">2personalinformationnoitamrofnilanosrep</span></code></p>
 </div></blockquote>
-<p>문서 이름 리스트를 입력 받아, 문서 제목의 알파벳 순서대로 정렬된 리스트를 반환하는 <code class="docutils literal notranslate"><span class="pre">docu_sort()</span></code>함수를 정의하여라. 단, 문서 제목은 모두 영어로 되어 있고, 문서 정렬은 역순문서제목은 무시하고 문서 제목만을 기준으로 삼으며, 문서 제목이 같은 경우 버전을 기준으로 오름차순 정렬한다.</p>
+<p>문서 이름 리스트를 입력 받아, 문서 제목의 알파벳 순서대로 정렬된 리스트를 반환하는 <code class="docutils literal notranslate"><span class="pre">docu_sort()</span></code>함수를 <strong>버블정렬</strong>을 사용하여 정의하여라. 단, 문서 제목은 모두 알파벳 소문자로 되어 있고, 문서 정렬은 역순문서제목은 무시하고 문서 제목만을 기준으로 삼으며, 문서 제목이 같은 경우, 입력받은 순서를 유지한다. 또, 버전은 1부터 99사이의 숫자이고, 문서 제목이 <code class="docutils literal notranslate"><span class="pre">a</span></code>와 <code class="docutils literal notranslate"><span class="pre">ab</span></code>인 경우, <code class="docutils literal notranslate"><span class="pre">a</span></code>를 먼저 정렬한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">docu_sort</span><span class="p">([</span><span class="s1">&#39;1testtset&#39;</span><span class="p">,</span> <span class="s1">&#39;3resulttlusre&#39;</span><span class="p">,</span> <span class="s1">&#39;12testtset&#39;</span><span class="p">,</span> <span class="s1">&#39;1finishedprojecttcejorpdehsinif&#39;</span><span class="p">,</span> <span class="s1">&#39;3finishhsinif&#39;</span><span class="p">,</span> <span class="s1">&#39;5personalinformationnoitamrofnilanosrep&#39;</span><span class="p">,</span> <span class="s1">&#39;7abccba&#39;</span><span class="p">]))</span>   
 
 <span class="go">[&#39;7abccba&#39;, &#39;3finishhsinif&#39;, &#39;1finishedprojecttcejorpdehsinif&#39;, &#39;5personalinformationnoitamrofnilanosrep&#39;, &#39;3resulttlusre&#39;, &#39;1testtset&#39;, &#39;12testtset&#39;]</span>
@@ -788,9 +788,9 @@
 </div>
 <div class="section" id="id8">
 <h3><span class="section-number">13.5.2. </span>문제<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>어린이 합창단 A와 B는 마지막 곡을 함께 부르기로 했다. 두 합창단은 키 순서대로 무대에 입장하는 데, 마지막 곡을 부르기 위해 키를 기준으로 두 줄로 선 합창단 A와 B는 한 줄로 서야 한다. 합창반 선생님은 다음과 같은 방식으로 두 줄을 한 줄로 합치려고 한다.</p>
+<p>어린이 합창단 A와 B는 마지막 곡을 함께 부르기로 했다. 두 합창단은 키 순서대로 무대에 입장하는 데, 마지막 곡을 부르기 위해 키를 기준으로 두 줄로 선 합창단 A와 B는 한 줄로 서야 한다. 합창반 선생님은 다음과 같은 방식으로 두 줄을 한 줄로 합치려고 한다. 단, 합창단 A와 B는 중복된 키가 없고, 각각은 정렬되어 있다고 가정한다.</p>
 <p>“우선 새로운 빈 줄을 만든다. A팀의 가장 작은 아이와 B팀의 가장 작은 아이의 키를 비교한 다음, 더 작은 아이가 새로운 줄로 간다. 그 이후에 다시 남은 아이들 중 A팀에서 가장 작은 아이와 B팀에서 가장 작은 아이를 비교한 뒤 더 작은 아이가 새로운 줄의 뒤쪽에 선다. 이런 식으로 원래의 한 줄이 모두 없어질 때까지 한 뒤, 남아있는 다른 줄의 아이는 모두 그대로 한 명씩 새로운 줄의 뒤쪽으로 간다.”</p>
-<p>A와 B 합창단원의 이름과 키가 딕셔너리 형태로 주어졌을 때, 두 딕셔너리를 입력 받아 줄이 합쳐지는 과정을 보여주는 <code class="docutils literal notranslate"><span class="pre">merge_chorus()</span></code>함수를 정의하여라.</p>
+<p>A와 B 합창단원의 이름과 키가 딕셔너리 형태로 주어졌을 때, 두 딕셔너리를 입력 받아 키 순으로 정렬된 이름 리스트를 반환하는 <code class="docutils literal notranslate"><span class="pre">merge_chorus()</span></code>함수를 정의하여라. 이때, 줄이 합쳐지는 과정도 보여줘라.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;민우&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;지우&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;자연&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;윤지&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;가현&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;마영&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>  
 <span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;다훈&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;재영&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;동석&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;수호&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span> <span class="s2">&quot;윤우&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">}</span>  
 <span class="gp">&gt;&gt;&gt; </span><span class="n">merge_chorus</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
@@ -805,16 +805,31 @@
 <span class="go">민우, 지우, 자연, 다훈, 재영, 윤지, 동석, 가현, 수호</span>
 <span class="go">민우, 지우, 자연, 다훈, 재영, 윤지, 동석, 가현, 수호, 마영</span>
 <span class="go">민우, 지우, 자연, 다훈, 재영, 윤지, 동석, 가현, 수호, 마영, 윤우</span>
+<span class="go">[&#39;민우&#39;, &#39;지우&#39;, &#39;자연&#39;, &#39;다훈&#39;, &#39;재영&#39;, &#39;윤지&#39;, &#39;동석&#39;, &#39;가현&#39;, &#39;수호&#39;, &#39;마영&#39;, &#39;윤우&#39;]</span>
 </pre></div>
+</div>
+<p>파이썬 3.7이후부터 <code class="docutils literal notranslate"><span class="pre">dict</span></code>는 삽입 순서를 기억한다. 즉, 딕셔너리의 값<font size="2">value</font> 순서대로 딕셔너리에 항목을 추가한 다음, 값들을 확인하면 그 순서대로 있는 것을 확인할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;민우&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;지우&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;자연&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;윤지&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;가현&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;마영&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>  
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;민우&#39;, 1), (&#39;지우&#39;, 2), (&#39;자연&#39;, 3), (&#39;윤지&#39;, 10), (&#39;가현&#39;, 20), (&#39;마영&#39;, 30)]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="id9">
 <h3><span class="section-number">13.5.3. </span>문제<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>A 회사는 선착순으로 사은품을 제공하기 위해 도착 순서대로 번호표를 나누어 줬고, 일정 시간이 지난 후 사은품을 제공하기로 했다. 시간이 되어 담당자가 와서 보니, 고객들이 임의의 순서대로 줄을 서 있었고, 일부 고객들은 없었다. 담당자는 번호가 작은 순서대로 현장에 있는 고객들을 줄 짓고 앞에 있는 n명에게 사은품을 제공해야 한다. 담당자는 혼잡을 줄이고, 고객들을 줄 세우기 위해 다음과 같은 방법을 생각해 냈다.</p>
 <p>“두 번째 사람이 자기보다 작은 번호를 가진 사람이 등장할 때까지 앞 사람과 자리를 바꾼다. 첫 번째 자리로 오면 비교를 중지한다. 세 번째 사람부터 앞 사람들과 비교하여 자기 자리를 찾아 들어가는 과정을 반복한다.”</p>
-<p>임의로 서 있는 번호 리스트와 사은품의 개수를 입력 받아, 위의 방법대로 정렬된 리스트와 마지막으로 사은품을 수령하는 번호를 반환하는 <code class="docutils literal notranslate"><span class="pre">event_sort()</span></code> 함수를 정의하여라.</p>
+<p>임의로 서 있는 번호 리스트와 사은품의 개수를 입력 받아, 위의 방법대로 정렬된 리스트와 마지막으로 사은품을 수령하는 번호를 튜플로 묶어 반환하는 <code class="docutils literal notranslate"><span class="pre">event_sort()</span></code> 함수를 정의하여라.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">event_sort</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">6</span><span class="p">))</span>
-<span class="go">[1, 2, 3, 5, 6, 7, 8], 7</span>
+<span class="go">([1, 2, 3, 5, 6, 7, 8], 7)</span>
 </pre></div>
 </div>
 <div class="info admonition">
@@ -825,9 +840,13 @@
 </div>
 <div class="section" id="id10">
 <h3><span class="section-number">13.5.4. </span>문제<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<p>어구전철<font size="2">anagram, 애너그램</font>은 문자의 순서를 변경하여 다른 단어나 문장을 만드는 놀이로, 때로는 암호로 사용하기도 한다. 예를 들어, ‘주문’ - ‘문자’, ‘listen’ - ‘silent’, ‘TOM MARVOLO RIDDLE’ - ‘I AM LORD VOLDEMORT’ 등이 있다.</p>
+<p>어구전철<font size="2">anagram, 애너그램</font>은 문자의 순서를 변경하여 다른 단어나 문장을 만드는 놀이로, 때로는 암호로 사용하기도 한다. 예를 들어, ‘자문’ - ‘문자’, ‘listen’ - ‘silent’, ‘TOM MARVOLO RIDDLE’ - ‘I AM LORD VOLDEMORT’ 등이 있다.</p>
 <p>(1) 파이썬의 sort(<code class="docutils literal notranslate"><span class="pre">sorted()</span></code>, <code class="docutils literal notranslate"><span class="pre">.sort()</span></code> 등)를 사용하지 않고, 두 개의 문자열을 입력 받아 어구전철인지를 판별하는 <code class="docutils literal notranslate"><span class="pre">is_anagram()</span></code> 함수를 정의하여라. 어구전철을 확인할 때, 공백은 무시한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">is_anagram</span><span class="p">(</span><span class="s1">&#39;문자&#39;</span><span class="p">,</span> <span class="s1">&#39;주문&#39;</span><span class="p">))</span>  
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">is_anagram</span><span class="p">(</span><span class="s1">&#39;문자&#39;</span><span class="p">,</span> <span class="s1">&#39;자문&#39;</span><span class="p">))</span>  
 <span class="go">True</span>
 </pre></div>
 </div>
