@@ -160,6 +160,11 @@
    13. 정렬
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch14.html">
+   14. 최단경로 문제
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -857,10 +862,12 @@ C_0 = 1,\quad C_{n+1} = \frac{2(2n + 1)}{n + 2} C_n
     <span class="n">C</span> <span class="o">=</span> <span class="n">Tower</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
     
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1">#탑A에 5개의 원판 넣기</span>
-        <span class="n">A</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">Disc</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>                                           
-    <span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">220</span><span class="p">)</span>   <span class="c1">#아래 텍스트가 입력될 장소로 이동. 0, -220로 이동.</span>
+        <span class="n">A</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">Disc</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>   
+        
     <span class="n">penup</span><span class="p">()</span>         <span class="c1">#이동할 때, 자취를 남기지 않게 함</span>
     <span class="n">ht</span><span class="p">()</span>            <span class="c1">#텍스트를 그릴 거북이는 안 보이게 함</span>
+    <span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">220</span><span class="p">)</span>   <span class="c1">#아래 텍스트가 입력될 장소로 이동. 0, -220로 이동.</span>
+
     <span class="n">write</span><span class="p">(</span><span class="s2">&quot;Press the Enter key&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Courier&quot;</span><span class="p">,</span> <span class="mi">17</span><span class="p">))</span>    <span class="c1">#텍스트를 화면에 나타냄</span>
 
     <span class="n">onkey</span><span class="p">(</span><span class="n">play</span><span class="p">,</span> <span class="s2">&quot;Return&quot;</span><span class="p">)</span>  <span class="c1">#Enter키를 누르면 play() 함수 실행</span>

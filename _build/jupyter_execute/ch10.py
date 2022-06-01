@@ -384,10 +384,12 @@ print(fibo3(100))
 #     C = Tower('C', 300)
 #     
 #     for i in range(5,0,-1):  #탑A에 5개의 원판 넣기
-#         A.push(Disc(i))                                           
-#     goto(0, -220)   #아래 텍스트가 입력될 장소로 이동. 0, -220로 이동.
+#         A.push(Disc(i))   
+#         
 #     penup()         #이동할 때, 자취를 남기지 않게 함
 #     ht()            #텍스트를 그릴 거북이는 안 보이게 함
+#     goto(0, -220)   #아래 텍스트가 입력될 장소로 이동. 0, -220로 이동.
+# 
 #     write("Press the Enter key", align="center", font=("Courier", 17))    #텍스트를 화면에 나타냄
 # 
 #     onkey(play, "Return")  #Enter키를 누르면 play() 함수 실행
