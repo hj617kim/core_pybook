@@ -290,6 +290,13 @@
   <a class="reference internal nav-link" href="#id6">
    14.5. 연습 문제
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     14.5.1. 문제
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -335,6 +342,13 @@
   <a class="reference internal nav-link" href="#id6">
    14.5. 연습 문제
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     14.5.1. 문제
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -700,6 +714,355 @@
 </div>
 <div class="section" id="id6">
 <h2><span class="section-number">14.5. </span>연습 문제<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3><span class="section-number">14.5.1. </span>문제<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>A는 이번 여름에 독일 함부르크에서 열리는 학회에 참석하기로 했다. 인천에서 다른 지역을 경유하여 함부르크로 갈 예정이고, 경유하고 싶은 도시와 그 도시까지의 비행 시간을 아래와 같이 정리하였다.</p>
+<p>예를 들어, <code class="docutils literal notranslate"><span class="pre">프랑크푸르트</span></code>의 대응하는 값은 <code class="docutils literal notranslate"> <span class="pre">[['함부르크',</span> <span class="pre">65],</span> <span class="pre">['이스탄불',</span> <span class="pre">195]]</span></code>이고, 이는 프랑크푸르트에서 함부르크는 65분, 프랑크푸르트에서 이스탄불은 195분이 소요되는 것을 의미한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">travel_time</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;인천&#39;</span> <span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;이스탄불&#39;</span><span class="p">,</span> <span class="mi">685</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;뮌헨&#39;</span><span class="p">,</span> <span class="mi">790</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;헬싱키&#39;</span><span class="p">,</span> <span class="mi">825</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;암스테르담&#39;</span><span class="p">,</span> <span class="mi">815</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;프랑크푸르트&#39;</span><span class="p">,</span> <span class="mi">830</span><span class="p">]],</span> <span class="s1">&#39;함부르크&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;인천&#39;</span><span class="p">,</span> <span class="mi">930</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;프랑크푸르트&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;암스테르담&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">]],</span> <span class="s1">&#39;이스탄불&#39;</span> <span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;함부르크&#39;</span><span class="p">,</span> <span class="mi">210</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;뮌헨&#39;</span><span class="p">,</span> <span class="mi">140</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;헬싱키&#39;</span><span class="p">,</span> <span class="mi">225</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;암스테르담&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;인천&#39;</span><span class="p">,</span> <span class="mi">620</span><span class="p">]],</span> <span class="s1">&#39;뮌헨&#39;</span> <span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;함부르크&#39;</span><span class="p">,</span> <span class="mi">65</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;이스탄불&#39;</span><span class="p">,</span> <span class="mi">150</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;프랑크푸르트&#39;</span><span class="p">,</span> <span class="mi">60</span><span class="p">]],</span> <span class="s1">&#39;헬싱키&#39;</span> <span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;함부르크&#39;</span><span class="p">,</span> <span class="mi">120</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;암스테르담&#39;</span><span class="p">,</span> <span class="mi">155</span><span class="p">]],</span> <span class="s1">&#39;암스테르담&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;함부르크&#39;</span><span class="p">,</span> <span class="mi">65</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;이스탄불&#39;</span><span class="p">,</span> <span class="mi">210</span><span class="p">]],</span> <span class="s1">&#39;프랑크푸르트&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;함부르크&#39;</span><span class="p">,</span> <span class="mi">65</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;이스탄불&#39;</span><span class="p">,</span> <span class="mi">195</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;인천&#39;</span><span class="p">,</span> <span class="mi">690</span><span class="p">]]}</span>
+</pre></div>
+</div>
+<p>인천에서 함부르크로 가는 경로의 최단시간과 그 경로를 보여주는 <code class="docutils literal notranslate"><span class="pre">Dijkstra_with_path()</span></code>함수를 정의하여라. 함수는 다음과 같은 형식으로 실행한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dijkstra_with_path</span><span class="p">(</span><span class="n">travel_time</span><span class="p">,</span> <span class="n">도시의개수</span><span class="p">,</span> <span class="n">출발도시</span><span class="p">,</span> <span class="n">도착도시</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>즉, 이번 문제에서는 다음과 같이 함수를 실행한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dijkstra_with_path</span><span class="p">(</span><span class="n">travel_time</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;인천&#39;</span><span class="p">,</span> <span class="s1">&#39;함부르크&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">folium</span>
+
+<span class="n">site</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;인천&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">37.4692</span><span class="p">,</span> <span class="mf">126.451</span><span class="p">],</span> <span class="s1">&#39;함부르크&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">53.5506</span><span class="p">,</span> <span class="mf">9.99333</span><span class="p">],</span> <span class="s1">&#39;이스탄불&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">41.0122</span><span class="p">,</span> <span class="mf">28.976</span><span class="p">],</span> <span class="s1">&#39;뮌헨&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">48.14</span><span class="p">,</span> <span class="mf">11.58</span><span class="p">],</span> <span class="s1">&#39;헬싱키&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">60.1699</span><span class="p">,</span> <span class="mf">24.9384</span><span class="p">],</span> <span class="s1">&#39;암스테르담&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">52.3738</span><span class="p">,</span> <span class="mf">4.89093</span><span class="p">],</span> <span class="s1">&#39;프랑크푸르트&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">50.1167</span><span class="p">,</span> <span class="mf">8.68333</span><span class="p">]}</span>
+<span class="n">travel_time</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;인천&#39;</span> <span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;이스탄불&#39;</span><span class="p">,</span> <span class="mi">685</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;뮌헨&#39;</span><span class="p">,</span> <span class="mi">790</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;헬싱키&#39;</span><span class="p">,</span> <span class="mi">825</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;암스테르담&#39;</span><span class="p">,</span> <span class="mi">815</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;프랑크푸르트&#39;</span><span class="p">,</span> <span class="mi">830</span><span class="p">]],</span> 
+               <span class="s1">&#39;함부르크&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;인천&#39;</span><span class="p">,</span> <span class="mi">930</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;프랑크푸르트&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;암스테르담&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">]],</span> 
+               <span class="s1">&#39;이스탄불&#39;</span> <span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;함부르크&#39;</span><span class="p">,</span> <span class="mi">210</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;뮌헨&#39;</span><span class="p">,</span> <span class="mi">140</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;헬싱키&#39;</span><span class="p">,</span> <span class="mi">225</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;암스테르담&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;인천&#39;</span><span class="p">,</span> <span class="mi">620</span><span class="p">]],</span> 
+               <span class="s1">&#39;뮌헨&#39;</span> <span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;함부르크&#39;</span><span class="p">,</span> <span class="mi">65</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;이스탄불&#39;</span><span class="p">,</span> <span class="mi">150</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;프랑크푸르트&#39;</span><span class="p">,</span> <span class="mi">60</span><span class="p">]],</span> 
+               <span class="s1">&#39;헬싱키&#39;</span> <span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;함부르크&#39;</span><span class="p">,</span> <span class="mi">120</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;암스테르담&#39;</span><span class="p">,</span> <span class="mi">155</span><span class="p">]],</span> 
+               <span class="s1">&#39;암스테르담&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;함부르크&#39;</span><span class="p">,</span> <span class="mi">65</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;이스탄불&#39;</span><span class="p">,</span> <span class="mi">210</span><span class="p">]],</span> 
+               <span class="s1">&#39;프랑크푸르트&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;함부르크&#39;</span><span class="p">,</span> <span class="mi">65</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;이스탄불&#39;</span><span class="p">,</span> <span class="mi">195</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;인천&#39;</span><span class="p">,</span> <span class="mi">690</span><span class="p">]]}</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">([</span><span class="mi">46</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span> <span class="n">zoom_start</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">site</span> <span class="p">:</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span><span class="n">site</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tooltip</span><span class="o">=</span> <span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">travel_time</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">travel_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">:</span>
+        <span class="n">folium</span><span class="o">.</span><span class="n">PolyLine</span><span class="p">(</span><span class="n">locations</span> <span class="o">=</span> <span class="p">[</span><span class="n">site</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">site</span><span class="p">[</span><span class="n">j</span><span class="p">[</span><span class="mi">0</span><span class="p">]]])</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;head&gt;    
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+
+        &lt;script&gt;
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        &lt;/script&gt;
+
+    &lt;style&gt;html, body {width: 100%;height: 100%;margin: 0;padding: 0;}&lt;/style&gt;
+    &lt;style&gt;#map {position:absolute;top:0;bottom:0;right:0;left:0;}&lt;/style&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/&gt;
+
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
+            &lt;style&gt;
+                #map_857e1d6926d918bc9a41f4e52b538daa {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            &lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body&gt;    
+
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_857e1d6926d918bc9a41f4e52b538daa&quot; &gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;    
+
+            var map_857e1d6926d918bc9a41f4e52b538daa = L.map(
+                &quot;map_857e1d6926d918bc9a41f4e52b538daa&quot;,
+                {
+                    center: [46.0, 70.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 3,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+
+
+
+
+            var tile_layer_8eb791f59304d71f0efaeb9d9e1f5483 = L.tileLayer(
+                &quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
+                {&quot;attribution&quot;: &quot;Data by \u0026copy; \u003ca href=\&quot;http://openstreetmap.org\&quot;\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\&quot;http://www.openstreetmap.org/copyright\&quot;\u003eODbL\u003c/a\u003e.&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 18, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var marker_ece36235a99ddb1073b83513d8ff516f = L.marker(
+                [37.4692, 126.451],
+                {}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            marker_ece36235a99ddb1073b83513d8ff516f.bindTooltip(
+                `&lt;div&gt;
+                     인천
+                 &lt;/div&gt;`,
+                {&quot;sticky&quot;: true}
+            );
+
+
+            var marker_d2a096f7e0e93e4599c941ef2f1f1c06 = L.marker(
+                [53.5506, 9.99333],
+                {}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            marker_d2a096f7e0e93e4599c941ef2f1f1c06.bindTooltip(
+                `&lt;div&gt;
+                     함부르크
+                 &lt;/div&gt;`,
+                {&quot;sticky&quot;: true}
+            );
+
+
+            var marker_21ed82abb7a267539e591fd1801531f5 = L.marker(
+                [41.0122, 28.976],
+                {}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            marker_21ed82abb7a267539e591fd1801531f5.bindTooltip(
+                `&lt;div&gt;
+                     이스탄불
+                 &lt;/div&gt;`,
+                {&quot;sticky&quot;: true}
+            );
+
+
+            var marker_7393d3bfc9240936e9d608b995b2ed7f = L.marker(
+                [48.14, 11.58],
+                {}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            marker_7393d3bfc9240936e9d608b995b2ed7f.bindTooltip(
+                `&lt;div&gt;
+                     뮌헨
+                 &lt;/div&gt;`,
+                {&quot;sticky&quot;: true}
+            );
+
+
+            var marker_cac084a05373da7906bebef32204096d = L.marker(
+                [60.1699, 24.9384],
+                {}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            marker_cac084a05373da7906bebef32204096d.bindTooltip(
+                `&lt;div&gt;
+                     헬싱키
+                 &lt;/div&gt;`,
+                {&quot;sticky&quot;: true}
+            );
+
+
+            var marker_6bf3962ac28c0a2a9a7141c5a2c9534b = L.marker(
+                [52.3738, 4.89093],
+                {}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            marker_6bf3962ac28c0a2a9a7141c5a2c9534b.bindTooltip(
+                `&lt;div&gt;
+                     암스테르담
+                 &lt;/div&gt;`,
+                {&quot;sticky&quot;: true}
+            );
+
+
+            var marker_d3d0ba41c97d29e28c80c6251460a08a = L.marker(
+                [50.1167, 8.68333],
+                {}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            marker_d3d0ba41c97d29e28c80c6251460a08a.bindTooltip(
+                `&lt;div&gt;
+                     프랑크푸르트
+                 &lt;/div&gt;`,
+                {&quot;sticky&quot;: true}
+            );
+
+
+            var poly_line_570e2c1bd89025f8dde4ee56da841bad = L.polyline(
+                [[37.4692, 126.451], [41.0122, 28.976]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_14430a499444f57cf77da1f8d27e973c = L.polyline(
+                [[37.4692, 126.451], [48.14, 11.58]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_9093a3d1ed159e86151ef30a6ee57673 = L.polyline(
+                [[37.4692, 126.451], [60.1699, 24.9384]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_3f3e4a29567780f04551733618e40cfb = L.polyline(
+                [[37.4692, 126.451], [52.3738, 4.89093]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_5105e30d82649cdd98d81b706a61ae8b = L.polyline(
+                [[37.4692, 126.451], [50.1167, 8.68333]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_944e59f4fc055f3d764cc8eaa3e760dd = L.polyline(
+                [[53.5506, 9.99333], [37.4692, 126.451]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_a808ebd4fd769412390998c113e28542 = L.polyline(
+                [[53.5506, 9.99333], [50.1167, 8.68333]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_a8d642f0a77ed774cda6ea6bbed7ede4 = L.polyline(
+                [[53.5506, 9.99333], [52.3738, 4.89093]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_c142ee6d5f7a0eb9d520d472f21f4a73 = L.polyline(
+                [[41.0122, 28.976], [53.5506, 9.99333]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_e993403a99255a9ca9e4454c454a61e4 = L.polyline(
+                [[41.0122, 28.976], [48.14, 11.58]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_4efc33cb5fc3e758108496fae7b23e97 = L.polyline(
+                [[41.0122, 28.976], [60.1699, 24.9384]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_d9a7d01e84d913f3c69691ce07f9fbaf = L.polyline(
+                [[41.0122, 28.976], [52.3738, 4.89093]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_9f46478c31dc4bde722e587e011328c6 = L.polyline(
+                [[41.0122, 28.976], [37.4692, 126.451]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_7f3f18ac96fc20c5c04bd1e6e539e8ae = L.polyline(
+                [[48.14, 11.58], [53.5506, 9.99333]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_5ef6992057c2ec37aabc3d696eaf3e52 = L.polyline(
+                [[48.14, 11.58], [41.0122, 28.976]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_28a02ef0e4f27a6557442098e62779ac = L.polyline(
+                [[48.14, 11.58], [50.1167, 8.68333]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_94c82347cecd9075b1cb4e7ebee073ad = L.polyline(
+                [[60.1699, 24.9384], [53.5506, 9.99333]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_52a86a93a2394401aadf321496988ec5 = L.polyline(
+                [[60.1699, 24.9384], [52.3738, 4.89093]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_6831e4767eb1f42f11607a7c03792857 = L.polyline(
+                [[52.3738, 4.89093], [53.5506, 9.99333]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_3501e8dd3f48f1ef342d97af633134ff = L.polyline(
+                [[52.3738, 4.89093], [41.0122, 28.976]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_48382cbf226d43afa746631354f40e4e = L.polyline(
+                [[50.1167, 8.68333], [53.5506, 9.99333]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_7e85821c4d875b0960aa570585e5b739 = L.polyline(
+                [[50.1167, 8.68333], [41.0122, 28.976]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+
+            var poly_line_0f8818fca63f35aba470a62ce0065739 = L.polyline(
+                [[50.1167, 8.68333], [37.4692, 126.451]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_857e1d6926d918bc9a41f4e52b538daa);
+
+&lt;/script&gt;" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div></div></div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">replit에서 <code class="docutils literal notranslate"><span class="pre">folium</span></code> 모듈의 지도   </p>
+<p>replit에서 <code class="docutils literal notranslate"><span class="pre">folium</span></code> 모듈의 지도를 보려면 <code class="docutils literal notranslate"><span class="pre">html</span></code> 파일로 저장해야 한다. 예를 들어, 위의 <code class="docutils literal notranslate"><span class="pre">m</span></code>을 <code class="docutils literal notranslate"><span class="pre">my_map</span></code>이라는 이름의 <code class="docutils literal notranslate"><span class="pre">html</span></code> 파일로 저장하려면, 아래와 같이 코드를 작성하면 된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;my_map.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
