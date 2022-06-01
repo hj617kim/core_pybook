@@ -1,0 +1,742 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14. 최단경로 문제 &#8212; core_pybook</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="13. 정렬" href="ch13.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">core_pybook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   소개
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch01.html">
+   1. 프로그래밍이란?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch02.html">
+   2. 파이썬 프로그래밍 개발 환경
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch03.html">
+   3. 파이썬 프로그래밍의 기초 I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch04.html">
+   4. 파이썬 프로그래밍의 기초 II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch05.html">
+   5. 파이썬 프로그래밍의 기초 III
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch06.html">
+   6. 파이썬 프로그래밍의 기초 IV
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch07.html">
+   7. 파이썬 프로그래밍의 기초 V
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch08.html">
+   8. 알고리즘
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch09.html">
+   9. 기초 추상 자료형
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch10.html">
+   10. 재귀
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch11.html">
+   11. 잔돈 지불 문제
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch12.html">
+   12. 탐색
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
+   13. 정렬
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   14. 최단경로 문제
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ch14.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hj617kim/core_pybook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hj617kim/core_pybook/issues/new?title=Issue%20on%20page%20%2Fch14.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hj617kim/core_pybook/master?urlpath=tree/docs/ch14.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   14.1. 그래프
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   14.2. 최단경로 문제
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   14.3. 다익스트라 알고리즘
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   14.4. 우선순위 큐
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   14.5. 연습 문제
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>최단경로 문제</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   14.1. 그래프
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   14.2. 최단경로 문제
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   14.3. 다익스트라 알고리즘
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   14.4. 우선순위 큐
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   14.5. 연습 문제
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1><span class="section-number">14. </span>최단경로 문제<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>집에서 학교로 가는 최단경로<font size="2">shortest path</font>의 길이를 구하여라.</p>
+<div align="center"><img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch14/sp_01.png" style="width:500px;"></div>
+<div class="section" id="id2">
+<h2><span class="section-number">14.1. </span>그래프<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>그래프<font size="2">graph</font>는 정점<font size="2">vertex 또는 마디node</font>과 이음선<font size="2">edge</font>으로 구성된 것을 말한다. 그래프 관련 용어는 아래와 같다.</p>
+<ul class="simple">
+<li><p>정점<font size="2">vertex 또는 마디node</font></p></li>
+<li><p>이음선<font size="2">edge</font></p></li>
+<li><p>방향 그래프<font size="2">directed graph</font> : 이음선에 방향이 있는 그래프</p></li>
+<li><p>가중치<font size="2">weight</font></p></li>
+<li><p>가중치 포함 그래프<font size="2">weighted graph</font></p></li>
+<li><p>경로<font size="2">path</font> : 이음선으로 연결된 마디들의 나열. 즉, 하나의 마디에서 다른 마디로 가는 이음선의 연결.</p></li>
+<li><p>단순경로<font size="2">simple path</font> : 같은 마디를 두 번 지나지 않는 경로</p></li>
+<li><p>경로의 길이<font size="2">length</font> :</p>
+<ul>
+<li><p>가중치  포함 그래프의 경우 : 경로 상에 있는 가중치의 합</p></li>
+<li><p>가중치 미포함 그래프의 경우 : 경로 상에 있는 이음선의 수</p></li>
+</ul>
+</li>
+</ul>
+<p>아래는 방향 그래프와 가중치 포함 그래프이다.</p>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch14/sp_02.png" style="width:350px;">
+    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch14/sp_03.png" style="width:300px;">
+</div>
+<div class="info admonition">
+<p class="admonition-title">쾨니히스베르크의 다리 문제  </p>
+<p>쾨니히스베르크에는 프레겔 강이 흐르고, 두 개의 큰 섬이 있다. 그리고 아래와 같이 두 섬과 나머지를 연결하는 7개의 다리가 있다.</p>
+<div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Konigsberg_bridges.png" style="width:300px;"></div>
+<p>쾨니히스베르크의 다리 문제는 위의 7개의 다리들을 한 번씩만 건너서 처음의 위치로 돌아올 수 있는가이다. 수학자 오일러는 이 문제를 해결하기 위하여 그래프를 도입하였고, 이것이 불가능하다는 것을 증명하였다.</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">14.2. </span>최단경로 문제<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>위의 문제는 하나의 점<font size="2">마디node</font>에서 다른 점<font size="2">마디node</font>로 가는 최단경로를 구하는 문제이다. 이때 이음선의 가중치와 방향을 함께 고려해야 한다. 이때의 최단경로는 단순경로로 찾으면 된다.</p>
+<p><strong>응용 사례</strong></p>
+<ul class="simple">
+<li><p>도시 간의 최단경로</p></li>
+<li><p>다구간 비행기표 여정</p></li>
+<li><p>지도앱에서 경유 추가</p></li>
+</ul>
+<p>위의 가중치 포함 방향 그래프에서 v1에서 v3로 가는 단순경로와 길이는 다음 여섯 종류이다.</p>
+<ul class="simple">
+<li><p>v1 → v2 → v3            : 경로 길이는 1 + 4 = 5</p></li>
+<li><p>v1 → v2 → v4 → v3       : 경로 길이는 1 + 1 + 2 = 4</p></li>
+<li><p>v1 → v2 → v5 → v4 → v3  : 경로 길이는 1 + 2 + 7 + 2 = 12</p></li>
+<li><p>v1 → v5 → v2 → v3       : 경로 길이는 3 + 9 + 4 = 16</p></li>
+<li><p>v1 → v5 → v2 → v4 → v3  : 경로 길이는 3 + 9 + 1 + 2 = 15</p></li>
+<li><p>v1 → v5 → v4 → v3       : 경로 길이는 3 + 7 + 2 = 12</p></li>
+</ul>
+<p>이 중에서 v1 → v2 → v4 → v3 가 v1에서 v3로 가는 최단경로이다.</p>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">14.3. </span>다익스트라 알고리즘<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>다익스트라<font size="2">또는 데이크스트라 Dijkstra</font> 알고리즘은 하나의 노드에서 다른 노드로 가는 가장 짧은 경로를 찾는 알고리즘으로, Dijkstra가 고안했다.</p>
+<p>다익스트라 알고리즘은 초깃값을 부여하고, 단계를 거듭하며 값을 개선시키는 방법이다. 아래 문제와 함께 다익스트라 알고리즘을 살펴보자. 시작 노드는 1이다.</p>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch14/sp_03.png" style="width:350px;">
+</div>
+<ol class="simple">
+<li><p>시작 노드의 경로 길이는 0으로, 다른 노드는 무한대로 초기화한다.</p></li>
+</ol>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>노드</p></th>
+<th class="text-align:center head"><p>v1</p></th>
+<th class="text-align:center head"><p>v2</p></th>
+<th class="text-align:center head"><p>v3</p></th>
+<th class="text-align:center head"><p>v4</p></th>
+<th class="text-align:center head"><p>v5</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>경로의 길이</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>inf</p></td>
+<td class="text-align:center"><p>inf</p></td>
+<td class="text-align:center"><p>inf</p></td>
+<td class="text-align:center"><p>inf</p></td>
+</tr>
+</tbody>
+</table>
+<p>방문하지 않은 노드 중에서 경로의 길이가 가장 짧은 노드를 선택한다. 여기서는 v1이다.</p>
+<ol class="simple">
+<li><p>v1를 거쳐 다른 노드로 가는 경로를 계산하여, 현재 값보다 작으면 값을 변경한다. 여기서는 v2와 v5가 v1과 연결되어 있다.
+|노드|v1|v2|v3|v4|v5|
+|:—:|:—:|:—:|:—:|:—:|:—:|
+|경로의 길이|0|1|inf|inf|3|</p></li>
+</ol>
+<p>방문하지 않은 노드 중에서 경로의 길이가 가장 짧은 노드를 선택한다. 여기서는 v2이다.</p>
+<ol class="simple">
+<li><p>v2를 거쳐 다른 노드로 가는 경로를 계산하여, 현재 값보다 작으면 값을 변경한다. 여기서는 v2와 연결된 v3, v4, v5를 살펴보면 된다. v1은 방문한 노드이다.</p></li>
+</ol>
+<ul class="simple">
+<li><p>v1 → v2 → v3 하면 1 + 4이고, 이는 inf 보다 작다.</p></li>
+<li><p>v1 → v2 → v4 하면 1 + 1이고, 이는 inf 보다 작다.</p></li>
+<li><p>v1 → v2 → v5 하면 1 + 2이고, 이는 3보다 작지 않다.</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>노드</p></th>
+<th class="text-align:center head"><p>v1</p></th>
+<th class="text-align:center head"><p>v2</p></th>
+<th class="text-align:center head"><p>v3</p></th>
+<th class="text-align:center head"><p>v4</p></th>
+<th class="text-align:center head"><p>v5</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>경로의 길이</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>5</p></td>
+<td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>3</p></td>
+</tr>
+</tbody>
+</table>
+<p>방문하지 않은 노드 중에서 경로의 길이가 가장 짧은 노드를 선택한다. 여기서는 v4이다. 참고로, v1과 v2는 이미 방문한 노드이다.</p>
+<ol class="simple">
+<li><p>v4를 거쳐 다른 노드로 가는 경로를 계산하여, 현재 값보다 작으면 값을 변경한다. 여기서는 v4와 연결된 v3를 살펴보면 된다. v2는 방문한 노드다.</p></li>
+</ol>
+<ul class="simple">
+<li><p>v1 → v2 → v4 → v3 하면 1 + 1 + 2이고, 이는 5보다 작다.</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>노드</p></th>
+<th class="text-align:center head"><p>v1</p></th>
+<th class="text-align:center head"><p>v2</p></th>
+<th class="text-align:center head"><p>v3</p></th>
+<th class="text-align:center head"><p>v4</p></th>
+<th class="text-align:center head"><p>v5</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>경로의 길이</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>4</p></td>
+<td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>3</p></td>
+</tr>
+</tbody>
+</table>
+<p>방문하지 않은 노드 중에서 경로의 길이가 가장 짧은 노드를 선택한다. 여기서는 v5이다. 참고로, v1과 v2, v4는 이미 방문한 노드이다.</p>
+<ol class="simple">
+<li><p>v5를 거쳐 다른 노드로 가는 경로를 계산하여, 현재 값보다 작으면 값을 변경한다. v5와 연결된 노드는 모두 방문한 노드다.</p></li>
+<li><p>마지막으로 남은 노드는 v3이다. 따라서, v1에서 v3로 가는 최단경로의 길이는 4이다.</p></li>
+</ol>
+<p>다익스트라 알고리즘을 정리하면 다음과 같다.</p>
+<ul class="simple">
+<li><p>시작 노드의 경로 길이는 0으로, 다른 노드는 무한대로 초기화한다.</p></li>
+<li><p>방문하지 않은 노드 중에서 경로의 길이가 가장 짧은 노드를 선택한다.</p></li>
+<li><p>위에서 선택한 노드를 거쳐 다른 노드로 가는 비용을 계산한 다음, 현재 값과 비교하여 작은 값을 경로의 길이로 둔다.</p></li>
+<li><p>방문하지 않은 노드 중에서 경로의 길이가 가장 짧은 노드를 선택할 때, 그것이 도착 노드가 될 때까지 위의 두 과정을 반복한다.</p></li>
+</ul>
+<p>이제 그래프와 노드의 개수, 시작 노드, 도착 노드를 인자로 받아 최단경로의 길이를 반환하는 <code class="docutils literal notranslate"><span class="pre">Dijkstra()</span></code> 함수를 정의하여라. 이때, 그래프는 아래와 같이 중첩된 리스트로 표현한다. 예를 들어, graph 리스트의 1번 인덱스 값 <code class="docutils literal notranslate"><span class="pre">[[2,</span> <span class="pre">1],</span> <span class="pre">[5,</span> <span class="pre">3]]</span></code>은 노드1에서 노드2로 가는 길이(또는 가중치)가 1이고, 노드1에서 노드5로 가는 길이가 3라는 의미다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span> <span class="o">=</span> <span class="p">[[],[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">Dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">inf</span>
+
+<span class="k">def</span> <span class="nf">Dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">n_nodes</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="p">:</span>
+    <span class="c1">#노드의 방문 정보를 담은 리스트 </span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n_nodes</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1">#경로 길이를 담은 리스트</span>
+    <span class="n">dst</span> <span class="o">=</span> <span class="p">[</span><span class="n">inf</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n_nodes</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    
+    <span class="c1">#방문하지 않은 노드 중에서 경로의 길이가 가장 짧은 노드를 반환하는 함수-순차탐색</span>
+    <span class="k">def</span> <span class="nf">get_smallest_node</span><span class="p">():</span>
+        <span class="n">min_value</span> <span class="o">=</span> <span class="n">inf</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_nodes</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">and</span> <span class="n">dst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min_value</span> <span class="p">:</span>
+                <span class="n">min_value</span> <span class="o">=</span> <span class="n">dst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">return</span> <span class="n">idx</span>
+    
+    <span class="c1">#시작 노드 경로 길이 0, 방문 정보 True</span>
+    <span class="n">dst</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">nodes</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    
+    
+    <span class="c1">#시작 노드를 거쳐 경우, 경로의 길이 갱신</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="p">:</span>
+        <span class="n">dst</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="c1"># 방문하지 않은 노드 중에서 경로의 길이가 가장 짧은 노드를 찾아 위의 과정 반복</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_nodes</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">:</span>
+        <span class="n">sm_node</span> <span class="o">=</span> <span class="n">get_smallest_node</span><span class="p">()</span>
+        <span class="n">nodes</span><span class="p">[</span><span class="n">sm_node</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        
+        <span class="c1"># 찾은 노드가 targe이면, 더 이상 반복하지 않아도 됨</span>
+        <span class="k">if</span> <span class="n">sm_node</span> <span class="o">==</span> <span class="n">target</span> <span class="p">:</span>
+            <span class="k">return</span> <span class="n">dst</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+        
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">sm_node</span><span class="p">]</span> <span class="p">:</span>
+            <span class="k">if</span> <span class="n">dst</span><span class="p">[</span><span class="n">sm_node</span><span class="p">]</span> <span class="o">+</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">dst</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="p">:</span>
+                <span class="n">dst</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">dst</span><span class="p">[</span><span class="n">sm_node</span><span class="p">]</span> <span class="o">+</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                
+    <span class="k">return</span> <span class="n">dst</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span> <span class="o">=</span> <span class="p">[[],[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p>다익스트라 알고리즘은 가중치가 음수가 아닐 때 사용한다.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">14.4. </span>우선순위 큐<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>우선순위 큐<font size="2">Priority Queue</font>는 우선순위가 높은 항목을 먼저 꺼내는 자료형이다. 파이썬에서는 <code class="docutils literal notranslate"><span class="pre">queue</span></code> 모듈의 <code class="docutils literal notranslate"><span class="pre">PriorityQueue</span></code>클래스를 이용하여 우선순위 큐를 사용할 수 있고, 가장 낮은 항목을 먼저 꺼낸다.</p>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>스택 : 선입후출<font size="2">Last In First Out, LIFO</font><br />
+큐 : 선입선출<font size="2">First In First Out, FIFO</font></p>
+</div>
+<p>우선순위 큐에 항목을 추가할 때는 <code class="docutils literal notranslate"><span class="pre">put()</span></code> 메서드를 이용하며, 항목을 꺼낼 때는 <code class="docutils literal notranslate"><span class="pre">get()</span></code> 메서드를 이용한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">PriorityQueue</span>
+
+<span class="n">pque1</span> <span class="o">=</span> <span class="n">PriorityQueue</span><span class="p">()</span>
+<span class="n">pque1</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">pque1</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">pque1</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">pque1</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pque1</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pque1</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pque1</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pque1</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>항목이 추가된 순서와 상관없이 우선순위가 높은 항목, 여기서는 값이 작은 항목부터 반환되는 것을 볼 수 있다.</p>
+<p>우선순위 큐에 항목을 추가할 때, 우선순위와 항목을 함께 지정할 수도 있다. 형식은 <code class="docutils literal notranslate"><span class="pre">(우선순위,</span> <span class="pre">항목)</span></code>이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pque2</span> <span class="o">=</span> <span class="n">PriorityQueue</span><span class="p">()</span>
+<span class="n">pque2</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">pque2</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">pque2</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">pque2</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pque2</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pque2</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pque2</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pque2</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 3)
+(1, 1)
+(2, 5)
+(7, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>그러면, 첫 번째 항목의 값이 작은(또는 우선순위가 높은) 항목부터 반환되는 것을 볼 수 있다.</p>
+<p>위의 다익스트라 <code class="docutils literal notranslate"><span class="pre">Dijkstra()</span></code>함수 정의에서 방문하지 않은 노드 중에서 경로의 길이가 가장 짧은 노드를 찾을 때, 순차탐색을 사용하였다. 순차탐색은 원하는 항목을 찾을 수 있다는 장점이 있지만 느리다. 우리는 순차탐색 대신 우선순위 큐를 사용할 수 있다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">inf</span>
+<span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">PriorityQueue</span>
+
+<span class="k">def</span> <span class="nf">Dijkstra1</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">n_nodes</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="p">:</span>
+
+    <span class="c1">#경로 길이를 담은 리스트</span>
+    <span class="n">dst</span> <span class="o">=</span> <span class="p">[</span><span class="n">inf</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n_nodes</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">pque</span> <span class="o">=</span> <span class="n">PriorityQueue</span><span class="p">()</span>
+    <span class="n">pque</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">start</span><span class="p">))</span>
+    <span class="n">dst</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">pque</span><span class="o">.</span><span class="n">empty</span><span class="p">()</span> <span class="p">:</span>
+        <span class="n">d</span><span class="p">,</span> <span class="n">sm_node</span> <span class="o">=</span> <span class="n">pque</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">dst</span><span class="p">[</span><span class="n">sm_node</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">d</span> <span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">sm_node</span><span class="p">]</span> <span class="p">:</span>
+            <span class="k">if</span> <span class="n">dst</span><span class="p">[</span><span class="n">sm_node</span><span class="p">]</span> <span class="o">+</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">dst</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="p">:</span>
+                <span class="n">dst</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">dst</span><span class="p">[</span><span class="n">sm_node</span><span class="p">]</span> <span class="o">+</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">pque</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="n">dst</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+                
+    <span class="k">return</span> <span class="n">dst</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span> <span class="o">=</span> <span class="p">[[],[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Dijkstra1</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">14.5. </span>연습 문제<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ch13.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">13. </span>정렬</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By HJ & codingalzi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
