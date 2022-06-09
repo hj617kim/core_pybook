@@ -50,7 +50,7 @@
 
 def bubble_sort(a_list) :
     for i in range(1, len(a_list)) :  #패스
-        for j in range(len(a_list)-1) : #패스 별 크기비교 및 자리교환
+        for j in range(len(a_list)-i) : #패스 별 크기비교 및 자리교환
             if a_list[j] > a_list[j + 1] :
                 a_list[j], a_list[j + 1] = a_list[j + 1], a_list[j]
 
