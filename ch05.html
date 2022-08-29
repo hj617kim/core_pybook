@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. 파이썬 프로그래밍의 기초 III &#8212; core_pybook</title>
+    <title>5. 기초 III(제어문, 함수, 이터러블과 이터레이터, 예외처리) &#8212; core_pybook</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,8 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. 파이썬 프로그래밍의 기초 IV" href="ch06.html" />
-    <link rel="prev" title="4. 파이썬 프로그래밍의 기초 II" href="ch04.html" />
+    <link rel="next" title="6. 기초 IV(함수, 모듈)" href="ch06.html" />
+    <link rel="prev" title="4. 기초 II(모음 자료형)" href="ch04.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -107,27 +107,27 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch03.html">
-   3. 파이썬 프로그래밍의 기초 I
+   3. 기초 I(기본 자료형, 변수, 함수)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch04.html">
-   4. 파이썬 프로그래밍의 기초 II
+   4. 기초 II(모음 자료형)
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   5. 파이썬 프로그래밍의 기초 III
+   5. 기초 III(제어문, 함수, 이터러블과 이터레이터, 예외처리)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch06.html">
-   6. 파이썬 프로그래밍의 기초 IV
+   6. 기초 IV(함수, 모듈)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch07.html">
-   7. 파이썬 프로그래밍의 기초 V
+   7. 기초 V(클래스)
   </a>
  </li>
  <li class="toctree-l1">
@@ -515,7 +515,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>파이썬 프로그래밍의 기초 III</h1>
+                <h1>기초 III(제어문, 함수, 이터러블과 이터레이터, 예외처리)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -771,7 +771,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="iii">
-<h1><span class="section-number">5. </span>파이썬 프로그래밍의 기초 III<a class="headerlink" href="#iii" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>기초 III(제어문, 함수, 이터러블과 이터레이터, 예외처리)<a class="headerlink" href="#iii" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2><span class="section-number">5.1. </span>제어문<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>프로그램 실행의 흐름을 제어하는 명령문을 살펴보자.</p>
@@ -882,7 +882,7 @@ Here!
 </div>
 <div class="info admonition">
 <p class="admonition-title">조건부 표현식<font size="2">conditional expression</font>  </p>
-<p>조건부 표현식을 사용하면, <code class="docutils literal notranslate"><span class="pre">if-else</span></code>문을 다음과 같이 한 줄에 간단히 표현할 수 있다.</p>
+<p>조건부 표현식은 <code class="docutils literal notranslate"><span class="pre">if-else</span></code> 조건문 형식을 빌려 조건에 따라 다른 값을 나타내는 표현식으로, 형식은 다음과 같다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;x is negative&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;x is non-negative&#39;</span>
 </pre></div>
 </div>
@@ -1465,7 +1465,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f130429a970&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7fe3cc63d8b0&gt;
 [1, 2, 3]
 </pre></div>
 </div>
@@ -2434,13 +2434,13 @@ Input :</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4. </span>파이썬 프로그래밍의 기초 II</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>기초 II(모음 자료형)</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ch06.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>파이썬 프로그래밍의 기초 IV</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>기초 IV(함수, 모듈)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
