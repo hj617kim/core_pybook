@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 파이썬 프로그래밍의 기초 II
+# # 기초 II(모음 자료형)
 
 # ## 모음 자료형
 

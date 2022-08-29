@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 파이썬 프로그래밍의 기초 III
+# # 기초 III(제어문, 함수, 이터러블과 이터레이터, 예외처리)
 
 # ## 제어문
 
@@ -111,7 +111,7 @@ else :
 
 # :::{admonition} 조건부 표현식<font size="2">conditional expression</font>  
 # :class: info  
-# 조건부 표현식을 사용하면, `if-else`문을 다음과 같이 한 줄에 간단히 표현할 수 있다.  
+# 조건부 표현식은 `if-else` 조건문 형식을 빌려 조건에 따라 다른 값을 나타내는 표현식으로, 형식은 다음과 같다.  
 # 
 # ```
 # 'x is negative' if x < 0 else 'x is non-negative'

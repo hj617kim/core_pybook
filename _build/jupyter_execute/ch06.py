@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 파이썬 프로그래밍의 기초 IV
+# # 기초 IV(함수, 모듈)
 
 # ## 함수
 

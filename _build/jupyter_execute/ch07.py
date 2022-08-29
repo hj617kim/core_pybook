@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 파이썬 프로그래밍의 기초 V
+# # 기초 V(클래스)
 
 # ## 클래스
 
