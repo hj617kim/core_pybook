@@ -708,6 +708,31 @@
      4.2.12. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id61">
+     4.2.13. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id62">
+     4.2.14. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id63">
+     4.2.15. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id64">
+     4.2.16. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id65">
+     4.2.17. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1169,6 +1194,31 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id60">
      4.2.12. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id61">
+     4.2.13. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id62">
+     4.2.14. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id63">
+     4.2.15. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id64">
+     4.2.16. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id65">
+     4.2.17. 문제
     </a>
    </li>
   </ul>
@@ -2641,7 +2691,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7fd2b4113c40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f724c2a5dc0&gt;
 </pre></div>
 </div>
 </div>
@@ -3710,10 +3760,10 @@ None
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;World&#39;, &#39;Hi&#39;, &#39;Hello&#39;}
-{&#39;World&#39;, &#39;Hi&#39;, &#39;Hello&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Hi&#39;, &#39;World&#39;, &#39;Hello&#39;}
+{&#39;Hi&#39;, &#39;World&#39;, &#39;Hello&#39;}
 {&#39;세계&#39;, &#39;안녕&#39;}
-{(&#39;Hello&#39;, &#39;안녕&#39;), (&#39;World&#39;, &#39;세계&#39;), (&#39;Hi&#39;, &#39;안녕&#39;)}
+{(&#39;World&#39;, &#39;세계&#39;), (&#39;Hi&#39;, &#39;안녕&#39;), (&#39;Hello&#39;, &#39;안녕&#39;)}
 </pre></div>
 </div>
 </div>
@@ -4060,6 +4110,69 @@ Input :</p>
 <span class="n">Most</span> <span class="n">expensive</span> <span class="n">food</span> <span class="p">:</span> <span class="n">chicken</span>  
 </pre></div>
 </div>
+</div>
+<div class="section" id="id61">
+<h3><span class="section-number">4.2.13. </span>문제<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h3>
+<p>정수 리스트가 주어졌을 때, 최댓값과 최솟값을 제외한 리스트를 출력하는 코드를 작성하여라. 최댓값과 최솟값이 여러 개라도 하나만 삭제한다.</p>
+<p>예를 들어, 아래 리스트에서 최댓값은 96, 최솟값은 73이므로, 이 두 값을 제외한 <code class="docutils literal notranslate"><span class="pre">[85,</span> <span class="pre">78,</span> <span class="pre">88,</span> <span class="pre">81,</span> <span class="pre">92]</span></code>을 출력한다.<br />
+Input : <code class="docutils literal notranslate"><span class="pre">[85,</span> <span class="pre">96,</span> <span class="pre">78,</span> <span class="pre">88,</span> <span class="pre">81,</span> <span class="pre">92,</span> <span class="pre">73]</span></code><br />
+Output : <code class="docutils literal notranslate"><span class="pre">[85,</span> <span class="pre">78,</span> <span class="pre">88,</span> <span class="pre">81,</span> <span class="pre">92]</span></code></p>
+<p>최솟값이 여러 개 있다면 가장 앞에 등장하는 최솟값 하나만 삭제하면 된다.<br />
+Input : <code class="docutils literal notranslate"><span class="pre">[85,</span> <span class="pre">96,</span> <span class="pre">78,</span> <span class="pre">88,</span> <span class="pre">81,</span> <span class="pre">92,</span> <span class="pre">73,</span> <span class="pre">73]</span></code><br />
+Output : <code class="docutils literal notranslate"><span class="pre">[85,</span> <span class="pre">78,</span> <span class="pre">88,</span> <span class="pre">81,</span> <span class="pre">92,</span> <span class="pre">73]</span></code></p>
+</div>
+<div class="section" id="id62">
+<h3><span class="section-number">4.2.14. </span>문제<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h3>
+<p>학생의 이름과 점수를 연결하여 저장하는 프로그램을 만들어보자.<br />
+입력으로 학생의 이름과 점수가 두 줄로 들어오는데, 각 줄의 항목은 공백으로 구분된다.<br />
+Input:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">강현</span> <span class="n">나현</span> <span class="n">다현</span> <span class="n">라현</span> 
+<span class="mi">95</span> <span class="mi">92</span> <span class="mi">96</span> <span class="mi">88</span> 
+</pre></div>
+</div>
+<p>아래와 같이 학생의 이름과 점수를 튜플로 묶어 리스트로 출력하는 코드를 작성하여라.</p>
+<p>Out:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[(</span><span class="s1">&#39;강현&#39;</span><span class="p">,</span> <span class="s1">&#39;95&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;나현&#39;</span><span class="p">,</span> <span class="s1">&#39;92&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;다현&#39;</span><span class="p">,</span> <span class="s1">&#39;96&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;라현&#39;</span><span class="p">,</span> <span class="s1">&#39;88&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id63">
+<h3><span class="section-number">4.2.15. </span>문제<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h3>
+<p>최고 점수와 최저 점수를 받은 학생 이름을 출력하는 프로그램을 만들어보자.<br />
+입력으로 학생의 이름과 점수가 두 줄로 들어오는데, 각 줄의 항목은 공백으로 구분된다.</p>
+<p>Input:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">강현</span> <span class="n">나현</span> <span class="n">다현</span> <span class="n">라현</span> 
+<span class="mi">95</span> <span class="mi">92</span> <span class="mi">96</span> <span class="mi">88</span> 
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">최고</span> <span class="p">:</span> <span class="n">다현</span>  
+<span class="n">최저</span> <span class="p">:</span> <span class="n">라현</span>  
+</pre></div>
+</div>
+</div>
+<div class="section" id="id64">
+<h3><span class="section-number">4.2.16. </span>문제<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h3>
+<p>100m 수영 경기에 참여한 선수들의 기록(초 단위)이 선수 번호 순으로 리스트에 정리돼 있다.<br />
+아래처럼 1, 2, 3등의 번호와 기록을 출력하는 코드를 작성하라.</p>
+<p>예를 들어, 아래 리스트에서 1번 기록은 64초, 2번 기록은 62초이며, 8번 기록은 100초이다.<br />
+이중 4번 기록이 54초로 가장 빠르다.</p>
+<p>Input: <code class="docutils literal notranslate"><span class="pre">num_list</span> <span class="pre">=</span> <span class="pre">[64,</span> <span class="pre">62,</span> <span class="pre">55,</span> <span class="pre">54,</span> <span class="pre">60,</span> <span class="pre">58,</span> <span class="pre">72,</span> <span class="pre">100]</span></code><br />
+Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="n">등</span> <span class="mi">4</span><span class="n">번</span> <span class="mi">54</span><span class="n">초</span>    
+<span class="mi">2</span><span class="n">등</span> <span class="mi">3</span><span class="n">번</span> <span class="mi">55</span><span class="n">초</span>  
+<span class="mi">3</span><span class="n">등</span> <span class="mi">6</span><span class="n">번</span> <span class="mi">58</span><span class="n">초</span>  
+</pre></div>
+</div>
+</div>
+<div class="section" id="id65">
+<h3><span class="section-number">4.2.17. </span>문제<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h3>
+<p>(1) 문자열이 주어졌을 때, 홀수번째 문자만 추출해 출력하는 코드를 작성하라.</p>
+<p>Input: <code class="docutils literal notranslate"><span class="pre">words</span> <span class="pre">=</span> <span class="pre">'abcdefg'</span></code><br />
+Output: <code class="docutils literal notranslate"><span class="pre">aceg</span></code></p>
+<p>(2) 문자열이 주어졌을 때, 짝수번째 문자만 추출해 출력하는 코드를 작성하라.</p>
+<p>Input: <code class="docutils literal notranslate"><span class="pre">words</span> <span class="pre">=</span> <span class="pre">'abcdefg'</span></code><br />
+Output: <code class="docutils literal notranslate"><span class="pre">bdf</span></code></p>
 </div>
 </div>
 </div>
