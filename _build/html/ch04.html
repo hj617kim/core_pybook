@@ -733,6 +733,16 @@
      4.2.17. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id66">
+     4.2.18. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id67">
+     4.2.19. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1219,6 +1229,16 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id65">
      4.2.17. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id66">
+     4.2.18. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id67">
+     4.2.19. 문제
     </a>
    </li>
   </ul>
@@ -2691,7 +2711,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f724c2a5dc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f80603353c0&gt;
 </pre></div>
 </div>
 </div>
@@ -3760,10 +3780,10 @@ None
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Hi&#39;, &#39;World&#39;, &#39;Hello&#39;}
-{&#39;Hi&#39;, &#39;World&#39;, &#39;Hello&#39;}
-{&#39;세계&#39;, &#39;안녕&#39;}
-{(&#39;World&#39;, &#39;세계&#39;), (&#39;Hi&#39;, &#39;안녕&#39;), (&#39;Hello&#39;, &#39;안녕&#39;)}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;World&#39;, &#39;Hi&#39;, &#39;Hello&#39;}
+{&#39;World&#39;, &#39;Hi&#39;, &#39;Hello&#39;}
+{&#39;안녕&#39;, &#39;세계&#39;}
+{(&#39;Hi&#39;, &#39;안녕&#39;), (&#39;Hello&#39;, &#39;안녕&#39;), (&#39;World&#39;, &#39;세계&#39;)}
 </pre></div>
 </div>
 </div>
@@ -4173,6 +4193,47 @@ Output: <code class="docutils literal notranslate"><span class="pre">aceg</span>
 <p>(2) 문자열이 주어졌을 때, 짝수번째 문자만 추출해 출력하는 코드를 작성하라.</p>
 <p>Input: <code class="docutils literal notranslate"><span class="pre">words</span> <span class="pre">=</span> <span class="pre">'abcdefg'</span></code><br />
 Output: <code class="docutils literal notranslate"><span class="pre">bdf</span></code></p>
+</div>
+<div class="section" id="id66">
+<h3><span class="section-number">4.2.18. </span>문제<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h3>
+<p>투표 결과를 담은 리스트 <code class="docutils literal notranslate"><span class="pre">results</span></code>가 주어졌을 때 각 후보자의 이름과 득표수를 튜플로 묶은 리스트를 출력하는 코드를 리스트 조건제시법을 사용해 작성하라.<br />
+단, 출력하는 리스트의 항목의 순서는 중요하지 않다.<br />
+Input:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;나연&#39;</span><span class="p">,</span> <span class="s1">&#39;나연&#39;</span><span class="p">,</span> <span class="s1">&#39;가연&#39;</span><span class="p">,</span> <span class="s1">&#39;다연&#39;</span><span class="p">,</span> <span class="s1">&#39;마연&#39;</span><span class="p">,</span> <span class="s1">&#39;나연&#39;</span><span class="p">,</span> <span class="s1">&#39;가연&#39;</span><span class="p">,</span> <span class="s1">&#39;나연&#39;</span><span class="p">,</span> <span class="s1">&#39;다연&#39;</span><span class="p">,</span> <span class="s1">&#39;다연&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[(</span><span class="s1">&#39;마연&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;나연&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;다연&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;가연&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>  
+</pre></div>
+</div>
+</div>
+<div class="section" id="id67">
+<h3><span class="section-number">4.2.19. </span>문제<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
+<p>어떤 문장의 각 문자를 일정한 거리만큼 밀어서 다른 문자로 변경하는 암호화 방법을 시저 암호라 한다.<br />
+예를 들어, <code class="docutils literal notranslate"><span class="pre">CAT</span></code>을 1글자씩 밀어내 암호화하면 <code class="docutils literal notranslate"><span class="pre">DBU</span></code>이다. 암호화할 영문장과 밀어내는 글자 수가 주어졌을 때, 암호화된 문장을 출력하여라. 단, 암호화할 영문장에는 공백이 없으며, 밀어내는 글자 수는 0보다 크고 26보다 작다고 가정한다.</p>
+<p>Input:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="s1">&#39;CAT&#39;</span>
+<span class="n">num</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;DBU&#39;</span>
+</pre></div>
+</div>
+<p>필요하다면 <code class="docutils literal notranslate"><span class="pre">string</span></code> 모듈의 ascii_uppercase를 이용하라.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ABCDEFGHIJKLMNOPQRSTUVWXYZ
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
