@@ -503,6 +503,16 @@
      5.5.11. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id26">
+     5.5.12. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id27">
+     5.5.13. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -757,6 +767,16 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id25">
      5.5.11. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id26">
+     5.5.12. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id27">
+     5.5.13. 문제
     </a>
    </li>
   </ul>
@@ -1465,7 +1485,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f02604dc370&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7fe9bc2fe070&gt;
 [1, 2, 3]
 </pre></div>
 </div>
@@ -2401,6 +2421,72 @@ Input :</p>
 </pre></div>
 </div>
 <p>Output : <code class="docutils literal notranslate"><span class="pre">Total</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">bingo</span> <span class="pre">is</span> <span class="pre">12</span></code></p>
+</div>
+<div class="section" id="id26">
+<h3><span class="section-number">5.5.12. </span>문제<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<p>주어진 빙고판에서 왼쪽 상단에서 오른쪽 하단을 연결한 대각선() 빙고의 총 개수를 세는 <code class="docutils literal notranslate"><span class="pre">find_left_diagonal_bingo()</span></code> 프로그램을 만들어보자. 빙고판의 행의 개수와 열의 개수는 모두 2이상이고, 행의 기수와 열의 개수는 같지 않을 수도 있다. 빙고 여부는 <code class="docutils literal notranslate"><span class="pre">'o'</span></code>기준으로 생각하며 빙고를 만족하기 위해 나란히 있어야 하는 <code class="docutils literal notranslate"><span class="pre">'o'</span></code>의 개수는 min(행의 개수, 열의 개수)이다.</p>
+<ul class="simple">
+<li><p>행의 개수와 열의 개수가 같은 경우. 아래 예제에서는 (0, 0), (1, 1), (2, 2) 위치의 값만 확인하면 됨.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bingo_board1</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">],</span>
+<span class="go">                    [&#39;x&#39;, &#39;o&#39;, &#39;x&#39;],</span>
+<span class="go">                    [&#39;o&#39;, &#39;o&#39;, &#39;o&#39;]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">find_left_diagonal_bingo</span><span class="p">(</span><span class="n">bingo_board1</span><span class="p">))</span> 
+<span class="go">1</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>행의 개수가 열의 개수보다 작은 경우. 아래 예제에서는 (0, 0), (1, 1), (2, 2)와 (0, 1), (1, 2), (2, 3) 그리고 (0, 2), (1, 3), (2, 4) 위치의 값만 확인하면 됨.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bingo_board3</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">],</span>
+<span class="go">                    [&#39;x&#39;, &#39;o&#39;, &#39;x&#39;],</span>
+<span class="go">                    [&#39;o&#39;, &#39;x&#39;, &#39;o&#39;],</span>
+<span class="go">                    [&#39;x&#39;, &#39;o&#39;, &#39;o&#39;],</span>
+<span class="go">                    [&#39;o&#39;, &#39;x&#39;, &#39;o&#39;],]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">find_left_diagonal_bingo</span><span class="p">(</span><span class="n">bingo_board3</span><span class="p">))</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>[참고] 파이썬 내장함수 <code class="docutils literal notranslate"><span class="pre">abs()</span></code>는 인자로 들어온 숫자의 절대값을 반환한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">))</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id27">
+<h3><span class="section-number">5.5.13. </span>문제<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<p>n × n 마방진이란, 1부터 n × n까지의 자연수를 중복 없이 모두 사용하면서 가로, 세로, 대각선에 있는 수들의 합이 모두 같도록 n × n 모양으로 배열한 것을 말한다. n이 홀수일 때는 다음과 같은 방법을 사용한다.</p>
+<ul class="simple">
+<li><p>첫 번째 행 가운데 칸에 <code class="docutils literal notranslate"><span class="pre">1</span></code>을 둔다.</p></li>
+<li><p>그 다음 자연수를 대각선 방향으로 오른쪽 위 칸에 넣는 것을 모든 칸이 채워질 때까지 반복한다.</p>
+<ul>
+<li><p>이때 해당하는 칸이 마방진의 위쪽으로 벗어난 경우에는 그 열의 가장 아래쪽의 칸으로 이동하여 수를 넣는다.</p></li>
+<li><p>이때 해당하는 칸이 마방진의 오른쪽으로 벗어나는 경우에는 그 행의 가장 왼쪽의 칸으로 이동하여 수를 넣는다.</p></li>
+</ul>
+</li>
+<li><p>이때 해당하는 칸에 이미 숫자가 있다면, 현재 위치 바로 아래 칸에 수를 넣는다.</p></li>
+</ul>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch05/magic_square3.png" style="width:500px;">
+</div>
+<p>홀수 n을 인자로 받아 n × n 마방진을 반환하는 <code class="docutils literal notranslate"><span class="pre">magic_square()</span></code> 함수를 정의하여라.</p>
+<br>
+<br>
+<br>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">magic_square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">[[8, 1, 6],</span>
+<span class="go"> [3, 5, 7],</span>
+<span class="go"> [4, 9, 2]]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">magic_square</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="go">[[17, 24,  1,  8, 15],</span>
+<span class="go"> [23,  5,  7, 14, 16],</span>
+<span class="go"> [ 4,  6, 13, 20, 22],</span>
+<span class="go"> [10, 12, 19, 21,  3],</span>
+<span class="go"> [11, 18, 25,  2,  9]]</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
