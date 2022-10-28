@@ -771,7 +771,7 @@ class Fraction(builtins.object)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f8b0846c9a0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f1ff40dc9a0&gt;
 </pre></div>
 </div>
 </div>
@@ -1379,43 +1379,39 @@ class Fraction(builtins.object)
 </li>
 </ul>
 <p>위 상황에 맞게 <code class="docutils literal notranslate"><span class="pre">Monster</span></code>와 <code class="docutils literal notranslate"><span class="pre">Player</span></code> 클래스를 구현하고, 코드를 작성하라.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Monster</span></code> 클래스</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Monster</span></code> 클래스</p>
-<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">Monster</span></code> 클래스의 인스턴스는 <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">monster_type</span></code>, <code class="docutils literal notranslate"><span class="pre">hp</span></code>, <code class="docutils literal notranslate"><span class="pre">damage</span></code>를 받아 다음과 같이 생성한다.</p></li>
-</ul>
-</li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Monster</span><span class="p">(</span><span class="s1">&#39;redDragon&#39;</span><span class="p">,</span> <span class="s1">&#39;fire&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* 상대 몬스터의 속성을 확인해 공격력이 변경되야 하면 `True`, 아니면 `False`를 반환하는 `check_enemy()` 메서드를 정의하라.   
-* 몬스터의 속성에 따라 변경된 공격력으로 상대의 hp를 감소시키고 아래와 같은 메시지를 출력하는 `critical_attack()` 메서드를 정의하라.    
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">몬스터</span> <span class="pre">A가</span> <span class="pre">몬스터</span> <span class="pre">C를</span> <span class="pre">강하게</span> <span class="pre">공격했습니다.</span> <span class="pre">몬스터</span> <span class="pre">C의</span> <span class="pre">HP는</span> <span class="pre">2입니다.</span></code><br />
-* <code class="docutils literal notranslate"><span class="pre">check_enemy()</span></code>의 반환값이 <code class="docutils literal notranslate"><span class="pre">True</span></code>면 <code class="docutils literal notranslate"><span class="pre">critical_attack()</span></code>를 실행하고, <code class="docutils literal notranslate"><span class="pre">False</span></code>면 기본 공격력만큼 상대의 hp를 감소시키고 아래와 같은 메시지를 출력하는 <code class="docutils literal notranslate"><span class="pre">attack()</span></code> 메서드를 정의하라.<br />
-<code class="docutils literal notranslate"><span class="pre">몬스터</span> <span class="pre">A가</span> <span class="pre">몬스터</span> <span class="pre">C를</span> <span class="pre">공격했습니다.</span> <span class="pre">몬스터</span> <span class="pre">C의</span> <span class="pre">HP는</span> <span class="pre">2입니다.</span></code></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Player</span></code> 클래스</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">Player</span></code> 클래스의 인스턴스는 다음과 같이 생성한다. 이때, 몬스터를 저장할 빈리스트<code class="docutils literal notranslate"><span class="pre">monster_list</span></code>를 정의해야 한다.</p></li>
+<li><p>상대 몬스터의 속성을 확인해 공격력이 변경되야 하면 <code class="docutils literal notranslate"><span class="pre">True</span></code>, 아니면 <code class="docutils literal notranslate"><span class="pre">False</span></code>를 반환하는 <code class="docutils literal notranslate"><span class="pre">check_enemy()</span></code> 메서드를 정의하라.</p></li>
+<li><p>몬스터의 속성에 따라 변경된 공격력으로 상대의 hp를 감소시키고 아래와 같은 메시지를 출력하는 <code class="docutils literal notranslate"><span class="pre">critical_attack()</span></code> 메서드를 정의하라.<br />
+<code class="docutils literal notranslate"><span class="pre">몬스터</span> <span class="pre">A가</span> <span class="pre">몬스터</span> <span class="pre">C를</span> <span class="pre">강하게</span> <span class="pre">공격했습니다.</span> <span class="pre">몬스터</span> <span class="pre">C의</span> <span class="pre">HP는</span> <span class="pre">2입니다.</span></code></p></li>
 </ul>
-</li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">check_enemy()</span></code>의 반환값이 <code class="docutils literal notranslate"><span class="pre">True</span></code>면 <code class="docutils literal notranslate"><span class="pre">critical_attack()</span></code>를 실행하고, <code class="docutils literal notranslate"><span class="pre">False</span></code>면 기본 공격력만큼 상대의 hp를 감소시키고 아래와 같은 메시지를 출력하는 <code class="docutils literal notranslate"><span class="pre">attack()</span></code> 메서드를 정의하라.<br />
+<code class="docutils literal notranslate"><span class="pre">몬스터</span> <span class="pre">A가</span> <span class="pre">몬스터</span> <span class="pre">C를</span> <span class="pre">공격했습니다.</span> <span class="pre">몬스터</span> <span class="pre">C의</span> <span class="pre">HP는</span> <span class="pre">2입니다.</span></code></p></li>
+</ul>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Player</span></code> 클래스</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Player</span></code> 클래스의 인스턴스는 다음과 같이 생성한다. 이때, 몬스터를 저장할 빈리스트<code class="docutils literal notranslate"><span class="pre">monster_list</span></code>를 정의해야 한다.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">player1</span> <span class="o">=</span> <span class="n">Player</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* 아래와 같이 몬스터 정보를 입력받아 `monster_list`에 추가하는 `add_monster()` 메서드를 정의하라. 
-</pre></div>
-</div>
+<ul class="simple">
+<li><p>아래와 같이 몬스터 정보를 입력받아 <code class="docutils literal notranslate"><span class="pre">monster_list</span></code>에 추가하는 <code class="docutils literal notranslate"><span class="pre">add_monster()</span></code> 메서드를 정의하라.</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">player1</span><span class="o">.</span><span class="n">add_monster</span><span class="p">(</span><span class="s1">&#39;redDragon fire 10 3&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* 대결할 몬스터를 선택하는 `select_monster()` 메서드를 정의하라. `monster_list`의 가장 처음에 있는 항목을 말한다.  
-* `monster_list`에서 가장 처음에 있는 항목을 삭제하는 `delete_monster()` 메서드를 정의하라.    
-</pre></div>
-</div>
+<ul class="simple">
+<li><p>대결할 몬스터를 선택하는 <code class="docutils literal notranslate"><span class="pre">select_monster()</span></code> 메서드를 정의하라. <code class="docutils literal notranslate"><span class="pre">monster_list</span></code>의 가장 처음에 있는 항목을 말한다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">monster_list</span></code>에서 가장 처음에 있는 항목을 삭제하는 <code class="docutils literal notranslate"><span class="pre">delete_monster()</span></code> 메서드를 정의하라.</p></li>
+</ul>
 </div>
 </div>
 </div>
