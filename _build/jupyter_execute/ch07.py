@@ -727,31 +727,39 @@ isinstance(2.0, str)
 # 
 # 위 상황에 맞게 `Monster`와 `Player` 클래스를 구현하고, 코드를 작성하라.   
 # 
-# * `Monster` 클래스   
-#     * `Monster` 클래스의 인스턴스는 `name`, `monster_type`, `hp`, `damage`를 받아 다음과 같이 생성한다.    
+# **`Monster` 클래스**   
+# * `Monster` 클래스의 인스턴스는 `name`, `monster_type`, `hp`, `damage`를 받아 다음과 같이 생성한다.    
 # ```python  
 # >>> Monster('redDragon', 'fire', 10, 3)
 # ```   
 #    
-#     * 상대 몬스터의 속성을 확인해 공격력이 변경되야 하면 `True`, 아니면 `False`를 반환하는 `check_enemy()` 메서드를 정의하라.   
-#     * 몬스터의 속성에 따라 변경된 공격력으로 상대의 hp를 감소시키고 아래와 같은 메시지를 출력하는 `critical_attack()` 메서드를 정의하라.    
-#    `몬스터 A가 몬스터 C를 강하게 공격했습니다. 몬스터 C의 HP는 2입니다.`  
-#     * `check_enemy()`의 반환값이 `True`면 `critical_attack()`를 실행하고, `False`면 기본 공격력만큼 상대의 hp를 감소시키고 아래와 같은 메시지를 출력하는 `attack()` 메서드를 정의하라.    
-#     `몬스터 A가 몬스터 C를 공격했습니다. 몬스터 C의 HP는 2입니다.`   
-#     
-#     
-# * `Player` 클래스
-#     * `Player` 클래스의 인스턴스는 다음과 같이 생성한다. 이때, 몬스터를 저장할 빈리스트`monster_list`를 정의해야 한다.  
+# 
+
+# * 상대 몬스터의 속성을 확인해 공격력이 변경되야 하면 `True`, 아니면 `False`를 반환하는 `check_enemy()` 메서드를 정의하라.   
+# * 몬스터의 속성에 따라 변경된 공격력으로 상대의 hp를 감소시키고 아래와 같은 메시지를 출력하는 `critical_attack()` 메서드를 정의하라.    
+#   `몬스터 A가 몬스터 C를 강하게 공격했습니다. 몬스터 C의 HP는 2입니다.`    
+
+# * `check_enemy()`의 반환값이 `True`면 `critical_attack()`를 실행하고, `False`면 기본 공격력만큼 상대의 hp를 감소시키고 아래와 같은 메시지를 출력하는 `attack()` 메서드를 정의하라.    
+#   `몬스터 A가 몬스터 C를 공격했습니다. 몬스터 C의 HP는 2입니다.`   
+# 
+
+# **`Player` 클래스**  
+# 
+# * `Player` 클래스의 인스턴스는 다음과 같이 생성한다. 이때, 몬스터를 저장할 빈리스트`monster_list`를 정의해야 한다.  
 # ```python
 # >>> player1 = Player()
 # ```   
-#   
-#     * 아래와 같이 몬스터 정보를 입력받아 `monster_list`에 추가하는 `add_monster()` 메서드를 정의하라. 
+
+# * 아래와 같이 몬스터 정보를 입력받아 `monster_list`에 추가하는 `add_monster()` 메서드를 정의하라.   
 # ```python
 # >>> player1.add_monster('redDragon fire 10 3')
 # ```
-#        
-#     * 대결할 몬스터를 선택하는 `select_monster()` 메서드를 정의하라. `monster_list`의 가장 처음에 있는 항목을 말한다.  
-#     * `monster_list`에서 가장 처음에 있는 항목을 삭제하는 `delete_monster()` 메서드를 정의하라.    
 
-# 
+# * 대결할 몬스터를 선택하는 `select_monster()` 메서드를 정의하라. `monster_list`의 가장 처음에 있는 항목을 말한다.  
+# * `monster_list`에서 가장 처음에 있는 항목을 삭제하는 `delete_monster()` 메서드를 정의하라.  
+
+# In[ ]:
+
+
+
+
