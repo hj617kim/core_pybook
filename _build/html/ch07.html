@@ -393,6 +393,11 @@
      7.3.5. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     7.3.6. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -537,6 +542,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id13">
      7.3.5. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     7.3.6. 문제
     </a>
    </li>
   </ul>
@@ -761,7 +771,7 @@ class Fraction(builtins.object)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f35f415c220&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f07dc07b9a0&gt;
 </pre></div>
 </div>
 </div>
@@ -1347,6 +1357,63 @@ class Fraction(builtins.object)
 <p>잔액보다 많은 금액을 송금할 수 없다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">seoul</span><span class="o">.</span><span class="n">send_money</span><span class="p">(</span><span class="s1">&#39;5678&#39;</span><span class="p">,</span> <span class="n">suwon</span><span class="p">,</span> <span class="mi">100_000</span><span class="p">)</span>  <span class="c1">#순서대로 비밀번호, 은행명, 금액</span>
 <span class="go">잔액을 초과하는 금액은 송금할 수 없습니다. </span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3><span class="section-number">7.3.6. </span>문제<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>두 명의 선수가 참여하는 몬스터 대전이 열린다. 그 내용은 아래와 같다.</p>
+<ul class="simple">
+<li><p>선수는 경기에 참여할 몬스터 3마리를 선택한다. 각 선수가 선택한 순서대로 몬스터는 대결한다.<br />
+예를 들어, <code class="docutils literal notranslate"><span class="pre">player1</span></code>이 <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>를 <code class="docutils literal notranslate"><span class="pre">player2</span></code>가 <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">D</span></code>, <code class="docutils literal notranslate"><span class="pre">E</span></code>를 선택했다면 <code class="docutils literal notranslate"><span class="pre">A</span></code>와 <code class="docutils literal notranslate"><span class="pre">C</span></code>가 먼저 대결한다.</p></li>
+<li><p>첫 번째 선수의 몬스터가 먼저 공격하고 이후 번갈아가며 공격한다.</p></li>
+<li><p>몬스터는 각자 가지고 있는 공격력만큼 상대 몬스터에게 데미지를 준다. 이때 상대 몬스터는 해당 데미지만큼 자신이 보유한 체력을 잃는다.</p></li>
+<li><p>체력이 0이하가 된 몬스터는 대전에서 제외되고 다음 순서의 몬스터가 등장한다. 이때 다음 순서의 몬스터가 없다면 상대 선수가 승리한다.</p></li>
+<li><p>단, 몬스터는 물(<code class="docutils literal notranslate"><span class="pre">water</span></code>), 불(<code class="docutils literal notranslate"><span class="pre">fire</span></code>), 바람(<code class="docutils literal notranslate"><span class="pre">wind</span></code>) 중 하나의 속성을 가지고 있으며,<br />
+물 몬스터가 불 몬스터를, 불 몬스터가 바람 몬스터를, 바람 몬스터가 물 몬스터를 공격할 때는 공격력이 다음과 같이 변경된다.</p>
+<ul>
+<li><p>물 몬스터 : 기본 공격력의 제곱</p></li>
+<li><p>불 몬스터 : 기본 공격력 더하기 7</p></li>
+<li><p>바람 몬스터 : 기본 공격력 곱하기 3</p></li>
+</ul>
+</li>
+</ul>
+<p>위 상황에 맞게 <code class="docutils literal notranslate"><span class="pre">Monster</span></code>와 <code class="docutils literal notranslate"><span class="pre">Player</span></code> 클래스를 구현하고, 코드를 작성하라.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Monster</span></code> 클래스</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Monster</span></code> 클래스의 인스턴스는 <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">monster_type</span></code>, <code class="docutils literal notranslate"><span class="pre">hp</span></code>, <code class="docutils literal notranslate"><span class="pre">damage</span></code>를 받아 다음과 같이 생성한다.</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Monster</span><span class="p">(</span><span class="s1">&#39;redDragon&#39;</span><span class="p">,</span> <span class="s1">&#39;fire&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* 상대 몬스터의 속성을 확인해 공격력이 변경되야 하면 `True`, 아니면 `False`를 반환하는 `check_enemy()` 메서드를 정의하라. 
+* 몬스터의 속성에 따라 변경된 공격력으로 상대의 hp를 감소시키고 아래와 같은 메시지를 출력하는 `critical_attack()` 메서드를 정의하라.  
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">몬스터</span> <span class="pre">A가</span> <span class="pre">몬스터</span> <span class="pre">C를</span> <span class="pre">강하게</span> <span class="pre">공격했습니다.</span> <span class="pre">몬스터</span> <span class="pre">C의</span> <span class="pre">HP는</span> <span class="pre">2입니다.</span></code>
+* <code class="docutils literal notranslate"><span class="pre">check_enemy()</span></code>의 반환값이 <code class="docutils literal notranslate"><span class="pre">True</span></code>면 <code class="docutils literal notranslate"><span class="pre">critical_attack()</span></code>를 실행하고, <code class="docutils literal notranslate"><span class="pre">False</span></code>면 기본 공격력만큼 상대의 hp를 감소시키고 아래와 같은 메시지를 출력하는 <code class="docutils literal notranslate"><span class="pre">attack()</span></code> 메서드를 정의하라.<br />
+<code class="docutils literal notranslate"><span class="pre">몬스터</span> <span class="pre">A가</span> <span class="pre">몬스터</span> <span class="pre">C를</span> <span class="pre">공격했습니다.</span> <span class="pre">몬스터</span> <span class="pre">C의</span> <span class="pre">HP는</span> <span class="pre">2입니다.</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Player</span></code> 클래스</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Player</span></code> 클래스의 인스턴스는 다음과 같이 생성한다. 이때, 몬스터를 저장할 빈리스트<code class="docutils literal notranslate"><span class="pre">monster_list</span></code>를 정의해야 한다.</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">player1</span> <span class="o">=</span> <span class="n">Player</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* 아래와 같이 몬스터 정보를 입력받아 `monster_list`에 추가하는 `add_monster()` 메서드를 정의하라. 
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">player1</span><span class="o">.</span><span class="n">add_monster</span><span class="p">(</span><span class="s1">&#39;redDragon fire 10 3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* 대결할 몬스터를 선택하는 `select_monster()` 메서드를 정의하라. `monster_list`의 가장 처음에 있는 항목을 말한다.  
+* `monster_list`에서 가장 처음에 있는 항목을 삭제하는 `delete_monster()` 메서드를 정의하라.    
 </pre></div>
 </div>
 </div>
