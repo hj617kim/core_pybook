@@ -348,6 +348,21 @@
      10.7.4. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     10.7.5. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     10.7.6. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     10.7.7. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -447,6 +462,21 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id16">
      10.7.4. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     10.7.5. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     10.7.6. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     10.7.7. 문제
     </a>
    </li>
   </ul>
@@ -940,6 +970,52 @@ C_0 = 1,\quad C_{n+1} = \frac{2(2n + 1)}{n + 2} C_n
     <span class="k">return</span> <span class="n">d</span>     
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="id17">
+<h3><span class="section-number">10.7.5. </span>문제<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p><strong>재귀</strong>를 사용해 주어진 수열의 첫 원소를 포함하는 부분수열 중 부분수열 원소들의 최대합을 반환하는 <code class="docutils literal notranslate"><span class="pre">subseq_max()</span></code> 함수를 정의하라.</p>
+<p>예를 들어, <code class="docutils literal notranslate"><span class="pre">subseq_max([5,</span> <span class="pre">3,</span> <span class="pre">-2,</span> <span class="pre">-1])</span></code>은 아래와 같으므로 <code class="docutils literal notranslate"><span class="pre">8</span></code>이다.</p>
+<ul class="simple">
+<li><p>5 + 3 - 2 - 1 = 5</p></li>
+<li><p>5 + 3 - 2 = 6</p></li>
+<li><p>5 + 3 = 8</p></li>
+<li><p>5 = 5</p></li>
+</ul>
+<p>또, <code class="docutils literal notranslate"><span class="pre">subseq_max([2,</span> <span class="pre">-5,</span> <span class="pre">-3,</span> <span class="pre">15,</span> <span class="pre">17,</span> <span class="pre">-11])</span></code>은 아래와 같으므로 <code class="docutils literal notranslate"><span class="pre">26</span></code>이다.</p>
+<ul class="simple">
+<li><p>2 -5 -3 + 15 + 17 - 11 = 15</p></li>
+<li><p>2 -5 -3 + 15 + 17 = 26</p></li>
+<li><p>2 -5 -3 + 15 = 9</p></li>
+<li><p>2 -5 -3 = -6</p></li>
+<li><p>2 -5 = -3</p></li>
+<li><p>2 = 2</p></li>
+</ul>
+</div>
+<div class="section" id="id18">
+<h3><span class="section-number">10.7.6. </span>문제<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>앞 문제에서 정의한 <code class="docutils literal notranslate"><span class="pre">subseq_max()</span></code>와 재귀를 사용해 주어진 수열 안에 있는 모든 연속된 부분수열들에 대해 부분수열 원소들의 최대합을 반환하는 <code class="docutils literal notranslate"><span class="pre">all_subseq_max()</span></code> 함수를 정의하라.</p>
+<p>예를 들어, <code class="docutils literal notranslate"><span class="pre">all_subseq_max([5,</span> <span class="pre">3,</span> <span class="pre">-2,</span> <span class="pre">-1])</span></code>은 아래와 같으므로 이다.</p>
+<ul class="simple">
+<li><p>5 + 3 - 2 - 1 = 5</p></li>
+<li><p>5 + 3 - 2 = 6</p></li>
+<li><p>5 + 3 = 8</p></li>
+<li><p>5 = 5</p></li>
+<li><p>3 - 2 - 1 = 0</p></li>
+<li><p>3 - 2 = 1</p></li>
+<li><p>3 = 3</p></li>
+<li><p>-2 - 1 = -3</p></li>
+<li><p>-2 = -2</p></li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h3><span class="section-number">10.7.7. </span>문제<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>임의로 중첩된 리스트를 풀어 중첩이 없는 리스트로 반환하는 <code class="docutils literal notranslate"><span class="pre">flatten()</span></code> 함수를 재귀를 이용하여 구현하라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]])</span>
+<span class="go">[1, 2, 3, 4, 5, 6, 7, 8]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatten</span><span class="p">([[</span><span class="mf">4.8</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">],</span> <span class="mf">3.3</span><span class="p">,</span> <span class="p">[</span><span class="mf">5.6</span><span class="p">,</span> <span class="mf">7.2</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">]])</span>
+<span class="go">[4.8, 1.2, 3.3, 5.6, 7.2, 9.8]</span>
+</pre></div>
 </div>
 </div>
 </div>
