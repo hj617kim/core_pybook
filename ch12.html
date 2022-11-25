@@ -309,6 +309,11 @@
      12.4.4. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     12.4.5. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -369,6 +374,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
      12.4.4. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     12.4.5. 문제
     </a>
    </li>
   </ul>
@@ -691,7 +701,7 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[48, 67, 73, 12, 77, 66, 95, 59, 10, 19]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[86, 43, 82, 5, 48, 17, 36, 89, 84, 99]
 </pre></div>
 </div>
 </div>
@@ -761,6 +771,47 @@ Output : <code class="docutils literal notranslate"><span class="pre">90</span><
 Output : <code class="docutils literal notranslate"><span class="pre">25</span></code></p>
 <p>Input : <code class="docutils literal notranslate"><span class="pre">print(semiconductor([40,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">30],</span> <span class="pre">96))</span></code><br />
 Output : <code class="docutils literal notranslate"><span class="pre">25</span></code></p>
+</div>
+<div class="section" id="id10">
+<h3><span class="section-number">12.4.5. </span>문제<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>A회사는 부서별로 원하는 만큼의 운영비를 지급하기로 했다. 그런데 담당자는 공통 운영비를 남겨두지 않았다는 사실을 뒤늦게 알았다. 담당자는 부서에 지원하는 운영비를 줄여 공통 운영비를 마련하려고 한다. 이때 각 부서별로 같은 금액을 줄이지 않고 다음과 같은 방법을 사용하기로 모든 부서와 합의했다.</p>
+<ul class="simple">
+<li><p>필요한 공통 운영비가 있다면, 운영비의 상한가를 정한다. 요청하는 운영비가 상한가보다 적으면 요청한 만큼을 지급하고, 요청하는 운영비가 상한가보다 크면 상한가만큼을 지급한다. 이때, ‘(요청하는 운영비)-(상한가)가 양수인 것들의 합’은 공통 운영비를 넘는 최솟값이다.</p></li>
+<li><p>운영비는 모두 0 또는 양의 정수다.</p></li>
+</ul>
+<p>각 부서가 요청한 운영비를 담은 리스트와 필요한 공통 운영비가 주어졌을 때, 상한가를 출력하는 <code class="docutils literal notranslate"><span class="pre">expenses()</span></code> 함수를 이진탐색을 사용해 정의하라.</p>
+<ul class="simple">
+<li><p>필요한 공통 운영비가 각 부서별 운영비의 합보다 크면 <code class="docutils literal notranslate"><span class="pre">False</span></code>를 반환한다.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">expenses</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">100</span><span class="p">))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>필요한 공통 운영비가 0원이면, 부서별로 원하는 만큼의 운영비를 지급한다.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">expenses</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">20</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>아래는 그 외 예시다.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">expenses</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>
+<span class="go">17</span>
+</pre></div>
+</div>
+<p>위에서 각 부서가 요청하는 운영비는 15, 16, 20, 13, 9이고, 필요한 공통 운영비는 3이다. 상한가를 17로 하면, 각 부서에 15, 16, 17, 13, 9를 지급하고 공통 운영비 3을 마련할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">expenses</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">6</span><span class="p">))</span>
+<span class="go">15</span>
+</pre></div>
+</div>
+<p>위에서 각 부서가 요청하는 운영비는 15, 16, 20, 13, 9이고, 필요한 공통 운영비는 6이다. 상한가를 15로 하면, 각 부서에 15, 15, 15, 13, 9를 지급하고 공통 운영비 6을 마련할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">expenses</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">7</span><span class="p">))</span>
+<span class="go">14</span>
+</pre></div>
+</div>
+<p>위에서 각 부서가 요청하는 운영비는 15, 16, 20, 13, 9이고, 필요한 공통 운영비는 7이다. 상한가를 15로 해 각 부서에 15, 15, 15, 13, 9를 지급하면 공통 운영비는 6으로 7보다 작다. 따라서 상한가를 14로 해 각 부서에 14, 14, 14, 13, 9를 지급하고 공통 운영비로 9를 마련해야 한다.</p>
 </div>
 </div>
 </div>
