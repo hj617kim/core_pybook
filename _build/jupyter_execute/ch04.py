@@ -2057,7 +2057,7 @@ print(string.ascii_uppercase)
 # 체스판의 각 칸은 아래와 같이 흰색(`W`)과 검은색(`B`)으로 되어 있다. 다음 물음에 답하여라. 
 # 
 # <div align="center">
-#     <img src="https://raw.githubusercontent.com/hj617kim/pybook/master/images/ch04/chess_img.png" style="width:800px;">
+#     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch04/chess_img.png" style="width:400px;">
 # </div>
 # 
 # 1. `input()` 함수로 체스판의 크기를 입력 받아 체스판의 각 칸의 색을 리스트로 출력하는 코드를 작성하라.   
@@ -2081,3 +2081,9 @@ print(string.ascii_uppercase)
 # ```
 # W
 # ```
+
+# In[ ]:
+
+
+
+
