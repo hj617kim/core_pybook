@@ -518,6 +518,16 @@
      5.5.14. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     5.5.15. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id30">
+     5.5.16. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -787,6 +797,16 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id28">
      5.5.14. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     5.5.15. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id30">
+     5.5.16. 문제
     </a>
    </li>
   </ul>
@@ -1495,7 +1515,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7f5fb67b3070&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator object at 0x7fbb600af6d0&gt;
 [1, 2, 3]
 </pre></div>
 </div>
@@ -1833,10 +1853,10 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True True False False True 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True True False 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False True True 
 </pre></div>
 </div>
 </div>
@@ -2497,6 +2517,30 @@ Input :</p>
 <div class="section" id="id28">
 <h3><span class="section-number">5.5.14. </span>문제<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
 <p>소수<font size="2">prime number</font>는 1보다 큰 자연수 중 1과 자기자신만을 약수로 가지는 수를 말한다. 예를 들어, 2, 3, 5, 7, 11, 13, 17, 19 등은 소수이다. 소수를 생성하는 이터레이터를 만들어라.</p>
+</div>
+<div class="section" id="id29">
+<h3><span class="section-number">5.5.15. </span>문제<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<p>자기자신의 각 자리 정수의 합으로 나누어지는 양의 정수를 하샤드 수(Harshad number)라 한다. 예를 들어, 12의 각 자리 정수의 합은 3(= 1 + 2)이고, 12는 3의 배수이므로 12는 하샤드 수이다. 또, 1729의 각 자리 정수의 합은 19(= 1 + 7 + 2 + 9)이고, 1729는 19의 배수이므로 1729는 하샤드 수이다.<br />
+양의 정수를 인자로 받아 하샤드 수이면 <code class="docutils literal notranslate"><span class="pre">True</span></code> 아니면 <code class="docutils literal notranslate"><span class="pre">False</span></code>를 반환하는 함수 <code class="docutils literal notranslate"><span class="pre">is_harshad()</span></code>를 정의하라.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">is_harshad</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">is_harshad</span><span class="p">(</span><span class="mi">1729</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id30">
+<h3><span class="section-number">5.5.16. </span>문제<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<p>읽고 말하기 수열은 이전 항을 읽어 다음 항을 만드는 수열를 말한다. 1로 시작하며, 이전 항을 연속된 같은 수
+의 개수로 묶어서 읽는 방식으로 다음 항을 만든다.<br />
+예를 들어, 읽고 말하기 수열은 다음과 같다.<br />
+1, 11, 21, 1211, 111221, 312211, 13112221, …<br />
+첫째 항은 1이다.<br />
+1은 1개의 1이므로 둘째 항은 11이다.<br />
+11은 2개의 1이므로 셋째 항은 21이다.<br />
+21은 1개의 2와 1개의 1이므로 넷째 항은 1211이다.<br />
+1211은 1개의 1과 1개의 2, 2개의 1이므로 다섯째 항은 111221이다.<br />
+읽고 말하기 수열의 항목을 생성하는 제너레이터 <code class="docutils literal notranslate"><span class="pre">look_and_say()</span></code>를 정의하고, 처음 10개의 항목을 출력하라.</p>
 </div>
 </div>
 </div>
