@@ -398,6 +398,11 @@
      7.3.6. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     7.3.7. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -547,6 +552,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id14">
      7.3.6. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     7.3.7. 문제
     </a>
    </li>
   </ul>
@@ -771,7 +781,7 @@ class Fraction(builtins.object)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f31bd78c9d0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f17d00cc760&gt;
 </pre></div>
 </div>
 </div>
@@ -1412,6 +1422,151 @@ class Fraction(builtins.object)
 <li><p>대결할 몬스터를 선택하는 <code class="docutils literal notranslate"><span class="pre">select_monster()</span></code> 메서드를 정의하라. <code class="docutils literal notranslate"><span class="pre">monster_list</span></code>의 가장 처음에 있는 항목을 말한다.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">monster_list</span></code>에서 가장 처음에 있는 항목을 삭제하는 <code class="docutils literal notranslate"><span class="pre">delete_monster()</span></code> 메서드를 정의하라.</p></li>
 </ul>
+</div>
+<div class="section" id="id15">
+<h3><span class="section-number">7.3.7. </span>문제<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>월드컵 조별예선은 4개의 국가가 서로 3번씩 경기를 하고, 모든 경기가 끝나면 승점을 가지고 순위를 매긴다.<br />
+승점은 이겼을 경우 3점, 비겼을 경우 1점, 진 경우 0점을 더한다. 승점이 동일한 경우, 득점에서 실점을 뺀 득실차를 가지고 순위를 매긴다.
+그리고 득실차가 동일한 경우, 총득점인 다득점을 가지고 순위를 매긴다.</p>
+<p>예를 들어, 다음은 2022년 카타르 월드컵 경기의 결과다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>국가1</p></th>
+<th class="text-align:center head"><p>국가2</p></th>
+<th class="text-align:center head"><p>국가1 득점</p></th>
+<th class="text-align:center head"><p>국가2 득점</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>포르투갈</p></td>
+<td class="text-align:center"><p>가나</p></td>
+<td class="text-align:center"><p>3</p></td>
+<td class="text-align:center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>대한민국</p></td>
+<td class="text-align:center"><p>우루과이</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>대한민국</p></td>
+<td class="text-align:center"><p>가나</p></td>
+<td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>포르투갈</p></td>
+<td class="text-align:center"><p>우루과이</p></td>
+<td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>0</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>대한민국</p></td>
+<td class="text-align:center"><p>포르투갈</p></td>
+<td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>가나</p></td>
+<td class="text-align:center"><p>우루과이</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>2</p></td>
+</tr>
+</tbody>
+</table>
+<p>위 조의 순위는 다음과 같다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>순위</p></th>
+<th class="text-align:center head"><p>국가</p></th>
+<th class="text-align:center head"><p>승점</p></th>
+<th class="text-align:center head"><p>승</p></th>
+<th class="text-align:center head"><p>무</p></th>
+<th class="text-align:center head"><p>패</p></th>
+<th class="text-align:center head"><p>득실차</p></th>
+<th class="text-align:center head"><p>총득점</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>포르투갈</p></td>
+<td class="text-align:center"><p>6</p></td>
+<td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>대한민국</p></td>
+<td class="text-align:center"><p>4</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>4</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>3</p></td>
+<td class="text-align:center"><p>우루과이</p></td>
+<td class="text-align:center"><p>4</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>4</p></td>
+<td class="text-align:center"><p>가나</p></td>
+<td class="text-align:center"><p>3</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>-2</p></td>
+<td class="text-align:center"><p>5</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>포르투갈은 승점 6점(2경기 승, 1경기 패)으로 1등이다.</p></li>
+<li><p>대한민국과 우루과이는 승점 4점(1경기 승, 1경기 무승부, 1경기 패), 득실차 0점이다.<br />
+대한민국은 총득점 4점, 우루과이는 2점이다.</p></li>
+<li><p>가나는 승점 3점(1경기 승, 2경기 패)</p></li>
+</ul>
+<p>경기 결과를 관리하는 <code class="docutils literal notranslate"><span class="pre">Worldcup</span></code> 클래스를 정의하라. <code class="docutils literal notranslate"><span class="pre">Worldcup</span></code> 클래스의 인스턴스는 국가명을 인자로 받아 다음과 같이 생성한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">korea</span> <span class="o">=</span> <span class="n">Worldcup</span><span class="p">(</span><span class="s1">&#39;korea&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">portugal</span> <span class="o">=</span> <span class="n">Worldcup</span><span class="p">(</span><span class="s1">&#39;portugal&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ghana</span> <span class="o">=</span> <span class="n">Worldcup</span><span class="p">(</span><span class="s1">&#39;ghana&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uruguay</span> <span class="o">=</span> <span class="n">Worldcup</span><span class="p">(</span><span class="s1">&#39;uruguay&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>다음과 같이 경기 결과를 입력 받는 <code class="docutils literal notranslate"><span class="pre">result()</span></code> 메서드를 정의하라. 예를 들어, 포르투갈과 가나의 경기는 3:2였다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">portugal</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">ghana</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>승점을 반환하는 <code class="docutils literal notranslate"><span class="pre">points()</span></code> 메서드를 정의하라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">portugal</span><span class="o">.</span><span class="n">points</span><span class="p">())</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ghana</span><span class="o">.</span><span class="n">points</span><span class="p">())</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<p>골득실을 반환하는 <code class="docutils literal notranslate"><span class="pre">goal_difference()</span></code> 메서드를 정의하라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">portugal</span><span class="o">.</span><span class="n">goal_difference</span><span class="p">())</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ghana</span><span class="o">.</span><span class="n">goal_difference</span><span class="p">())</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+<p>총득점을 반환하는 <code class="docutils literal notranslate"><span class="pre">goals()</span></code> 메서드를 정의하라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">portugal</span><span class="o">.</span><span class="n">goals</span><span class="p">())</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ghana</span><span class="o">.</span><span class="n">goals</span><span class="p">())</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>위 클래스를 활용해 다음과 같이 등수별 국가를 출력하는 코드를 작성하라. 만약, 모든 경기의 결과를 다 입력했다면 결과는 다음과 같다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">portugal</span>
+<span class="mf">2.</span> <span class="n">korea</span>
+<span class="mf">3.</span> <span class="n">uruguay</span>
+<span class="mf">4.</span> <span class="n">ghana</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
