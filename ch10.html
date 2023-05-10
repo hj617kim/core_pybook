@@ -363,6 +363,11 @@
      10.7.7. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     10.7.8. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -477,6 +482,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id19">
      10.7.7. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     10.7.8. 문제
     </a>
    </li>
   </ul>
@@ -1016,6 +1026,24 @@ C_0 = 1,\quad C_{n+1} = \frac{2(2n + 1)}{n + 2} C_n
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flatten</span><span class="p">([[</span><span class="mf">4.8</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">],</span> <span class="mf">3.3</span><span class="p">,</span> <span class="p">[</span><span class="mf">5.6</span><span class="p">,</span> <span class="mf">7.2</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">]])</span>
 <span class="go">[4.8, 1.2, 3.3, 5.6, 7.2, 9.8]</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="id20">
+<h3><span class="section-number">10.7.8. </span>문제<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>편집 거리(edit distance)는 두 문자열의 유사도를 측정하는 방법 중 하나로, 한 문자열을 다른 문자열로 만드는데 필요한 최소한의 삽입(insert), 삭제(delete), 변경(substitute) 횟수를 계산해 측정한다.</p>
+<p>예는 다음과 같다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'cut'</span></code>과 <code class="docutils literal notranslate"><span class="pre">'cat'</span></code> : <code class="docutils literal notranslate"><span class="pre">'u'</span></code>를 <code class="docutils literal notranslate"><span class="pre">'a'</span></code>로 변경(편집 거리 : 1)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'hi'</span></code>와 <code class="docutils literal notranslate"><span class="pre">'hello'</span></code> : <code class="docutils literal notranslate"><span class="pre">'i'</span></code>를 <code class="docutils literal notranslate"><span class="pre">'e'</span></code>로 변경하고, 뒤에 <code class="docutils literal notranslate"><span class="pre">'llo'</span></code>를 삽입(편집 거리 : 4)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'dogs'</span></code>와 <code class="docutils literal notranslate"><span class="pre">'dog'</span></code> : <code class="docutils literal notranslate"><span class="pre">'s'</span></code>를 삭제(편집 거리 : 1)</p></li>
+</ul>
+<p>두 문자열을 인자로 받아 편집 거리를 반환하는 함수 <code class="docutils literal notranslate"><span class="pre">edit_distance()</span></code>를 재귀를 사용해 정의하라. 이때 두 문자열은 모두 소문자로 주어진다고 가정한다.</p>
+<p>[주의] 문제에서 변경(substitute)은 하나의 문자를 다른 문자로 대체한다는 의미다. 문자의 순서의 교환을 의미하지 않는다.<br />
+예를 들어, <code class="docutils literal notranslate"><span class="pre">'ab'</span></code>와 <code class="docutils literal notranslate"><span class="pre">'ba'</span></code>의 편집 거리는 2고, <code class="docutils literal notranslate"><span class="pre">'listen'</span></code>과 <code class="docutils literal notranslate"><span class="pre">'silent'</span></code>의 편집 거리는 4다.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">도움말</p>
+<p>두 문자열의 처음 또는 마지막 문자부터 하나씩 처리하면 된다. 예를 들어, 마지막 문자부터 하나씩 처리할 때 마지막 문자가 동일하지 않다면<br />
+각 경우(삽입, 삭제, 변경)의 최소 횟수를 재귀적으로 구한 다음 최소값을 취하면 된다.</p>
 </div>
 </div>
 </div>
