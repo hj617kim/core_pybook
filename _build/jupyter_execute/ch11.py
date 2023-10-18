@@ -74,7 +74,7 @@ def make_change_brute_force(coin_list, change) :
 print(make_change_brute_force([10, 50, 100, 500], 630))
 
 
-# In[6]:
+# In[65]:
 
 
 print(make_change_brute_force([10, 50, 100, 210, 500], 630))
@@ -98,7 +98,7 @@ print(make_change_brute_force([10, 50, 100, 210, 500], 630))
 # 
 # 디폴트딕트 객체를 생성할 때는 값들의 자료형을 명시하며, `int`의 경우 모든 키의 값이 0으로 초기화된다. 
 
-# In[7]:
+# In[18]:
 
 
 from collections import defaultdict
@@ -109,7 +109,7 @@ print(aDict[10])
 
 # 아래 `make_change_brute_force2()` 함수는 재귀 호출이 발생할 때마다 그 결과를 디폴트딕트에 기억해두고, 필요한 경우 재활용한다. 
 
-# In[8]:
+# In[60]:
 
 
 from collections import defaultdict
@@ -130,13 +130,13 @@ def make_change_brute_force2(coin_list, change, known_results=defaultdict(int)) 
     return min_cnt
 
 
-# In[9]:
+# In[61]:
 
 
 print(make_change_brute_force2([10, 50, 100, 500], 630, known_results=defaultdict(int)))
 
 
-# In[10]:
+# In[62]:
 
 
 print(make_change_brute_force2([10, 50, 100, 210, 500], 630, known_results=defaultdict(int)))
@@ -177,7 +177,7 @@ print(make_change_brute_force2([10, 50, 100, 210, 500], 630, known_results=defau
 
 # 동적계획법을 이용하여 잔돈 지불 문제를 해결하는 알고리즘은 다음과 같다. 
 
-# In[11]:
+# In[66]:
 
 
 from collections import defaultdict
@@ -196,13 +196,13 @@ def make_change_dp(coin_list, change) :
     return min_cnt[change]
 
 
-# In[12]:
+# In[67]:
 
 
 print(make_change_dp([10, 50, 100, 500], 630))
 
 
-# In[13]:
+# In[68]:
 
 
 print(make_change_dp([10, 50, 100, 210, 500], 630))
@@ -210,7 +210,7 @@ print(make_change_dp([10, 50, 100, 210, 500], 630))
 
 # 위 알고리즘은 해답을 찾는 데 걸리는 시간이 빠른 편이다. 하지만 지금은 지불에 필요한 최소 동전 수만 계산할 뿐 실제로 어떻게 지불해야 하는가는 알려주지 않는다. 이 문제를 해결하려면 디폴트딕트를 업데이트하면서 동시에 마지막으로 사용된 동전이 무엇이었는지를 기억하면 된다.   
 
-# In[14]:
+# In[69]:
 
 
 from collections import defaultdict
@@ -241,7 +241,7 @@ def print_coins(coins_used, change) :
         coin = coin - this_coin
 
 
-# In[15]:
+# In[73]:
 
 
 amount = 630
@@ -254,7 +254,7 @@ print_coins(coins_used, amount)
 
 # 210원 동전이 추가되면, 210원 동전 3개가 필요함을 확인해준다. 
 
-# In[16]:
+# In[74]:
 
 
 amount = 630

@@ -1063,7 +1063,7 @@ print(random.sample(a_word, len(a_word)))
 # 각 칸의 위치는 아래와 같으며, 입력값으로는 8개의 줄로 o와 x가 공백으로 분리되어 입력된다.
 # 
 # <div align="center">
-#     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch06/eight_queens01.pn" style="width:500px;">
+#     <img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch06/eight_queens01.png" style="width:500px;">
 # </div>
 # 
 # 
