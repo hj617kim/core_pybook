@@ -388,16 +388,6 @@
      9.4.9. 문제
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
-     9.4.10. 문제
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id19">
-     9.4.11. 문제
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -537,16 +527,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id17">
      9.4.9. 문제
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
-     9.4.10. 문제
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id19">
-     9.4.11. 문제
     </a>
    </li>
   </ul>
@@ -1455,9 +1435,9 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;c&#39;, &#39;b&#39;, &#39;a&#39;]
-[&#39;b&#39;, &#39;b&#39;, &#39;b&#39;]
-[&#39;a&#39;, &#39;a&#39;, &#39;c&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;b&#39;, &#39;c&#39;, &#39;c&#39;]
+[&#39;a&#39;, &#39;c&#39;, &#39;c&#39;]
+[&#39;a&#39;, &#39;c&#39;, &#39;b&#39;]
 </pre></div>
 </div>
 </div>
@@ -1485,45 +1465,6 @@ True
 </div>
 <div class="section" id="id15">
 <h3><span class="section-number">9.4.7. </span>문제<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
-<p>정수를 항목으로 갖는 리스트와 자연수 k가 주어지면, 길이가 k인 각각의 연속된 부분 리스트의 최댓값들을 담은 리스트를 반환하는 <code class="docutils literal notranslate"><span class="pre">sliding_window()</span></code> 함수를 정의하여라.</p>
-<p>예를 들어, 주어진 리스트가 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">-1,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">2,</span> <span class="pre">-3]</span></code>이고 k가 3이라면, 길이가 3인 각각의 연속된 부분 리스트의 최댓값은 아래와 같다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">-1,</span> <span class="pre">3</span></code>의 최댓값 : <code class="docutils literal notranslate"><span class="pre">3</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-1,</span> <span class="pre">3,</span> <span class="pre">4</span></code>의 최댓값 : <code class="docutils literal notranslate"><span class="pre">4</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">2</span></code>의 최댓값 : <code class="docutils literal notranslate"><span class="pre">4</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">4,</span> <span class="pre">2,</span> <span class="pre">-3</span></code>의 최댓값 : <code class="docutils literal notranslate"><span class="pre">4</span></code></p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sliding_window</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>  
-<span class="go">[3, 4, 4, 4]</span>
-</pre></div>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">도움말</p>
-<p>파이썬의 슬라이싱과 <code class="docutils literal notranslate"><span class="pre">max()</span></code>를 사용하면, 쉽게 해결된다. 반면, 리스트의 유용한 인덱스를 덱(또는 큐)에 저장하는 방식으로 문제를 해결할 수 있다. 이때는 덱의 머리와 꼬리 항목을 확인할 수 있는 <code class="docutils literal notranslate"><span class="pre">peek_front()</span></code>와 <code class="docutils literal notranslate"><span class="pre">peek_rear()</span></code>를 추가하는 것이 좋다. 덱에 최댓값을 저장해두고, 한 칸씩 이동하면서 최댓값인지 아닌지를 확인하면 된다.</p>
-</div>
-</div>
-<div class="section" id="id16">
-<h3><span class="section-number">9.4.8. </span>문제<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
-<p>정수를 항목으로 갖는 리스트와 자연수 k가 주어지면, 길이가 k인 부분 리스트의 모든 최댓값과 최솟값의 합을 반환하는 <code class="docutils literal notranslate"><span class="pre">sum_of_k_sub()</span></code> 함수를 정의하여라.</p>
-<p>예를 들어, 주어진 리스트가 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">-1,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">2,</span> <span class="pre">-3]</span></code>이고 k가 3이라면, 길이가 3인 각각의 연속된 부분 리스트의 최댓값과 최솟값은 아래와 같다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">-1,</span> <span class="pre">3</span></code>의 최댓값 : <code class="docutils literal notranslate"><span class="pre">3</span></code>, 최솟값 : <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-1,</span> <span class="pre">3,</span> <span class="pre">4</span></code>의 최댓값 : <code class="docutils literal notranslate"><span class="pre">4</span></code>, 최솟값 : <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">2</span></code>의 최댓값 : <code class="docutils literal notranslate"><span class="pre">4</span></code>, 최솟값 : <code class="docutils literal notranslate"><span class="pre">2</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">4,</span> <span class="pre">2,</span> <span class="pre">-3</span></code>의 최댓값 : <code class="docutils literal notranslate"><span class="pre">4</span></code>, 최솟값 : <code class="docutils literal notranslate"><span class="pre">-3</span></code></p></li>
-</ul>
-<p>모든 최댓값과 최솟값을 더하면, 12이다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sum_of_k_sub</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>  
-<span class="go">12</span>
-</pre></div>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">도움말</p>
-<p>이전 문제와 비슷하다. 다만, 덱을 사용할 때는 최솟값을 저장할 덱이 하나 더 필요하다.</p>
-</div>
-</div>
-<div class="section" id="id17">
-<h3><span class="section-number">9.4.9. </span>문제<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p>n명이 동그랗게 둘러앉아 임의의 한 사람부터 순서를 세어 k번째 사람을 제외하는 게임을 아무도 남지 않을 때까지 계속한다. 단, t명이 제외될 때마다 사람을 세는 방향을 변경한다. 자연수 n, k, t를 입력받아 제외되는 사람의 순서를 반환하는 <code class="docutils literal notranslate"><span class="pre">josephus_permutation()</span></code> 함수를 정의하여라. 단, t, k &lt; n라고 가정한다.</p>
 <p>예를 들어, n = 7, k = 3, t = 2라면 3 -&gt; 6 -&gt; 2 -&gt; 5 -&gt; 4 -&gt; 7 -&gt; 1 순서로 제외한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">josephus_permutation</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -1543,8 +1484,8 @@ True
 즉, <code class="docutils literal notranslate"><span class="pre">i</span></code>는 0부터 시작하여 사람을 제외할 떄마다 1씩 증가하게 두고, <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">//</span> <span class="pre">t</span></code>의 값이 짝수냐 홀수냐에 따라 방향을 변경하면 된다.</p>
 </div>
 </div>
-<div class="section" id="id18">
-<h3><span class="section-number">9.4.10. </span>문제<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3><span class="section-number">9.4.8. </span>문제<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p>여러 명이 함께 사용하는 실험실 공용 프린터 한 대가 무작위적으로 입력되는 프린팅 작업을 수행할 때 벌어지는 일을 모의실험해보자. 모의실험의 목적은 사용자가 프린팅 명령을 내리고 과제가 출력되기 시작할 때까지 평균적으로 걸리는 시간을 계산하는 일이다.</p>
 <p><strong>필요한 객체</strong><br />
 다음 세 개의 객체를 사용한다.</p>
@@ -1654,8 +1595,8 @@ True
 </pre></div>
 </div>
 </div>
-<div class="section" id="id19">
-<h3><span class="section-number">9.4.11. </span>문제<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3><span class="section-number">9.4.9. </span>문제<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p>어느 카페의 바리스타 한명이 무작위적으로 입력되는 주문 작업을 수행할 때 벌어지는 일을 모의실험하여라. 모의실험의 목적은 손님이 주문을 하고 주문한 음료를 받을 때까지 평균적으로 걸리는 시간을 계산하는 일이다.</p>
 </div>
 </div>

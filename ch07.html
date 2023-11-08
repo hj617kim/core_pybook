@@ -403,6 +403,11 @@
      7.3.7. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     7.3.8. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -557,6 +562,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id15">
      7.3.7. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     7.3.8. 문제
     </a>
    </li>
   </ul>
@@ -781,7 +791,7 @@ class Fraction(builtins.object)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7fc5684dc490&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Fraction object at 0x7f90e46eca90&gt;
 </pre></div>
 </div>
 </div>
@@ -1565,6 +1575,33 @@ class Fraction(builtins.object)
 <span class="mf">2.</span> <span class="n">korea</span>
 <span class="mf">3.</span> <span class="n">uruguay</span>
 <span class="mf">4.</span> <span class="n">ghana</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3><span class="section-number">7.3.8. </span>문제<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>이메일을 관리하는 <code class="docutils literal notranslate"><span class="pre">Email</span></code> 클래스를 정의하라.</p>
+<p>(1) <code class="docutils literal notranslate"><span class="pre">Email</span></code> 클래스의 인스턴스는 <code class="docutils literal notranslate"><span class="pre">이메일주소</span></code>, <code class="docutils literal notranslate"><span class="pre">비밀번호</span></code>를 인자로 받아서 다음과 같이 생성한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">seoul</span> <span class="o">=</span> <span class="n">Email</span><span class="p">(</span><span class="s1">&#39;seoul@snu.ac.kr&#39;</span><span class="p">,</span> <span class="s1">&#39;a1234&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(2) 비밀번호는 외부에서 직접 접근할 수 없도록 하고, 비밀번호를 변경하는 <code class="docutils literal notranslate"><span class="pre">set_pw()</span></code> 메서드를 <code class="docutils literal notranslate"><span class="pre">Email</span></code> 클래스에 구현하여라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">seoul</span><span class="o">.</span><span class="n">set_pw</span><span class="p">(</span><span class="s1">&#39;b5678&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(3) 상대와 이메일 내용을 입력받아 이메일을 보내는 <code class="docutils literal notranslate"><span class="pre">send_email()</span></code> 메서드를 정의하라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">suwon</span> <span class="o">=</span> <span class="n">Email</span><span class="p">(</span><span class="s1">&#39;suwon@snu.ac.kr&#39;</span><span class="p">,</span> <span class="s1">&#39;a2580&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seoul</span><span class="o">.</span><span class="n">send_email</span><span class="p">(</span><span class="n">suwon</span><span class="p">,</span> <span class="s1">&#39;오늘 회의 장소는...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(4) 안읽은 메일의 개수를 반환하는 <code class="docutils literal notranslate"><span class="pre">get_n_email()</span></code> 메서드를 정의하라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">suwon</span><span class="o">.</span><span class="n">get_n_email</span><span class="p">())</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>(5) 안읽은 메일의 보낸 이의 메일 주소와 내용을 보여주는 <code class="docutils literal notranslate"><span class="pre">read_email()</span></code> 메서드를 정의하라. 단, 출력하는 순서는 상관없다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">suwon</span><span class="o">.</span><span class="n">read_email</span><span class="p">()</span>
+<span class="go">seoul@snu.ac.kr 오늘 회의 장소는...</span>
 </pre></div>
 </div>
 </div>
