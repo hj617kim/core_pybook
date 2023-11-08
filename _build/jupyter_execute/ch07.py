@@ -841,6 +841,38 @@ isinstance(2.0, str)
 # 4. ghana
 # ```
 
+# ### 문제
+
+# 이메일을 관리하는 `Email` 클래스를 정의하라.   
+# 
+# (1) `Email` 클래스의 인스턴스는 `이메일주소`, `비밀번호`를 인자로 받아서 다음과 같이 생성한다.
+# ```python
+# >>> seoul = Email('seoul@snu.ac.kr', 'a1234')
+# ```
+# 
+# (2) 비밀번호는 외부에서 직접 접근할 수 없도록 하고, 비밀번호를 변경하는 `set_pw()` 메서드를 `Email` 클래스에 구현하여라.  
+# ```python
+# >>> seoul.set_pw('b5678')
+# ```
+# 
+# (3) 상대와 이메일 내용을 입력받아 이메일을 보내는 `send_email()` 메서드를 정의하라.  
+# ```python
+# >>> suwon = Email('suwon@snu.ac.kr', 'a2580')
+# >>> seoul.send_email(suwon, '오늘 회의 장소는...')
+# ```
+# 
+# (4) 안읽은 메일의 개수를 반환하는 `get_n_email()` 메서드를 정의하라.
+# ```python
+# >>> print(suwon.get_n_email())
+# 1
+# ```
+# 
+# (5) 안읽은 메일의 보낸 이의 메일 주소와 내용을 보여주는 `read_email()` 메서드를 정의하라. 단, 출력하는 순서는 상관없다.
+# ```python
+# >>> suwon.read_email()
+# seoul@snu.ac.kr 오늘 회의 장소는...
+# ```
+
 # In[ ]:
 
 
