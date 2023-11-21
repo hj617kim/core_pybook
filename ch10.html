@@ -368,6 +368,11 @@
      10.7.8. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     10.7.9. 문제
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -487,6 +492,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id20">
      10.7.8. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     10.7.9. 문제
     </a>
    </li>
   </ul>
@@ -1044,6 +1054,39 @@ C_0 = 1,\quad C_{n+1} = \frac{2(2n + 1)}{n + 2} C_n
 <p class="admonition-title">도움말</p>
 <p>두 문자열의 처음 또는 마지막 문자부터 하나씩 처리하면 된다. 예를 들어, 마지막 문자부터 하나씩 처리할 때 마지막 문자가 동일하지 않다면<br />
 각 경우(삽입, 삭제, 변경)의 최소 횟수를 재귀적으로 구한 다음 최소값을 취하면 된다.</p>
+</div>
+</div>
+<div class="section" id="id21">
+<h3><span class="section-number">10.7.9. </span>문제<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>한 지점에서 다른 지점으로 가는 최소 비용을 구하려고 한다. 각 지점의 비용은 아래 그림 a와 같다. 처음 위치는 (0, 0)이며, 지점을 이동할 때는 오른쪽으로 한 칸, 아랫쪽으로 한 칸, 오른쪽 아래 방향의 대각선 칸(\ 방향)으로만 가능하다(그림 b참고).</p>
+<div align="center"><img src="https://raw.githubusercontent.com/hj617kim/core_pybook/master/images/ch10/cost_img2.png" style="width:500px;"></div>
+<p>위의 상황에서는 처음 위치 (0, 0)에서 (2, 2)로 갈 때의 최소 비용은 7(2 -&gt; 1 -&gt; 1 -&gt; 3)이다.</p>
+<p>비용 정보와 도착 위치를 입력 받아 최소 비용을 반환하는 <code class="docutils literal notranslate"><span class="pre">min_cost()</span></code> 함수를 정의하라.</p>
+<p>입력값 첫 줄에는 비용 정보의 행(r)과 열(c) 크기가 들어온다.
+그 다음 r개의 줄에 비용 정보가 들어오고, 마지막 줄에 도착 위치가 있다.<br />
+입력값1</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="mi">3</span>
+<span class="mi">2</span> <span class="mi">1</span> <span class="mi">3</span> 
+<span class="mi">4</span> <span class="mi">2</span> <span class="mi">1</span>
+<span class="mi">7</span> <span class="mi">8</span> <span class="mi">3</span>
+<span class="mi">2</span> <span class="mi">2</span>    
+</pre></div>
+</div>
+<p>출력값1</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span>
+</pre></div>
+</div>
+<p>입력값2</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="mi">4</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
+<span class="mi">4</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">9</span>
+<span class="mi">7</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">2</span>
+<span class="mi">1</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>출력값2</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span>
+</pre></div>
 </div>
 </div>
 </div>
